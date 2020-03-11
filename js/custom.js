@@ -1,12 +1,12 @@
-console.clear();
+$(document).ready(function(){   
 
-canvasWidth = 1600;
-canvasHeight = 1;
+ var canvasWidth = 1600;
+ var canvasHeight = 1;
 
-pCount = 0;
+var pCount = 0;
 
 
-pCollection = new Array();
+var pCollection = new Array();
 
 var puffs = 1;
 var particlesPerPuff = 2000;
@@ -133,26 +133,10 @@ function randOffset(n, variance)
   return n * r;
 }
 
-function clog(s)
-{  
-  console.log(s);
-}
 // canvas
   
 
-$(document).ready(function(){   
-  var target = $('section');
-  var targetPos = target.offset().top;
-  var winHeight = $(window).height();
-  var scrollToElem = targetPos - winHeight;
   
-  $(window).scroll(function(){
-  var winScrollTop = $(this).scrollTop();
-  if(winScrollTop > scrollToElem){
-    //сработает когда пользователь доскроллит к элементу с классом .elem
-  }
-});
-  // 
   $('.kolbs-img').click(function(e){
     e.preventDefault();
   });
@@ -161,28 +145,11 @@ $(document).ready(function(){
       e.preventDefault();
     });
   
-    $('#watershisha').click(function(){
-      $('.new-kolba').remove('#milkshisha, #alcoshisha');
-      $('#watershisha').appendTo('.new-kolba').addClass('watershisha-active');
-      if($('.new-kolba').hasClass('milkshisha-active') || $('.new-kolba').hasClass('alcoshisha-active')){
-        $('#milkshisha').appendTo('.checkbox-label');
-        $('#alcoshisha').appendTo('.checkbox-label');
-      }
-    });
-  
-    $('#milkshisha').click(function(){
-      $('.new-kolba').remove('#watershisha, #alcoshisha');
-      $('#milkshisha').appendTo('.new-kolba').addClass('milkshisha-active');
-      if($('.new-kolba').hasClass('watershisha-active') || $('.new-kolba').hasClass('alcoshisha-active')){
-        $('#watershisha').appendTo('.checkbox-label');
-        $('#alcoshisha').appendTo('.checkbox-label');
-    }});
-    
-    $('#alcoshisha').click(function(){
-      $('.new-kolba').remove('#watershisha, #milkshisha');
-      $('#alcoshisha').appendTo('.new-kolba').addClass('alcoshisha-active');
-      if($('.new-kolba').hasClass('watershisha-active') || $('.new-kolba').hasClass('milkshisha-active')){
-        $('#watershisha').appendTo('.checkbox-label');
-        $('#milkshisha').appendTo('.checkbox-label');
-    }});
-});
+    $('.colbs').on('click', function () {
+      $('.colbs').fadeIn(450);
+      $(this).css({'borderTop': '0px'})
+      $(this).fadeOut(450);
+      $('.new-kolba').removeClass().addClass('new-kolba').addClass($(this).attr('data-image'));
+      $(this).css({'borderTop': '2px solid rgb(27, 255, 244)'});
+})
+})
