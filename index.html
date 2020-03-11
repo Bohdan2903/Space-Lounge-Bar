@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,500i,700&display=swap&subset=cyrillic-ext" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c3b8959d8b.js"></script>
+    <title>diploma</title>
+</head>
+<body>
+    <canvas class="myCanvas"></canvas>
+    <header id="header" class="fadeInDown">
+            <div id="main-nav">
+                <div id="nav-img">
+                    <a href="#" class="main-nav-links">
+                        <img src="/img/logo.jpg" id="logo-img">
+                    </a>
+                </div>
+                <ul class="main-nav-bar">
+                        <li class ="footer_icon">
+                            <a class="icon " href="mailto:bogdanprodan20@gmail.com">
+                            <i class="fas fa-envelope "></i></a>
+                                    
+                        </li>
+                        <li  class ="footer_icon" >
+                            <a class="icon  " href="tel:+380660580166">
+                            <i class="fas fa-phone-square-alt "></i></a>
+                            
+                        </li>
+                        <li class ="footer_icon">
+                            <a class="icon " href="https://www.instagram.com/bogdan_prodan/">
+                                <i class="fab fa-instagram "></i></a>
+                           
+                    </li>
+                </ul>
+
+                    <div class="main-nav-bar">
+                        <a href="#" class="main-nav-links">АКЦИИ</a>
+                       </div>
+                    <div class="main-nav-bar">
+                       <a href="#" class="main-nav-links">МЕНЮ</a>
+                        </div>
+                        <div class="main-nav-bar">
+                            <a href="#" class="main-nav-links">КАЛЬЯН</a>
+                          </div>
+                    <div class="main-nav-bar">
+                          <a href="#" class="main-nav-links">О НАС</a>
+                        </div>
+                    <div class="main-nav-bar">
+                         <a href="#" class="main-nav-links">КОНТАКТЫ</a>
+                    </div>
+            </div>
+    </header>
+    
+    <aside id="main-page" style="display: block; z-index: 9;" class="fp-section fp-table">
+        
+        <video id="main-movie" autoplay loop muted >
+            <source src="img/video.mp4" type="video/mp4">
+        </video>
+      
+        <div id="main-article">
+
+                <div class="article-text"> 
+                    <span class="first-text">Space Hookah Lounge</span> 
+                    <span class="second-text">Место, куда хочется возвращаться</span>
+                    
+                </div>
+
+                <div class="promo">
+                    <img src="/img/maindiscount.png" id="first-promo">
+
+                <div class="proposition"> 
+                    <span class="second-text">Мы предлагаем:</span> 
+                    <span class="third-text">Огромный выбор табака</span>
+                    <span class="third-text">Самый дымный кальян</span>
+                    <span class="third-text">Настольные игры и Play Station</span>
+                    <span class="third-text">Авторские чаи и вкусный кофе</span>
+                </div>
+                </div>
+    </aside>
+
+    <section class="all-discout ">
+        
+        <div id="discount">
+           
+            <img src="/img/discount2.png" id="second-promo">
+            <img src="/img/birthday.png" id="birthday-promo">
+            <img src="/img/maindiscount.png" id="main-promo">
+           
+        </div>
+       
+    </section>
+
+        
+    <section class="about">
+
+        <div id="about-us">
+        
+                <div id="smoke-block">
+                  <span class="smoke">Кальянная</span>
+                  <span class="smoke">Space</span>
+                  <span class="smoke">Hookah</span>
+                  <span class="smoke">Lounge</span>
+                  <span class="smoke">приглашает</span>
+                  <span class="smoke">всех</span>
+                  <span class="smoke">мы</span>
+                  <span class="smoke">любителей</span>
+                  <span class="smoke">густого</span>
+                  <span class="smoke">качественного</span>
+                  <span class="smoke">дыма</span>
+                  <span class="smoke">расслабиться</span>
+                  <span class="smoke">и</span>
+                  <span class="smoke">нашей</span>
+                  <span class="smoke">уютной</span>
+                  <span class="smoke">атмосферой</span>
+
+                </div>
+
+            
+                <span class="about-main-text">Итак, давайте разберём по пунктам чем можем можем Вас порадовать: </span>
+                <span class="about-text">🔸Уютная Lounge-обстановка</span>
+                <span class="about-text">🔸Огромный выбор различных видов и вкусов табака 🍉🍏🍊💨</span>
+                <span class="about-text">🔸Ароматные китайские чаи☕️</span>
+                <span class="about-text">🔸Огромный выбор популярных настольных игр 🎲</span>
+                <span class="about-text">🔸Свободный Wi-Fi</span>
+                <span class="about-text">🔸Профессиональное обслуживание </span>
+                <span class="about-text">🔸Приемлемая цена и акции</span> 
+        </div>
+    </section>
+
+    <section class="hookah">
+
+        <form class="form-calculate" method="POST" action="server.php" enctype="multipart/form-data">
+            <span id="form-text"> Соберите Ваш кальян </span>
+    
+            <fieldset id="first-fieldset">
+                <span class="form-question">Какая крепкость?</span>
+
+                <p>
+                   
+                    <label class="option" for="easyShisha">Легкий
+                        <input class="css-radio calc-handler" id="easyShisha" type="radio" name="shisha" value="easy" checked data-site="Легкий кальян" data-price="150">
+                        <input type="image" src="/img/sherbetti.jpg" class="calc-img" name="sherbetti" id="sherbetti" value="sherbetti">
+                    <input type="image" src="/img/fumari.jpg" class="calc-img" name="fumari" id="fumari" value="fumari">
+                    </label>
+                    
+                </p>
+
+                <p>
+                    
+                    <label class="option" for="mediumShisha">Средний
+                        <input class="css-radio calc-handler" id="mediumShisha" type="radio" name="shisha" value="medium" data-site=" Средний кальян" data-price="170">
+                         <input type="image" src="/img/jibiar.png" class="calc-img" name="jibiar" id="jibiar" value="jibiar">
+                    <input type="image" src="/img/cult.jpg" class="calc-img" name="cult" id="cult" value="cult">
+                    </label>
+                   
+                </p>
+
+                <p>
+                   
+                    <label class="option" for="hardShisha">Крепкий
+                        <input class="css-radio calc-handler" id="hardShisha" type="radio" name="shisha" value="hard" data-site=" Крепкий кальян" data-price="200">
+                         <input type="image" src="/img/tangiers.jpg" class="calc-img" name="tangiers" id="tangiers" value="tangiers">
+                    <input type="image" src="/img/darkside.png" class="calc-img" name="darkside" id="darkside" value="darkside">
+                    </label>
+                   
+                </p>
+
+            </fieldset>
+
+           
+
+           
+
+            <fieldset>
+               
+                <span class="form-question">Выберите чашу</span>
+                <label class="label">
+                    <p>
+                    <input type="image" src="/img/glina.jpg" class="calc-img"  id="chasha" value="glina" data-price="0">
+                    <input type="image" src="/img/orange.png" class="calc-img"  id="orange" value="orange" data-price="40">
+                    <input type="image" src="/img/pineapple.jpg" class="calc-img" id="pineapple" value="pineapple" data-price="60"> 
+                  
+                </p>
+                    <div id="main-shahta">
+                        <img src="/img/sahta.jpg" id="shahta-img" width="300px" height="500px">
+                        <div class="new-kolba"></div>
+                     </div>
+                </label>
+
+            </fieldset>
+
+            <fieldset id="kolbs">
+                <span class="form-question">Что будет в колбе?</span>
+                <label class="label">
+                    
+                    <br>
+                        <span class="checkbox-label base_value">Вода
+                              <input type="image" src="/img/watershisha-removebg-preview.png" class="kolbs-img"  id="watershisha" data-price="0">
+                        </span> 
+      
+                        <span class="checkbox-label base_value">Молоко
+                             <input type="image" src="/img/milkshisha-removebg-preview.png" class="kolbs-img" id="milkshisha" data-price="30">
+                        </span> 
+                    
+                        <span class="checkbox-label base_value">Алкоголь
+                             <input type="image" src="/img/alcoshisha-removebg-preview.png" class="kolbs-img"  id="alcoshisha" data-price="50">
+                        </span>
+                    
+                </label>
+
+        </fieldset>
+
+            <div class="total_price">
+                <span class="total_price__wrap">
+                    <span class="total_price_sum">0</span>
+                    <span class="total_price_val">UAH</span>
+                </span>
+            </div>
+
+            <button class="button end-button" type="button">Заказать</button>
+    </section>
+
+
+
+
+
+    <section class="contact-info"  style=" z-index: 9;">
+        <div id="contact">
+            <span id="contact-text">
+                Связаться с нами
+            </span>
+            <div id="contact-us">
+                <div id="mapframe">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d84584.65535773613!2d35.00836405810549!3d48.508879418281595!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d958c91fa3ff3b%3A0x8e5048ae7dd11059!2z0JrQsNGA0LDQstCw0L0!5e0!3m2!1sru!2sua!4v1581938568811!5m2!1sru!2sua" width="400px" height="350px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                </div>
+                <div id="contact-info">
+                    <a href="tel:+380660580166"  class="icon1">
+                        <i class="fas fa-phone-square icon1">+380660580166</i>
+                    </a> 
+                     
+                    <a href="https://www.instagram.com/bogdan_prodan/"  class="icon1">
+                    <i class="fab fa-instagram icon1">bogdan_prodan</i></a>
+            
+                    <a href="https://www.facebook.com/" class="icon1">
+                    <i class="fab fa-facebook icon1">bogdan prodan</i></a>
+                </div>
+            </div>
+         </div>
+    </section>
+        
+
+<script src="js/custom.js"></script>
+</body>
+</html> 
