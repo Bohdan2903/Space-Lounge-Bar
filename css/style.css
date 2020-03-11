@@ -7,7 +7,10 @@ a {
 ::-webkit-scrollbar-track-piece { background-color: rgba(11, 0, 39, 0.966);}
 ::-webkit-scrollbar-thumb { height: 50px; background-color: #ff00b3ef; border-radius: 7px; -webkit-border-radius: 7px; -moz-border-radius: 7px; -ms-border-radius: 7px; -o-border-radius: 7px; }
 ::-webkit-resizer { background-color: rgb(231, 14, 14);}
-
+.fp-section.fp-table, .fp-slide.fp-table{
+  width:100vw;
+  height: 100vh;
+}
 .myCanvas
 {
   height: 100vh;

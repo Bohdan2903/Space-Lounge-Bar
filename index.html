@@ -7,13 +7,19 @@
     <link href="css/reset.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link href="css/fullpage.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,500i,700&display=swap&subset=cyrillic-ext" rel="stylesheet">
     <script src="https://kit.fontawesome.com/c3b8959d8b.js"></script>
     <title>diploma</title>
 </head>
 <body>
-    <canvas class="myCanvas"></canvas>
-    <header id="header" class="fadeInDown">
+    
+<div id="fullpage">
+
+    <div class="section " id="section0">
+
+         <canvas class="myCanvas"></canvas>
+             <header id="header" class="fadeInDown">
             <div id="main-nav">
                 <div id="nav-img">
                     <a href="#" class="main-nav-links">
@@ -82,7 +88,9 @@
                 </div>
                 </div>
     </aside>
+</div>
 
+<div class="section" id="section1">
     <section class="all-discout ">
         
         <div id="discount">
@@ -94,8 +102,9 @@
         </div>
        
     </section>
-
-        
+</div>
+     
+<div class="section" id="section2">
     <section class="about">
 
         <div id="about-us">
@@ -131,6 +140,9 @@
                 <span class="about-text">🔸Приемлемая цена и акции</span> 
         </div>
     </section>
+</div>
+
+<div class="section" id="section3">
 
     <section class="hookah">
 
@@ -172,10 +184,10 @@
 
             </fieldset>
 
-           
+        </div>         
 
            
-
+        <div class="section" id="section4">
             <fieldset>
                
                 <span class="form-question">Выберите чашу</span>
@@ -224,11 +236,10 @@
 
             <button class="button end-button" type="button">Заказать</button>
     </section>
+</div>
 
 
-
-
-
+<div class="section" id="section5">
     <section class="contact-info"  style=" z-index: 9;">
         <div id="contact">
             <span id="contact-text">
@@ -252,8 +263,18 @@
             </div>
          </div>
     </section>
-        
+</div>
+
+    
+</div>    
 
 <script src="js/custom.js"></script>
+<script type="text/javascript" src="js/fullpage.js"></script>
+<script type="text/javascript">
+     var myFullpage = new fullpage('#fullpage', {
+        anchors: ['1stPage', '2ndPage', '3rdPage', '4thpage', '5thPage', '6thPage', 'lastPage'],
+        lazyLoad: true
+    });
+</script>
 </body>
 </html> 
