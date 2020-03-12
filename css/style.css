@@ -71,7 +71,7 @@ fieldset{
 }
 #kolbs{
   display:flex;
-  margin-top:-260px;
+  margin-top:-20%;
 }
 .kolbs-img{
   width:200px;
@@ -145,6 +145,7 @@ fieldset{
 }
 #header{
 font-family: 'Roboto', medium;
+top:0;
 font-weight: 500;
 background:rgba(11, 0, 39, 0.966);
 height: 90px;
@@ -312,8 +313,7 @@ width:100%;
 color: #ff00b3ef;
 font-family: 'Roboto', sans-serif;
 font-size:38px;
-font-style:bold;
-font-weight: 300;
+font-weight: bold;
 z-index: 1;
 }
 .about-text{
@@ -322,7 +322,7 @@ line-height: 45px;
 display: flex;
 justify-content: center;
 width:100%;
-color: rgba(255, 255, 255, 0.938);
+color: rgba(41, 255, 244, 0.904);
 font-family: 'Roboto', sans-serif;
 font-size:30px;
 font-style:bold;
@@ -330,12 +330,16 @@ font-weight: 100;
 z-index: 1;
 }
 #contact{
+padding-top:150px;
 background: black;
 display: flex;
 flex-direction: column;
-z-index: 1;
+z-index: 9;
 height: 100vh;
-
+}
+#main-page{
+  display: block;
+   z-index: 9;
 }
 #contact-text{
 text-align: center;
@@ -360,7 +364,7 @@ line-height: 50px;
 flex-wrap: wrap;
 flex-basis: 50%;
 justify-content: flex-start;
-z-index: 1;
+z-index: 9;
 }
 .icon1{
 flex-basis: 100%;
@@ -378,8 +382,8 @@ color: #ff00b3ef;
   overflow: hidden;
   justify-content: start;
   text-align: center;
-  margin-top:-150px;
-  padding:15px;
+  margin-top:-180px;
+  padding:20px;
   color: transparent;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -390,7 +394,8 @@ color: #ff00b3ef;
   display: inline-block;
   font-family: 'Roboto', sans-serif;
   font-size:30px;
-  font-weight: 300;
+  font-weight: 500;
+  color: rgba(27, 255, 244, 0.082);
   text-shadow: 0 0 0 whitesmoke;
   z-index: 1;
 }

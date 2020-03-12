@@ -146,10 +146,8 @@ function randOffset(n, variance)
     });
   
     $('.colbs').on('click', function () {
-      $('.colbs').fadeIn(450);
-      $(this).css({'borderTop': '0px'})
-      $(this).fadeOut(450);
+      $('.colbs').fadeIn(650);
+      $(this).fadeOut(550).css({'borderTop': '2px solid rgb(27, 255, 244)'});
       $('.new-kolba').removeClass().addClass('new-kolba').addClass($(this).attr('data-image'));
-      $(this).css({'borderTop': '2px solid rgb(27, 255, 244)'});
 })
 })
