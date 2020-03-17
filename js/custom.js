@@ -146,8 +146,9 @@ function randOffset(n, variance)
     });
   
     $('.colbs').on('click', function () {
-      $('.colbs').fadeIn(650);
-      $(this).fadeOut(550).css({'borderTop': '2px solid rgb(27, 255, 244)'});
-      $('.new-kolba').removeClass().addClass('new-kolba').addClass($(this).attr('data-image'));
+      $('.colbs').fadeIn(750);
+      $(this).fadeOut(650);
+      $('.base_value').css({'borderTop': '2px solid rgb(27, 255, 244)'});
+      $('.new-kolba').removeClass().addClass('new-kolba').hide().addClass($(this).attr('data-image')).fadeIn(900);
 })
 })
