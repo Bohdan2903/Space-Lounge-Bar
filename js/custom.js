@@ -147,8 +147,16 @@ function randOffset(n, variance)
   
     $('.colbs').on('click', function () {
       $('.colbs').fadeIn(750);
-      $(this).fadeOut(650);
-      $('.base_value').css({'borderTop': '2px solid rgb(27, 255, 244)'});
-      $('.new-kolba').removeClass().addClass('new-kolba').hide().addClass($(this).attr('data-image')).fadeIn(900);
-})
+      $('.colbs-header').removeClass("border-colbs-header");
+      $(this).fadeOut(750).parent().find(".colbs-header").addClass("border-colbs-header");
+      $('.new-kolba').removeClass().addClass('new-kolba').hide().addClass($(this).attr('data-image')).fadeIn(800);
+    });
+
+    $('.calc-img-chasha').on('click', function () {
+      $('.calc-img-chasha').fadeIn(750);
+      $('.colbs-header').removeClass("border-chasha-header");
+      $(this).fadeOut(750).parent().find(".colbs-header").addClass("border-chasha-header");
+      $('.new-chasha').removeClass().addClass('new-chasha').hide().addClass($(this).attr('data-image')).fadeIn(800);
+    });
+
 })

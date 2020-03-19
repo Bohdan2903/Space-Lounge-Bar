@@ -24,11 +24,32 @@ a {
   transform: rotate(180deg);
   background:black url(https://s.cdpn.io/16327/texture_bg.jpg) no-repeat 100% 0px;
 }
-.calc-handler{
-  width:26px;
-  height: 26px;
-  margin-top:20px;
+
+.css-radio {
+  height: 25px;
+  width: 25px;
+  margin: 25px;
+  cursor: pointer;
 }
+
+  /* .option:before {
+    cursor: pointer;
+    content: "";
+    display: inline-block;
+    width: 26px;
+    z-index: 99;
+    height: 25px;
+    margin-right: 10px;
+    background-color: rgb(84, 84, 85);
+    border-radius: 50%;
+    box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+    vertical-align: inherit;
+  }
+    
+  .css-radio:checked + .option::before {
+      background-color: #fd04e8; 
+  }*/
+  
 .calc-img{
   width:150px;
   height:150px;
@@ -36,7 +57,7 @@ a {
   margin:15px;
 }
 .checkbox-label{
-  padding:50px;
+  padding:30px;
   width:200px;
   text-align: center;
 }
@@ -101,7 +122,7 @@ fieldset{
   margin-top:20px;
   color:whitesmoke;
 }
-.label{
+.label-form{
   padding:20px;
   display: flex;
   font-size:25px;
@@ -109,16 +130,19 @@ fieldset{
 }
 .option{
     padding-top:20px;
+    margin-left:20px;
     font-size: 35px;
     width:20%;
     color: whitesmoke;
-    justify-content: center;
+    z-index: 9;
 }
 #option{
-  padding-top:50px;
-  display:flex;
-  width: 95%;
-  justify-content: space-between;
+    display: flex;
+    padding-top: 20px;
+    font-size: 35px;
+    width: 99%;
+    color: whitesmoke;
+    justify-content: space-between;
 }
 .tabac{
   padding:5px;
@@ -139,9 +163,40 @@ fieldset{
   color:whitesmoke;
 }
 .calc-img-chasha{
-  width:120px;
-  height: 120px;
-  padding:25px;
+  margin-left: 40px;
+  margin-top: 20px;
+}
+.calc-handler{
+  width:26px;
+  height: 26px;
+  margin-top:20px;
+}
+.glina{
+  background: url('../img/glina.jpg') no-repeat;
+  background-size:cover;
+  width:100px;
+  height: 100px;
+}
+.orange{
+  background: url('../img/orange.png') no-repeat;
+  background-size:cover;
+  width:100px;
+  height: 100px;
+}
+.pineapple{
+  background: url('../img/pineapple.jpg') no-repeat;
+  background-size:cover;
+  width:100px;
+  height: 100px;
+}
+.new-chasha{
+  transform: rotateX(45deg);
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    margin-top: -36px;
+    margin-left: 102px;
+    z-index: 9;
 }
 #header{
 font-family: 'Roboto', medium;
@@ -200,8 +255,9 @@ z-index: 10;
 margin-top:-20px;
 }
 #logo-img{
-width:70px; 
-height:60px;
+width:100px; 
+height:78px;
+margin-top:-13px;
 }
 
 
@@ -592,44 +648,39 @@ color: #ff00b3ef;
   animation-fill-mode: both;
 }
 
-.watershisha-active{
-  transition: 3s;
-  -webkit-transition: 3s;
-  -moz-transition: 3s;
-  -ms-transition: 3s;
-  -o-transition: 3s;
-}
-.milkshisha-active{
-
-  transition: 3s;
-  -webkit-transition: 3s;
-  -moz-transition: 3s;
-  -ms-transition: 3s;
-  -o-transition: 3s;
-}
-.alcoshisha-active{
-
-  transition: 3s;
-  -webkit-transition: 3s;
-  -moz-transition: 3s;
-  -ms-transition: 3s;
-  -o-transition: 3s;
-}
 .colbWater {
   background: url('../img/watershisha-removebg-preview.png') no-repeat;
   background-size:cover;
-  width:200px;
-  height: 200px;
+  width: 198px;
+  height: 190px;
 }
 .colbMilk {
   background: url('../img/milkshisha-removebg-preview.png') no-repeat;
   background-size:cover;
-  width:205px;
-  height: 200px;
+  width: 204px;
+  height: 190px;
 }
 .colbAlk {
   background: url('../img/alcoshisha-removebg-preview.png') no-repeat;
   background-size:cover;
-  width:200px;
-  height: 200px;
+  width: 198px;
+  height: 195px;
+}
+.border-colbs-header {
+  border-bottom: 4px solid rgb(27, 255, 244);
+  padding: 2px;
+  transition: 0.3s ease-in;
+  -webkit-transition: 0.3s ease-in;
+  -moz-transition: 0.3s ease-in;
+  -ms-transition: 0.3s ease-in;
+  -o-transition: 0.3s ease-in;
+}
+.border-chasha-header {
+  border-bottom: 4px solid rgb(27, 255, 244);
+  padding: 2px;
+  transition: 0.3s ease-in;
+  -webkit-transition: 0.3s ease-in;
+  -moz-transition: 0.3s ease-in;
+  -ms-transition: 0.3s ease-in;
+  -o-transition: 0.3s ease-in;
 }
