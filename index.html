@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -147,17 +147,17 @@
             <fieldset id="first-fieldset">
                 
                 <div class="form-question">Какая крепкость?</div>
-                <div id=option>
-                    <label class="option" for="Shisha">Легкий
-                       <input class="css-radio calc-handler" id="easyShisha" type="radio" name="shisha" value="easy" checked data-site="Легкий кальян" data-price="150">
+                <div id=option-block>
+                    <label class="option form-input" for="Shisha" data-price="150">Легкий
+                       <input class="css-radio calc-handler" id="easyShisha" type="radio" name="shisha" value="easy" checked data-site="Легкий кальян" >
                    </label>
 
-                   <label class="option" for="Shisha">Средний
-                   <input class="css-radio calc-handler" id="mediumShisha" type="radio" name="shisha" value="medium" data-site=" Средний кальян" data-price="170">
+                   <label class="option form-input" for="Shisha" data-price="170">Средний
+                   <input class="css-radio calc-handler" id="mediumShisha" type="radio" name="shisha" value="medium" data-site=" Средний кальян" >
                     </label>
 
-                   <label class="option" for="Shisha">Крепкий 
-                       <input class="css-radio calc-handler" id="hardShisha" type="radio" name="shisha" value="hard" data-site=" Крепкий кальян" data-price="200">
+                   <label class="option form-input" for="Shisha" data-price="200">Крепкий 
+                       <input class="css-radio calc-handler" id="hardShisha" type="radio" name="shisha" value="hard" data-site=" Крепкий кальян" >
                    </label>
                </div>
 
@@ -191,18 +191,22 @@
                 <div class="label-form"> 
                     <div class="checkbox-label base_value">
                          <div class="colbs-header">glina</div>
-                         <div class="calc-img-chasha glina" alt="glina" data-price="0" data-image="glina"></div>
+                         <div class="calc-img-chasha glina form-input" alt="glina" data-price="0" data-image="glina"></div>
                     </div>
                     <div class="checkbox-label base_value">
                         <div class="colbs-header">orange</div>
-                        <div class="calc-img-chasha orange"  alt="orange" data-price="40" data-image="orange" > </div>
+                        <div class="calc-img-chasha orange form-input"  alt="orange" data-price="40" data-image="orange" > </div>
                     </div>
                     <div class="checkbox-label base_value">
                              <div class="colbs-header">pineapple</div>
-                             <div class="calc-img-chasha pineapple" alt="pineapple" data-price="60" data-image="pineapple"> </div>
+                             <div class="calc-img-chasha pineapple form-input" alt="pineapple" data-price="60" data-image="pineapple"> </div>
                     </div>
                
-                  
+                  <div class="range-input">
+                      <div class="range-text">Время курение</div>
+                    <input type="range" min="0" max="4" value="0" step="1" class="range blue form-input"/>
+                    <div class="range-val-text">1 час</div>
+                  </div>
         
                     <div id="main-shahta">
                         <div id="shahta-items">
@@ -221,29 +225,31 @@
                 <div class="label-form">
                     <div class="checkbox-label base_value">
                         <div class="colbs-header">Вода</div>
-                        <div class="colbWater colbs " data-price="0" data-image="colbWater"></div>
+                        <div class="colbWater colbs form-input " data-price="0" data-image="colbWater"></div>
                     </div>
                     <div class="checkbox-label base_value">
                         <div class="colbs-header">Молоко</div>
-                        <div class="colbMilk colbs" data-price="20" data-image="colbMilk"></div>
+                        <div class="colbMilk colbs form-input" data-price="20" data-image="colbMilk"></div>
                     </div>
                     <div class="checkbox-label base_value">
                         <div class="colbs-header">Алкоголь</div>
-                        <div class="colbAlk colbs" data-price="40" data-image="colbAlk"></div>
+                        <div class="colbAlk colbs form-input" data-price="40" data-image="colbAlk"></div>
                     </div>
                 </div>
-        </fieldset>
-        
-        </div>
-
-            <div class="total_price">
+                  <div class="total_price">
                 <span class="total_price__wrap">
                     <span class="total_price_sum">0</span>
                     <span class="total_price_val">UAH</span>
                 </span>
+                <button class="button end-button" type="button">Заказать</button>
             </div>
+        </fieldset>
+        
+        </div>
 
-            <button class="button end-button" type="button">Заказать</button>
+          
+
+            
 
 
 <div class="section" id="section6"><a name="contact-page"></a>

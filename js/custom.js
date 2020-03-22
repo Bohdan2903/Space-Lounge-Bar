@@ -158,5 +158,22 @@ function randOffset(n, variance)
       $(this).fadeOut(750).parent().find(".colbs-header").addClass("border-chasha-header");
       $('.new-chasha').removeClass().addClass('new-chasha').hide().addClass($(this).attr('data-image')).fadeIn(800);
     });
+    //
+    //calculator
+      
+      $('.form-input').on('change', function () {
 
-})
+        summ();
+
+      });
+      function summ() {
+        let total = 0;
+        let  optionCount = +$(".option").prop("checked").data(price);
+        if (isNaN(optionCount))
+        optionCount = 0;
+        total = +$(".calc-img-chasha").data("price") + optionCount;
+        let rangeCount = $("range").val() * 10;
+        $(".total_price_sum").text(total + optionCount + rangeCount);
+      };
+  
+  })
