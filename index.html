@@ -22,7 +22,7 @@
             <div id="main-nav">
                 <div id="nav-img">
                     <a href="#" class="main-nav-links">
-                        <img src="/img/logo.png" id="logo-img">
+                        <img src="./img/logo.png" id="logo-img">
                     </a>
                 </div>
                 <ul class="main-nav-bar">
@@ -63,8 +63,8 @@
     
     <aside id="main-page">
         
-        <video id="main-movie" autoplay loop muted >
-            <source src="img/video.mp4" type="video/mp4">
+        <video id="main-movie" autoplay muted loop  >
+            <source src="./img/video.mp4" type="video/mp4">
         </video>
       
         <div id="main-article">
@@ -76,7 +76,7 @@
                 </div>
 
                 <div class="promo">
-                    <img src="/img/maindiscount.png" id="first-promo">
+                    <img src="./img/maindiscount.png" id="first-promo">
 
                 <div class="proposition"> 
                     <span class="second-text">Мы предлагаем:</span> 
@@ -95,9 +95,9 @@
         
         <div id="discount">
            
-            <img src="/img/discount2.png" id="second-promo">
-            <img src="/img/birthday.png" id="birthday-promo">
-            <img src="/img/maindiscount.png" id="main-promo">
+            <img src="./img/discount2.png" id="second-promo">
+            <img src="./img/birthday.png" id="birthday-promo">
+            <img src="./img/maindiscount.png" id="main-promo">
             <div id="smoke-block" class="block">
                 <span class="smoke">Кальянная</span>
                 <span class="smoke">Space</span>
@@ -148,36 +148,37 @@
                 
                 <div class="form-question">Какая крепкость?</div>
                 <div id=option-block>
-                    <label class="option form-input" for="Shisha" data-price="150">Легкий
-                       <input class="css-radio calc-handler" id="easyShisha" type="radio" name="shisha" value="easy" checked data-site="Легкий кальян" >
+                    <label class="option " for="Shisha" >Легкий
+                       <input class="css-radio calc-handler form-input" id="easyShisha" type="radio" name="shisha" checked value="easy" data-price="150" data-site="Легкий кальян" />
                    </label>
 
-                   <label class="option form-input" for="Shisha" data-price="170">Средний
-                   <input class="css-radio calc-handler" id="mediumShisha" type="radio" name="shisha" value="medium" data-site=" Средний кальян" >
+                   <label class="option " for="Shisha" >Средний
+                   <input class="css-radio calc-handler form-input" id="mediumShisha" type="radio" name="shisha" value="medium" data-price="170" data-site=" Средний кальян" />
                     </label>
 
-                   <label class="option form-input" for="Shisha" data-price="200">Крепкий 
-                       <input class="css-radio calc-handler" id="hardShisha" type="radio" name="shisha" value="hard" data-site=" Крепкий кальян" >
+                   <label class="option" for="Shisha" >Крепкий 
+                       <input class="css-radio calc-handler form-input" id="hardShisha" type="radio" name="shisha" value="hard" data-price="200" data-site=" Крепкий кальян" />
                    </label>
                </div>
 
                     <div id="tabac">
-                        <div class="tabac" for="easyShisha">
-                             <input type="image" src="/img/sherbetti.png" class="calc-img" name="sherbetti" id="sherbetti" value="sherbetti">
-                            <input type="image" src="/img/fumari.png" class="calc-img" name="fumari" id="fumari" value="fumari">
+
+                        <div class="tabac-wrap" for="easyShisha">
+                            <div class="calc-img sherbetti" name="sherbetti" value="sherbetti"> </div>
+                            <div  class="calc-img fumari" name="fumari"  value="fumari"></div>
                         </div>
+                         
                     
-                    <div class="tabac" for="mediumShisha">
-                        <input type="image" src="/img/jibiar.png" class="calc-img" name="jibiar" id="jibiar" value="jibiar">
-                        <input type="image" src="/img/cult.jpg" class="calc-img" name="cult" id="cult" value="cult">
-                        <input type="image" src="/img/dailyhookah.png" class="calc-img" name="dailyhookah" id="dailyhookah" value="dailyhookah">
+                    <div class="tabac-wrap" for="mediumShisha">
+                        <div class="calc-img jibiar" name="jibiar"  value="jibiar"> </div>
+                        <div class="calc-img cult" name="cult"  value="cult"></div>
+                        <div class="calc-img dailyhookah" name="dailyhookah"  value="dailyhookah"></div>
                     </div>
                    
                
-                    <div class="tabac" for="hardShisha">
-                        <input type="image" src="/img/tangiers.jpg" class="calc-img" name="tangiers" id="tangiers" value="tangiers">
-                        <input type="image" src="/img/darkside.png" class="calc-img" name="darkside" id="darkside" value="darkside">
-                    </div>
+                    <div class="tabac-wrap" for="hardShisha">
+                        <div class="calc-img tangiers" name="tangiers"  value="tangiers"></div>
+                        <div class="calc-img darkside" name="darkside"  value="darkside"> </div>
                     </div>
             </fieldset>
 
@@ -190,28 +191,28 @@
 
                 <div class="label-form"> 
                     <div class="checkbox-label base_value">
-                         <div class="colbs-header">glina</div>
+                         <div class="colbs-header">Классическая</div>
                          <div class="calc-img-chasha glina form-input" alt="glina" data-price="0" data-image="glina"></div>
                     </div>
                     <div class="checkbox-label base_value">
-                        <div class="colbs-header">orange</div>
+                        <div class="colbs-header">Апельсиновая</div>
                         <div class="calc-img-chasha orange form-input"  alt="orange" data-price="40" data-image="orange" > </div>
                     </div>
                     <div class="checkbox-label base_value">
-                             <div class="colbs-header">pineapple</div>
+                             <div class="colbs-header">Ананасовая</div>
                              <div class="calc-img-chasha pineapple form-input" alt="pineapple" data-price="60" data-image="pineapple"> </div>
                     </div>
                
                   <div class="range-input">
-                      <div class="range-text">Время курение</div>
-                    <input type="range" min="0" max="4" value="0" step="1" class="range blue form-input"/>
-                    <div class="range-val-text">1 час</div>
+                      <div class="range-text">На какое время</div>
+                    <input type="range" min="1" max="5" value="0" step="1" class="range blue form-input"/>
+                    <div class="range-val-text">1 ЧАС</div>
                   </div>
         
                     <div id="main-shahta">
                         <div id="shahta-items">
                             <div class='new-chasha'></div>
-                             <img src="/img/sahta.jpg" id="shahta-img">
+                             <img src="./img/sahta.jpg" id="shahta-img">
                                 <div class="new-kolba"></div>
                         </div>
                        
@@ -239,7 +240,6 @@
                   <div class="total_price">
                 <span class="total_price__wrap">
                     <span class="total_price_sum">0</span>
-                    <span class="total_price_val">UAH</span>
                 </span>
                 <button class="button end-button" type="button">Заказать</button>
             </div>
@@ -254,16 +254,16 @@
 
 <div class="section" id="section6"><a name="contact-page"></a>
     
-    <section class="contact-info">
+    <section class="contact-page">
         <div id="contact">
             <span id="contact-text">
                 Связаться с нами
             </span>
             <div id="contact-us">
-                <div id="mapframe">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d84584.65535773613!2d35.00836405810549!3d48.508879418281595!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d958c91fa3ff3b%3A0x8e5048ae7dd11059!2z0JrQsNGA0LDQstCw0L0!5e0!3m2!1sru!2sua!4v1581938568811!5m2!1sru!2sua" width="400px" height="350px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                <div class="mapframe">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d84584.65535773613!2d35.00836405810549!3d48.508879418281595!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d958c91fa3ff3b%3A0x8e5048ae7dd11059!2z0JrQsNGA0LDQstCw0L0!5e0!3m2!1sru!2sua!4v1581938568811!5m2!1sru!2sua" width='100%' height="350px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                 </div>
-                <div id="contact-info">
+                <div class="contact-info">
                     <a href="tel:+380660580166"  class="icon1">
                         <i class="fas fa-phone-square icon1">+380660580166</i>
                     </a> 

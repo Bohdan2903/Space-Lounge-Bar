@@ -1,4 +1,5 @@
 $(document).ready(function(){   
+ const HOUR_STRING = ['ЧАС', 'ЧАСА', 'ЧАСОВ'];
 
  var canvasWidth = 1600;
  var canvasHeight = 1;
@@ -146,34 +147,67 @@ function randOffset(n, variance)
     });
   
     $('.colbs').on('click', function () {
-      $('.colbs').fadeIn(750);
+      $('.colbs').fadeIn(250);
       $('.colbs-header').removeClass("border-colbs-header");
-      $(this).fadeOut(750).parent().find(".colbs-header").addClass("border-colbs-header");
-      $('.new-kolba').removeClass().addClass('new-kolba').hide().addClass($(this).attr('data-image')).fadeIn(800);
+      $(this).fadeOut(450, summ).parent().find(".colbs-header").addClass("border-colbs-header");
+      $('.new-kolba').removeClass().addClass('new-kolba').hide().addClass($(this).attr('data-image')).fadeIn(600);
     });
 
     $('.calc-img-chasha').on('click', function () {
-      $('.calc-img-chasha').fadeIn(750);
+      $('.calc-img-chasha').fadeIn(250);
       $('.colbs-header').removeClass("border-chasha-header");
-      $(this).fadeOut(750).parent().find(".colbs-header").addClass("border-chasha-header");
-      $('.new-chasha').removeClass().addClass('new-chasha').hide().addClass($(this).attr('data-image')).fadeIn(800);
+      $(this).fadeOut(450, summ).parent().find(".colbs-header").addClass("border-chasha-header");
+      $('.new-chasha').removeClass().addClass('new-chasha').hide().addClass($(this).attr('data-image')).fadeIn(600);
     });
+
+  
     //
     //calculator
       
-      $('.form-input').on('change', function () {
+      $('.form-input').change(function () {
 
         summ();
-
       });
-      function summ() {
-        let total = 0;
-        let  optionCount = +$(".option").prop("checked").data(price);
-        if (isNaN(optionCount))
-        optionCount = 0;
-        total = +$(".calc-img-chasha").data("price") + optionCount;
-        let rangeCount = $("range").val() * 10;
-        $(".total_price_sum").text(total + optionCount + rangeCount);
-      };
+
   
+      function summ() {
+        let total=0;
+        
+
+        let chashaPrice = 0;
+          $('.calc-img-chasha').each(function() {
+              if ($(this).css("display") == "none")
+              chashaPrice = $(this).attr('data-price');
+          });
+          
+          
+          let colbPrice = 0;
+          $('.colbs').each(function() {
+            if ($(this).css("display") == "none")
+            colbPrice = $(this).attr('data-price');
+          });
+          
+
+          let tabacPrice = $(".calc-handler:checked").attr('data-price');
+      
+           
+            let rangePrice = $('.range').val() * 5;
+            
+            if($('.range').val() < 2) {
+               $(".range-val-text").text($('.range').val()+ ' '+ HOUR_STRING[0]);
+            } else if ($('.range').val() >=2 && $('.range').val() < 5) {
+              $(".range-val-text").text($('.range').val()+ ' '+ HOUR_STRING[1]);
+            } else $(".range-val-text").text($('.range').val()+ " " + HOUR_STRING[2]);
+
+            
+             
+            total = +rangePrice + +tabacPrice + +chashaPrice + +colbPrice;
+
+             $(".total_price_sum").text(total + " " + "UAH");
+              console.log(total);
+         
+
+      };
+
+
   })
