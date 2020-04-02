@@ -1,11 +1,18 @@
-/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+.section{
+  width:100%;
+ 
 
+}
+#fullpage{
+  width:100%;
+  padding: 2px;
+}
 a { 
   text-decoration: none;
 }
 body{
   font-family: 'Roboto';
-  /* max-width: 1400px; */
+  
 }
 ::-webkit-scrollbar { width: 8px; height: 2px;}
 ::-webkit-scrollbar-button {  background-color: rgba(11, 0, 39, 0.966); }
@@ -19,16 +26,17 @@ body{
 .myCanvas
 {
   height: 100vh;
-  width:100vw;
+  width: 100vw;
   position: fixed;
   z-index: -1;
   bottom: 0;
   right: 0;
   left:0;
+  top: 0;
   background: black;
   -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
   background:black url(https://s.cdpn.io/16327/texture_bg.jpg) no-repeat 100% 0px;
 }
 
@@ -71,8 +79,8 @@ body{
   width: 200px;
   height: 200px;
   position: absolute;
-  margin-top: -160px;
-  margin-left:47px;
+  margin-top: -155px;
+  margin-left: 47px;
 }
 #first-fieldset{
   
@@ -83,10 +91,9 @@ fieldset{
   margin-top: 20px;
 }
 #kolbs{
-  display:-webkit-box;
-  display:-ms-flexbox;
-  display:flex;
-  margin-top:-20%;
+  padding: 1;
+  width: 100%;
+  margin-top:-19%;
 }
 .kolbs-img{
   width:200px;
@@ -108,7 +115,7 @@ fieldset{
           justify-content: flex-end;
   font-size:40px;
   color: whitesmoke;
-  margin-top: -20px;
+  margin-top: -3%;
 }
 .total_price__wrap{
   margin-top: -150px;
@@ -253,18 +260,22 @@ fieldset{
 }
 
 .new-chasha{
-  -webkit-transform: rotateX(45deg);
-          transform: rotateX(45deg);
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    margin-top: -36px;
-    margin-left: 102px;
-    z-index: 9;
+         width: 80px;
+         transform: rotateX(48deg);
+         height: 80px;
+         position: absolute;
+         margin-top: -20px;
+         margin-left: 113px;
+         z-index: 9;
+         -webkit-transform: rotateX(50);
+         -moz-transform: rotateX(50);
+         -ms-transform: rotateX(50);
+         -o-transform: rotateX(50);
 }
 #header{
 font-family: 'Roboto', medium;
 top:0;
+padding:2px;
 font-weight: 500;
 background:rgba(11, 0, 39, 0.966);
 height: 90px;
@@ -272,40 +283,42 @@ margin: 0 auto;
 position: fixed;
 width: 100%;
 z-index: 10;
+border-bottom: 2px solid  rgb(16, 255, 255);
+
 }
 #main-nav{
   padding:35px;
-  width: 90%;
-  font-size:17px;
+  width: 93%;
+  font-size: 18px;
   display:-webkit-box;
   display:-ms-flexbox;
   display:flex;
   -ms-flex-line-pack: center;
-      align-content: center;
+  align-content: center;
   -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch; 
-  -webkit-box-pack: justify; 
-      -ms-flex-pack: justify; 
-          justify-content: space-between;
-
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 .main-nav-links{
  
   color: rgba(241, 240, 240, 0.9);
+  font-size: 17px;
 }
 .main-nav-links:hover{
-  transition: 0.1s;
-  font-size: 18px;
+  transition: 0.4s;
+  font-size: 17px;
   font-weight: bold;
   color: rgba(248, 12, 217, 0.932);
-  -webkit-transition: 0.1s;
-  -moz-transition: 0.1s;
-  -ms-transition: 0.1s;
-  -o-transition: 0.1s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
 }
 .main-nav-bar{
-  width:100px;
+  width:110px;
   display:-webkit-box;
   display:-ms-flexbox;
   display:flex;
@@ -315,7 +328,7 @@ z-index: 10;
 }
 .icon{
   
-  font-size:22px;
+  font-size:26px;
   color: rgba(241, 240, 240, 0.9);
 }
 .icon:hover{
@@ -349,9 +362,8 @@ background: none;
 } 
 
 #main-movie{
-  margin-top: -50px;
+  margin-top: -10px;
   width:100%;
-  height: auto;
   z-index: 1;
   position: absolute;
   top: 0;
@@ -360,7 +372,7 @@ background: none;
   left: 0;
   overflow: hidden;
   background: url(/img/backroundvideo.JPG) no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 
 #main-movie> video {
@@ -369,8 +381,7 @@ background: none;
   left: 0;
   min-width: 100%; 
   min-height: 100%;
-  width: auto;
-  height: auto; 
+
 }
 
 .article-text{
@@ -504,6 +515,8 @@ height: 100vh;
 #main-page{
   display: block;
    z-index: 9;
+   width:100%;
+  
 }
 #contact-text{
 text-align: center;
@@ -534,6 +547,7 @@ z-index: 1;
           justify-content: center;
   z-index: 9;
   font-family: 'Roboto';
+  margin-top:20px;
 }
 .icon1{
   font-size: 20px;
@@ -619,6 +633,7 @@ z-index: 1;
     width: 250px;
     cursor: -webkit-grab;
     cursor: grab;
+    font-size: 1px;
     
 }
 .range-val-text{
@@ -918,6 +933,7 @@ input[type=range]::-moz-range-thumb:active {
     font-size: 28px;
     font-family: 'Roboto';
 }
+
     
 .border-colbs-header {
   border-bottom: 4px solid rgb(27, 255, 244);
