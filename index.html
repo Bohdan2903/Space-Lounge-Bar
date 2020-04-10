@@ -16,12 +16,15 @@
 <div id="fullpage">
 
     <div class="section " id="section0">
+      <div class='canvas'>
+          <canvas class="myCanvas"></canvas>
+      </div>
+       
 
-         <canvas class="myCanvas"></canvas>
              <header id="header" class="fadeInDown">
             <div id="main-nav">
                 <div id="nav-img">
-                    <a href="#" class="main-nav-links">
+                    <a href="#" class="main-nav-bar">
                         <img src="./img/logo.png" id="logo-img">
                     </a>
                 </div>
@@ -62,30 +65,35 @@
     </header>
     
     <aside id="main-page">
-        
-        <video id="main-movie" autoplay muted loop  >
+        <div class='main-video'> 
+          <video  width="100%" height="auto" preload="auto" autoplay="true" loop="true" muted="muted">
             <source src="./img/video.mp4" type="video/mp4">
         </video>
+      </div>
+       
       
         <div id="main-article">
 
                 <div class="article-text"> 
-                    <span class="first-text">Space Hookah Lounge</span> 
-                    <span class="second-text">Место, куда хочется возвращаться</span>
+                    <div class="first-text">Space Hookah Lounge</div> 
+                    <div class="second-text">Место, куда хочется возвращаться</div>
                     
                 </div>
 
-                <div class="promo">
-                    <img src="./img/maindiscount.png" id="first-promo">
 
-                <div class="proposition"> 
-                    <span class="second-text">Мы предлагаем:</span> 
-                    <span class="third-text">Огромный выбор табака</span>
-                    <span class="third-text">Самый дымный кальян</span>
-                    <span class="third-text">Настольные игры и Play Station</span>
-                    <span class="third-text">Авторские чаи и вкусный кофе</span>
+                <div class="main-page-contacts">
+                    <div class="adress">
+                        <p><i class="fa fa-location-arrow" aria-hidden="true"></i> ул. Нижнеднпровская, 17</p>
+                    </div>
+                    <div class="work-time">
+                        <p class="hidden-sm-down"><i class="fa fa-clock-o" aria-hidden="true"></i>Вс - Чт 12:00 - 02:00, Пт -Сб 12:00 - 03:00</p>
+                    </div>
+                    <div class="phone-number">
+                        <p><a href="tel:+380660580166"><i class="fa fa-phone" aria-hidden="true"></i>+380 (66)058-01-66</a> </p>
+                    </div>
+                 
                 </div>
-                </div>
+
         </div>
     </aside>
 </div>
@@ -96,9 +104,9 @@
         <div id="discount">
            
             <img src="./img/discount2.png" id="second-promo">
-            <img src="./img/birthday.png" id="birthday-promo">
+            <!-- <img src="./img/birthday.png" id="birthday-promo"> -->
             <img src="./img/maindiscount.png" id="main-promo">
-            <div id="smoke-block" class="block">
+            <!-- <div id="smoke-block" class="block">
                 <span class="smoke">Кальянная</span>
                 <span class="smoke">Space</span>
                 <span class="smoke">Hookah</span>
@@ -116,7 +124,7 @@
                 <span class="smoke">уютной</span>
                 <span class="smoke">атмосферой</span>
 
-              </div>
+              </div> -->
         </div>
        
     </section>
@@ -127,25 +135,72 @@
 
         <div id="about-us">
         
-                <span class="about-main-text">Итак, давайте разберём по пунктам чем можем можем Вас порадовать: </span>
-                <span class="about-text">🔸Уютная Lounge-обстановка</span>
-                <span class="about-text">🔸Огромный выбор различных видов и вкусов табака 🍉🍊💨</span>
-                <span class="about-text">🔸Ароматные китайские чаи☕️</span>
-                <span class="about-text">🔸Огромный выбор популярных настольных игр🎲 и Play Station</span>
-                <span class="about-text">🔸Свободный Wi-Fi</span>
-                <span class="about-text">🔸Профессиональное обслуживание 👌</span>
-                <span class="about-text">🔸Приемлемая цена и акции 🔥</span> 
+                <span class="about-main-text bounceInLeft ">⚠️Что мы предлагаем:⚠️</span>
+                <span class="about-text bounceInLeft">🔸Уютная Lounge-обстановка 👌</span>
+                <span class="about-text bounceInLeft">🔸Огромный выбор различных видов и вкусов табака 🍉🍊💨</span>
+                <span class="about-text bounceInLeft">🔸Ароматные китайские чаи☕️</span>
+                <span class="about-text bounceInLeft">🔸Огромный выбор популярных настольных игр 🎲 и Play Station 🎮</span>
+                <span class="about-text bounceInLeft">🔸Свободный Wi-Fi 🔥</span>
+                <span class="about-text bounceInLeft">🔸Профессиональное обслуживание 💯</span>
+                <span class="about-text bounceInLeft">🔸Приемлемая цена и акции 🧡</span> 
             </div>
         </section>
+    </div>
+    <div class="section" id="section3">
+    <div class="gallery-wrapper">
+        <div class="gallery-item bounceInLeft wow" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.6s; animation-name: bounceInLeft;">
+            
+                <img class="img-responsive" src="/img//galery_1.jpg" alt="Кальянная">
+  
+        </div>
+        <div class="gallery-item bounceInLeft wow" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: bounceInLeft;">
+           
+                <img class="img-responsive" src="/img//galery_2.jpg" alt="Кальянная">
+            
+        </div>
+        <div class="gallery-item bounceInLeft wow" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.2s; animation-name: bounceInLeft;">
+            
+                <img class="img-responsive" src="/img//galery_3.jpg" alt="Кальянная">
+            
+        </div>
+        <div class="gallery-item bounceInLeft wow" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.2s; animation-name: bounceInLeft;">
+            
+                <img class="img-responsive" src="/img//galery_4.jpg" alt="Кальянная ">
+            
+        </div>
+        <div class="gallery-item bounceInLeft wow" data-wow-delay="1s" style="visibility: visible; animation-delay: 1s; animation-name: bounceInLeft;">
+           
+                <img class="img-responsive" src="/img//galery_5.jpg" alt="Кальянная ">
+            
+        </div>
+        <div class="gallery-item bounceInLeft wow" data-wow-delay="1.2s" style="visibility: visible; animation-delay: 1.2s; animation-name: bounceInLeft;">
+           
+                <img class="img-responsive" src="/img//galery_6.jpg" alt="Кальянная">
+          
+        </div>
+        <div class="gallery-item bounceInLeft wow" data-wow-delay="1.4s" style="visibility: visible; animation-delay: 1.4s; animation-name: bounceInLeft;">
+           
+                <img class="img-responsive" src="/img//galery_7.jpg" alt="Кальянная">
+            
+        </div>
+        <div class="gallery-item bounceInLeft wow" data-wow-delay="1.6s" style="visibility: visible; animation-delay: 1.6s; animation-name: bounceInLeft;">
+           
+                <img class="img-responsive" src="/img//galery_8.jpg" alt="Кальянная">
+            
+        </div>
+        
+      
+    </div>
     </div>
 
 
 <div class="section" id="section4"><a name="shisha-page"></a>
 
-        <form class="form-calculate" method="POST" action="server.php" enctype="multipart/form-data">
-            <span id="form-text"> Соберите Ваш  кальян </span>
+  <div class="shishaPage">
+
             <fieldset id="first-fieldset">
                 
+            <div id="form-text"> Соберите Ваш  кальян </div>
                 <div class="form-question">Какая крепкость?</div>
                 <div id=option-block>
                     <label class="option " for="Shisha" >Легкий
@@ -181,75 +236,78 @@
                         <div class="calc-img darkside" name="darkside"  value="darkside"> </div>
                     </div>
             </fieldset>
-
-        </div>         
+      
+  </div>
+        
+</div>         
 
            
-        <div class="section" id="section5">
+<div class="section" id="section5">
+ 
+  <div class="shishaItem">
+    
+<div class="form-second-question">Выберите чашу</div>
+      <div class="label-form"> 
         
-            <div class="form-second-question">Выберите чашу</div>
-
-                <div class="label-form"> 
-                    <div class="checkbox-label base_value">
-                         <div class="colbs-header">Классическая</div>
-                         <div class="calc-img-chasha glina form-input" alt="glina" data-price="0" data-image="glina"></div>
-                    </div>
-                    <div class="checkbox-label base_value">
-                        <div class="colbs-header">Апельсиновая</div>
-                        <div class="calc-img-chasha orange form-input"  alt="orange" data-price="40" data-image="orange" > </div>
-                    </div>
-                    <div class="checkbox-label base_value">
-                             <div class="colbs-header">Ананасовая</div>
-                             <div class="calc-img-chasha pineapple form-input" alt="pineapple" data-price="60" data-image="pineapple"> </div>
-                    </div>
-               
-                  <div class="range-input">
-                      <div class="range-text">На какое время</div>
-                    <input type="range" min="1" max="5" value="0" step="1" class="range blue form-input"/>
-                    <div class="range-val-text">1 ЧАС</div>
-                  </div>
-        
-                    <div id="main-shahta">
-                        <div id="shahta-items">
-                            <div class='new-chasha'></div>
-                             <img src="./img/sahta.jpg" id="shahta-img">
-                                <div class="new-kolba"></div>
-                        </div>
-                       
-                     </div>
-                </div>
-            
-
-            <fieldset id="kolbs">
-                <div class="form-second-question">Что будет в колбе?</div>
-
-                <div class="label-form">
-                    <div class="checkbox-label base_value">
-                        <div class="colbs-header">Вода</div>
-                        <div class="colbWater colbs form-input " data-price="0" data-image="colbWater"></div>
-                    </div>
-                    <div class="checkbox-label base_value">
-                        <div class="colbs-header">Молоко</div>
-                        <div class="colbMilk colbs form-input" data-price="20" data-image="colbMilk"></div>
-                    </div>
-                    <div class="checkbox-label base_value">
-                        <div class="colbs-header">Алкоголь</div>
-                        <div class="colbAlk colbs form-input" data-price="40" data-image="colbAlk"></div>
-                    </div>
-                </div>
-                  <div class="total_price">
-                <span class="total_price__wrap">
-                    <span class="total_price_sum">0</span>
-                </span>
-                <button class="button end-button" type="button">Заказать</button>
-            </div>
-        </fieldset>
-        
+          <div class="checkbox-label base_value">
+               <div class="colbs-header">Классическая</div>
+               <div class="calc-img-chasha glina form-input" alt="glina" data-price="0" data-image="glina"></div>
+          </div>
+          <div class="checkbox-label base_value">
+              <div class="colbs-header">Апельсиновая</div>
+              <div class="calc-img-chasha orange form-input"  alt="orange" data-price="40" data-image="orange" > </div>
+          </div>
+          <div class="checkbox-label base_value">
+                   <div class="colbs-header">Ананасовая</div>
+                   <div class="calc-img-chasha pineapple form-input" alt="pineapple" data-price="60" data-image="pineapple"> </div>
+          </div>
+     
+        <div class="range-input">
+            <div class="range-text">На какое время</div>
+          <input type="range" min="1" max="5" value="0" step="1" class="range blue form-input"/>
+          <div class="range-val-text">1 ЧАС</div>
         </div>
 
-          
+          <div id="main-shahta">
+              <div id="shahta-items">
+                  <div class='new-chasha'></div>
+                   <img src="./img/sahta.jpg" id="shahta-img">
+                      <div class="new-kolba"></div>
+              </div>
+             
+           </div>
+      </div>
+  
 
-            
+  <div id="kolbs">
+      <div class="form-second-question">Что будет в колбе?</div>
+
+      <div class="label-form">
+          <div class="checkbox-label base_value">
+              <div class="colbs-header">Вода</div>
+              <div class="colbWater colbs form-input " data-price="0" data-image="colbWater"></div>
+          </div>
+          <div class="checkbox-label base_value">
+              <div class="colbs-header">Молоко</div>
+              <div class="colbMilk colbs form-input" data-price="20" data-image="colbMilk"></div>
+          </div>
+          <div class="checkbox-label base_value">
+              <div class="colbs-header">Алкоголь</div>
+              <div class="colbAlk colbs form-input" data-price="40" data-image="colbAlk"></div>
+          </div>
+
+          <div class="total_price">
+    
+            <div class="total_price_sum">0</div>
+    
+          <button class="button end-button" type="button">Заказать</button>
+          </div>
+      </div>
+  </div>
+  </div>
+  
+</div>
+
 
 
 <div class="section" id="section6"><a name="contact-page"></a>
@@ -261,8 +319,76 @@
             </span>
             <div id="contact-us">
                 <div class="mapframe">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d84584.65535773613!2d35.00836405810549!3d48.508879418281595!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d958c91fa3ff3b%3A0x8e5048ae7dd11059!2z0JrQsNGA0LDQstCw0L0!5e0!3m2!1sru!2sua!4v1581938568811!5m2!1sru!2sua" width='100%' height="400px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d84584.65535773613!2d35.00836405810549!3d48.508879418281595!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d958c91fa3ff3b%3A0x8e5048ae7dd11059!2z0JrQsNGA0LDQstCw0L0!5e0!3m2!1sru!2sua!4v1581938568811!5m2!1sru!2sua" width='75%' height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                 </div>
+
+                <div class="slider">
+                    <div class="slider__wrapper">
+                      <div class="slider__items">
+                        <div class="slider__item slider__item_1">
+                          <div class="slider__item_inner">
+                            <span class="slider__item_img">
+                              <img class="slider__item_photo" src="/examples/images/photo-1.jpg" alt="">
+                            </span>
+                            <span class="slider__item_testimonial">
+                              <span class="slider__item_name">Ismael Matsuura</span>
+                              <span class="slider__item_post">Web Developer</span>
+                              <span class="slider__item_text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim nihil quo molestiae perspiciatis qui vero?
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="slider__item slider__item_2">
+                          <div class="slider__item_inner">
+                            <span class="slider__item_img">
+                              <img src="/examples/images/photo-2.jpg" alt="">
+                            </span>
+                            <span class="slider__item_testimonial">
+                              <span class="slider__item_name">Lawanda Batchelder</span>
+                              <span class="slider__item_post">Web Designer</span>
+                              <span class="slider__item_text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim nihil quo molestiae perspiciatis qui vero?
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="slider__item slider__item_3">
+                          <div class="slider__item_inner">
+                            <span class="slider__item_img">
+                              <img src="/examples/images/photo-3.jpg" alt="">
+                            </span>
+                            <span class="slider__item_testimonial">
+                              <span class="slider__item_name">Bennett Arbogast</span>
+                              <span class="slider__item_post">Web Developer</span>
+                              <span class="slider__item_text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim nihil quo molestiae perspiciatis qui vero?
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="slider__item slider__item_4">
+                          <div class="slider__item_inner">
+                            <span class="slider__item_img">
+                              <img src="/examples/images/photo-4.jpg" alt="">
+                            </span>
+                            <span class="slider__item_testimonial">
+                              <span class="slider__item_name">Shanna Parcell</span>
+                              <span class="slider__item_post">Web Designer</span>
+                              <span class="slider__item_text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim nihil quo molestiae perspiciatis qui vero?
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <a class="slider__control slider__control_prev" href="#" role="button"></a>
+                    <a class="slider__control slider__control_next" href="#" role="button"></a>
+                  </div>
+            </div>
+                
+              
                 <div class="contact-info">
                     <a href="tel:+380660580166"  class="icon1">
                         <i class="fas fa-phone-square icon1">+380660580166</i>
