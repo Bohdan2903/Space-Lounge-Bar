@@ -9,22 +9,86 @@
     <link href="css/reset.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/fullpage.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <title>diploma</title>
 </head>
 <body>
+  <form id="myform">
+  
+      <header>Заказ Кальяна</header>
+  
+    <div class="form-price"> Cумма заказа </div>
+    <div class="area">
+      <div class="row">
+        <div class="col2">
+          <input type="text" name="firstname" class="form-name" required minlength="3" maxlength='20'>
+          <label for="fistname">Имя</label>
+        </div>
+        <div class="col2">
+          <input type="text" name="lastname" maxlength='20'>
+          <label for="lastname">Фамилия</label>
+        </div>
+      </div>
+      <div class="row">
+        <input type="phone" name="phone" class="form-phone"required minlength="6" maxlength='12'>
+        <label for="phone">Телефон</label>
+      </div>
+      <div class="row-place">
+        <label class="place" for="adress" >В заведении 
+          <input class="css-radio-2 for-place" type="radio" name='for'/>
+      </label>
+      <label class="place" for="adress" >На доставку
+        <input class="css-radio-2 for-adress" type="radio"  name='for'/>
+    </label>
+      </div>
+      <div class="row adress" >
+        <input type="text" name="address" class="form-adress" minlength="3" maxlength='30' >
+        <label for="address">Адресс доставки</label>
+      </div>
+      <div class="row">
+        <input type="text" name="time" maxlength="10">
+        <label for="address">Время</label>
+      </div>
+   <div class="row-button">
+      <input type="submit" value="Заказать" class="btn go-btn">
+      <input type="submit" value="Вернутся" class="btn back-btn">
+    </div>
+    </div>
+
+</form>
     
+   
+   <div class="succes-order">
+    Спасибо за заказ.<br> Мы свяжемся с Вами в течении 10 минут.
+    <div class='cl-btn-3 order-close-btn'><span class='top'></span> <span class='bot'></span></div>
+  </div>
+  </div>
+  
+  
 <div id="fullpage">
 
     <div class="section " id="section0">
       <div class='canvas'>
           <canvas class="myCanvas"></canvas>
       </div>
-       
+      <div id="rc-phone">
+        <div id="rc-phone-form" class="closed">
+            <div id="rc-phone-icon" class="fa fa-phone">        
+            </div>
+            <div id="rc-phone-form-wrap" class="rc-parent-form">
+                <form class="orderForm hotorder-form">
+                <div id="rc-recall">Перезвоним за 2 минуты!</div>
+            <input type="tel" id="rc-phone-input" name="phone" placeholder="Телефон" maxlength="20">
+                <button id="rc-phone-button" type="submit" value=""><i class="fa fa-phone"></i></button>                    
+                </form>
+            </div>
+        </div>
+        </div>
 
              <header id="header" class="fadeInDown">
             <div id="main-nav">
                 <div id="nav-img">
-                    <a href="#" class="main-nav-bar">
+                    <a href="#main-page" class="main-nav-bar">
                         <img src="./img/logo.png" id="logo-img">
                     </a>
                 </div>
@@ -52,12 +116,14 @@
                     <div class="main-nav-bar">
                        <a href="#" class="main-nav-links">МЕНЮ</a>
                         </div>
+
+                        <div class="main-nav-bar">
+                          <a href="#about-page" class="main-nav-links">О НАС</a>
+                        </div>
                         <div class="main-nav-bar">
                             <a href="#shisha-page" class="main-nav-links">КАЛЬЯН</a>
                           </div>
-                    <div class="main-nav-bar">
-                          <a href="#about-page" class="main-nav-links">О НАС</a>
-                        </div>
+                  
                     <div class="main-nav-bar">
                          <a href="#contact-page" class="main-nav-links">КОНТАКТЫ</a>
                     </div>
@@ -91,10 +157,10 @@
                     <div class="phone-number">
                         <p><a href="tel:+380660580166"><i class="fa fa-phone" aria-hidden="true"></i>+380 (66)058-01-66</a> </p>
                     </div>
-                 
+                    
                 </div>
-
         </div>
+
     </aside>
 </div>
 
@@ -106,25 +172,7 @@
             <img src="./img/discount2.png" id="second-promo">
             <!-- <img src="./img/birthday.png" id="birthday-promo"> -->
             <img src="./img/maindiscount.png" id="main-promo">
-            <!-- <div id="smoke-block" class="block">
-                <span class="smoke">Кальянная</span>
-                <span class="smoke">Space</span>
-                <span class="smoke">Hookah</span>
-                <span class="smoke">Lounge</span>
-                <span class="smoke">приглашает</span>
-                <span class="smoke">всех</span>
-                <span class="smoke">мы</span>
-                <span class="smoke">любителей</span>
-                <span class="smoke">густого</span>
-                <span class="smoke">качественного</span>
-                <span class="smoke">дыма</span>
-                <span class="smoke">расслабиться</span>
-                <span class="smoke">и</span>
-                <span class="smoke">нашей</span>
-                <span class="smoke">уютной</span>
-                <span class="smoke">атмосферой</span>
-
-              </div> -->
+          
         </div>
        
     </section>
@@ -135,57 +183,57 @@
 
         <div id="about-us">
         
-                <span class="about-main-text bounceInLeft ">⚠️Что мы предлагаем:⚠️</span>
-                <span class="about-text bounceInLeft">🔸Уютная Lounge-обстановка 👌</span>
-                <span class="about-text bounceInLeft">🔸Огромный выбор различных видов и вкусов табака 🍉🍊💨</span>
-                <span class="about-text bounceInLeft">🔸Ароматные китайские чаи☕️</span>
-                <span class="about-text bounceInLeft">🔸Огромный выбор популярных настольных игр 🎲 и Play Station 🎮</span>
-                <span class="about-text bounceInLeft">🔸Свободный Wi-Fi 🔥</span>
-                <span class="about-text bounceInLeft">🔸Профессиональное обслуживание 💯</span>
-                <span class="about-text bounceInLeft">🔸Приемлемая цена и акции 🧡</span> 
+                <span class="about-main-text wow ">⚠️Что мы предлагаем:⚠️</span>
+                <span class="about-text wow">🔸Уютная Lounge-обстановка 👌</span>
+                <span class="about-text wow">🔸Огромный выбор различных видов и вкусов табака 🍉🍊💨</span>
+                <span class="about-text wow">🔸Ароматные китайские чаи☕️</span>
+                <span class="about-text wow">🔸Огромный выбор популярных настольных игр 🎲 и Play Station 🎮</span>
+                <span class="about-text wow">🔸Свободный Wi-Fi 🔥</span>
+                <span class="about-text wow">🔸Профессиональное обслуживание 💯</span>
+                <span class="about-text wow">🔸Приемлемая цена и акции 🧡</span> 
             </div>
         </section>
     </div>
     <div class="section" id="section3">
-    <div class="gallery-wrapper">
-        <div class="gallery-item bounceInLeft wow" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.6s; animation-name: bounceInLeft;">
+    <div class="gallery-wrapper" >
+        <div class="gallery-item  " data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.6s; ">
             
-                <img class="img-responsive" src="/img//galery_1.jpg" alt="Кальянная">
+                <img class="img-responsive" src="./img/galery_1.jpg" alt="Кальянная">
   
         </div>
-        <div class="gallery-item bounceInLeft wow" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: bounceInLeft;">
+        <div class="gallery-item  " data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; ">
            
-                <img class="img-responsive" src="/img//galery_2.jpg" alt="Кальянная">
+                <img class="img-responsive" src="./img/galery_2.jpg" alt="Кальянная">
             
         </div>
-        <div class="gallery-item bounceInLeft wow" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.2s; animation-name: bounceInLeft;">
+        <div class="gallery-item  " data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.2s;">
             
-                <img class="img-responsive" src="/img//galery_3.jpg" alt="Кальянная">
-            
-        </div>
-        <div class="gallery-item bounceInLeft wow" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.2s; animation-name: bounceInLeft;">
-            
-                <img class="img-responsive" src="/img//galery_4.jpg" alt="Кальянная ">
+                <img class="img-responsive" src="./img/galery_3.jpg" alt="Кальянная">
             
         </div>
-        <div class="gallery-item bounceInLeft wow" data-wow-delay="1s" style="visibility: visible; animation-delay: 1s; animation-name: bounceInLeft;">
+        <div class="gallery-item  " data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.2s; ">
+            
+                <img class="img-responsive" src="./img/galery_4.jpg" alt="Кальянная ">
+            
+        </div>
+        <div class="gallery-item  " data-wow-delay="1s" style="visibility: visible; animation-delay: 1s; ">
            
-                <img class="img-responsive" src="/img//galery_5.jpg" alt="Кальянная ">
+                <img class="img-responsive" src="./img/galery_5.jpg" alt="Кальянная ">
             
         </div>
-        <div class="gallery-item bounceInLeft wow" data-wow-delay="1.2s" style="visibility: visible; animation-delay: 1.2s; animation-name: bounceInLeft;">
+        <div class="gallery-item  " data-wow-delay="1.2s" style="visibility: visible; animation-delay: 1.2s; ">
            
-                <img class="img-responsive" src="/img//galery_6.jpg" alt="Кальянная">
+                <img class="img-responsive" src="./img/galery_6.jpg" alt="Кальянная">
           
         </div>
-        <div class="gallery-item bounceInLeft wow" data-wow-delay="1.4s" style="visibility: visible; animation-delay: 1.4s; animation-name: bounceInLeft;">
+        <div class="gallery-item  " data-wow-delay="1.4s" style="visibility: visible; animation-delay: 1.4s; ">
            
-                <img class="img-responsive" src="/img//galery_7.jpg" alt="Кальянная">
+                <img class="img-responsive" src="./img/galery_7.jpg" alt="Кальянная">
             
         </div>
-        <div class="gallery-item bounceInLeft wow" data-wow-delay="1.6s" style="visibility: visible; animation-delay: 1.6s; animation-name: bounceInLeft;">
+        <div class="gallery-item  " data-wow-delay="1.6s" style="visibility: visible; animation-delay: 1.6s;">
            
-                <img class="img-responsive" src="/img//galery_8.jpg" alt="Кальянная">
+                <img class="img-responsive" src="./img/galery_8.jpg" alt="Кальянная">
             
         </div>
         
@@ -300,12 +348,12 @@
     
             <div class="total_price_sum">0</div>
     
-          <button class="button end-button" type="button">Заказать</button>
+          <button class="button order-button" type="button">Заказать</button>
           </div>
       </div>
   </div>
   </div>
-  
+ 
 </div>
 
 
@@ -319,7 +367,7 @@
             </span>
             <div id="contact-us">
                 <div class="mapframe">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d84584.65535773613!2d35.00836405810549!3d48.508879418281595!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d958c91fa3ff3b%3A0x8e5048ae7dd11059!2z0JrQsNGA0LDQstCw0L0!5e0!3m2!1sru!2sua!4v1581938568811!5m2!1sru!2sua" width='75%' height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d84584.65535773613!2d35.00836405810549!3d48.508879418281595!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d958c91fa3ff3b%3A0x8e5048ae7dd11059!2z0JrQsNGA0LDQstCw0L0!5e0!3m2!1sru!2sua!4v1581938568811!5m2!1sru!2sua" width='75%' height="250px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                 </div>
 
                 <div class="slider">
@@ -327,56 +375,55 @@
                       <div class="slider__items">
                         <div class="slider__item slider__item_1">
                           <div class="slider__item_inner">
-                            <span class="slider__item_img">
-                              <img class="slider__item_photo" src="/examples/images/photo-1.jpg" alt="">
-                            </span>
+                            <div class="slider__item_img">
+                              <img  src="./img/slider-img-1.jpg" class="slider-img" alt="phonto">
+                            </div>
                             <span class="slider__item_testimonial">
-                              <span class="slider__item_name">Ismael Matsuura</span>
-                              <span class="slider__item_post">Web Developer</span>
+                              <span class="slider__item_name">KYIVSTONER</span>
                               <span class="slider__item_text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim nihil quo molestiae perspiciatis qui vero?
+                                ВНАТУРЕ ЧЕТКАЯ ТРУБКА, РЕСПЕКТ ЗА ТАКОЕ МЕСТО.
                               </span>
                             </span>
                           </div>
                         </div>
                         <div class="slider__item slider__item_2">
                           <div class="slider__item_inner">
-                            <span class="slider__item_img">
-                              <img src="/examples/images/photo-2.jpg" alt="">
-                            </span>
+                            <div class="slider__item_img">
+                              <img src="./img/slider-img-2.jpg" class="slider-img" alt="photo">
+                            </div>
                             <span class="slider__item_testimonial">
-                              <span class="slider__item_name">Lawanda Batchelder</span>
-                              <span class="slider__item_post">Web Designer</span>
+                              <span class="slider__item_name">Leonardno DiCaprio</span>
+                              
                               <span class="slider__item_text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim nihil quo molestiae perspiciatis qui vero?
+                                Лучший кальян в моей жизни, уютная атмосфера, никаких папараци.<br> Обязательно прийдем еще.
                               </span>
                             </span>
                           </div>
                         </div>
                         <div class="slider__item slider__item_3">
                           <div class="slider__item_inner">
-                            <span class="slider__item_img">
-                              <img src="/examples/images/photo-3.jpg" alt="">
-                            </span>
+                            <div class="slider__item_img">
+                              <img src="./img/slider-img-3.jpg" class="slider-img" alt="photo">
+                            </div>
                             <span class="slider__item_testimonial">
-                              <span class="slider__item_name">Bennett Arbogast</span>
-                              <span class="slider__item_post">Web Developer</span>
+                              <span class="slider__item_name">Brad Pitt</span>
+                              
                               <span class="slider__item_text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim nihil quo molestiae perspiciatis qui vero?
+                                Пришел сюда по приглашению Лео, не ожидал увидеть такой сервис. Очень круто, ребята молодцы.<br> Китайчские чаи-великолепны.
                               </span>
                             </span>
                           </div>
                         </div>
                         <div class="slider__item slider__item_4">
                           <div class="slider__item_inner">
-                            <span class="slider__item_img">
-                              <img src="/examples/images/photo-4.jpg" alt="">
-                            </span>
+                            <div class="slider__item_img">
+                              <img src="./img/slider-img-4.jpeg" class="slider-img" alt="photo">
+                            </div>
                             <span class="slider__item_testimonial">
-                              <span class="slider__item_name">Shanna Parcell</span>
-                              <span class="slider__item_post">Web Designer</span>
+                              <span class="slider__item_name">Надя Дорофеева</span>
+                              
                               <span class="slider__item_text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim nihil quo molestiae perspiciatis qui vero?
+                                Очень приятный персонал, отличные чаи и большое разнообразие игр. <br> Ушли довольными, огромное спасибо.
                               </span>
                             </span>
                           </div>
@@ -401,12 +448,12 @@
                     <i class="fab fa-facebook icon1">bogdan prodan</i></a>
                 </div>
             </div>
-         </div>
-    </section>
+
 </div>
 
     
 </div>    
+
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="js/custom.js"></script>
 <script type="text/javascript" src="js/fullpage.js"></script>
