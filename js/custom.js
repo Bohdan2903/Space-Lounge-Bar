@@ -518,7 +518,7 @@ $('#rc-phone-icon').click(function(){
 
 $('.order-button').click(function(){
   $('#fullpage').css('display', "none");
-  $('body').css({'background': 'rgba(11, 0, 39, 0.966)','font-family': 'Roboto'});
+  $('body').css({'background': 'rgba(11, 10, 15, 0.966)','font-family': 'Roboto'});
   $('#myform').css('display', "block");
 });
 
