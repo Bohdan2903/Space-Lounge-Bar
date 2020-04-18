@@ -14,7 +14,7 @@
     <title>diploma</title>
 </head>
 <body>
-  <form id="myform">
+  <form id="myform" class="fadeInDown"> <a name="#make-order"></a>
   
       <header>Заказ Кальяна</header>
   
@@ -59,7 +59,7 @@
 </form>
     
    
-   <div class="succes-order">
+   <div class="succes-order fadeInDown">
     Спасибо за заказ.<br> Мы свяжемся с Вами в течении 10 минут.
     <div class='cl-btn-3 order-close-btn'><span class='top'></span> <span class='bot'></span></div>
   </div>
@@ -67,11 +67,9 @@
   
   
 <div id="fullpage">
-
-    <div class="section " id="section0">
-      <div class='canvas'>
-          <canvas class="myCanvas"></canvas>
-      </div>
+  
+    <div class="section " id="section0" >
+      
       <div id="rc-phone">
         <div id="rc-phone-form" class="closed">
             <div id="rc-phone-icon" class="fa fa-phone">        
@@ -93,34 +91,18 @@
                         <img src="./img/logo.png" id="logo-img">
                     </a>
                 </div>
-                <ul class="main-nav-bar">
-                        <li class ="footer_icon">
-                            <a class="icon " href="mailto:bogdanprodan20@gmail.com">
-                            <i class="fas fa-envelope "></i></a>
-                                    
-                        </li>
-                        <li  class ="footer_icon" >
-                            <a class="icon  " href="tel:+380660580166">
-                            <i class="fas fa-phone-square-alt "></i></a>
-                            
-                        </li>
-                        <li class ="footer_icon">
-                            <a class="icon " href="https://www.instagram.com/bogdan_prodan/">
-                                <i class="fab fa-instagram "></i></a>
-                           
-                    </li>
-                </ul>
-
-                    <div class="main-nav-bar">
+            
+                    <div class="main-nav-bar-right">
+                      <div class="main-nav-bar">
+                        <a href="#about-page" class="main-nav-links">О НАС</a>
+                      </div>
+                      
+                        <div class="main-nav-bar">
+                          <a href="#menu-page" class="main-nav-links">МЕНЮ</a>
+                           </div>
+                           <div class="main-nav-bar">  
                         <a href="#discount-page" class="main-nav-links">АКЦИИ</a>
                        </div>
-                    <div class="main-nav-bar">
-                       <a href="#" class="main-nav-links">МЕНЮ</a>
-                        </div>
-
-                        <div class="main-nav-bar">
-                          <a href="#about-page" class="main-nav-links">О НАС</a>
-                        </div>
                         <div class="main-nav-bar">
                             <a href="#shisha-page" class="main-nav-links">КАЛЬЯН</a>
                           </div>
@@ -128,172 +110,236 @@
                     <div class="main-nav-bar">
                          <a href="#contact-page" class="main-nav-links">КОНТАКТЫ</a>
                     </div>
+
+                    <a class="icon nav-phone " href="tel:+380660580166">+380660580166 </a>
+                    </div>
+                  
+                     
+                  
             </div>
     </header>
     
-    <aside id="main-page">
-        <div class='main-video'> 
-          <video  width="100%" height="auto" preload="auto" autoplay="true" loop="true" muted="muted">
+    <aside class="video-page ">
+        <div class='main-video'> <a name="main-page"></a>
+          <video  width="100%" height="100%" preload="true" autoplay="true" loop="true" muted="muted">
             <source src="./img/video.mp4" type="video/mp4">
         </video>
+        <div class="main-video-bg"></div>
       </div>
        
       
-        <div id="main-article">
+        <div class="main-article">
 
                 <div class="article-text"> 
-                    <div class="first-text">Space Hookah Lounge</div> 
-                    <div class="second-text">Место, куда хочется возвращаться!</div>
+                    
+                      <div class="first-text">Space </div> 
+                        <div class="first-text">Hookah</div>
+                          <div class="first-text">Lounge</div>
+                    
+                    <span class="second-text">Место, куда хочется возвращаться!</span>
+                    <a href='#make-order' class='order-table'><span>Забронировать столик</span></a>
                     
                 </div>
 
-
-                <div class="main-page-contacts">
-                    <div class="adress">
-                        <p><i class="fa fa-location-arrow" aria-hidden="true"></i> ул. Нижнеднпровская, 17</p>
-                    </div>
-                    <div class="work-time">
-                        <p class="hidden-sm-down"><i class="fa fa-clock-o" aria-hidden="true"></i>Вс - Чт 12:00 - 02:00, Пт -Сб 12:00 - 03:00</p>
-                    </div>
-                    <div class="phone-number">
-                        <p><a href="tel:+380660580166"><i class="fa fa-phone" aria-hidden="true"></i>+380 (66)058-01-66</a> </p>
-                    </div>
-                    
-                </div>
+                
+                <div class="right-article">
+                 <ul class="main-nav-bar-icon">
+                  
+                    <li class ="header_icon">
+                        <a class="icon " href="mailto:bogdanprodan20@gmail.com">
+                          <i class="fab fa-facebook-square "></i></a>
+                                
+                    </li>
+                    <li  class ="header_icon" >
+                        <a class="icon  " href="">
+                          <i class="fab fa-youtube  "></i></a>
+                        
+                    </li>
+                      <li class ="header_icon">
+                        <a class="icon " href="https://www.instagram.com/bogdan_prodan/">
+                          <i class="fab fa-instagram  "></i></a>
+                       </li>
+                  </ul>
+              </div>
         </div>
+        
 
     </aside>
 </div>
 
-<div class="section" id="section1"> <a name="discount-page"></a>
-    <section class="all-discout ">
+<div class="section" id="section1">
+  <section class="about"> <a name="about-page"></a> 
+
+        <div id="about-us">
+                
+                  <span class="about-main-text"> О НАС </span>
+                <span class="about-text-1 "> Мы  &nbsp -<span class="purple-text"> &nbsp Space Hoohak Lounge  </span> &nbsp  работаем в этой свере уже 3 года.</span>
+                <span class="about-text ">Нам очень приятно, что количество наших клиевнтов растет с каждым днем - это значит, что наша работа и старания не напрасны.</span>
+                <span class="about-text ">Наша главная задача - предоставить клиентам отличный отдых в <span class="purple-text"> &nbsp  уютной Lounge-обстановке</span>.</span>
+                <br>  
+                <span class="about-text "> У нас вы можете рассалибтся попивая <span class="purple-text"> &nbsp чашечку ароматного китайского чая</span> &nbsp  или же вкуснейший коктейль.  </span>
+                   <span class="about-text ">Наши клиенты - это наша основная мотивация что бы быть лучше и расширяться.</span>
+                  <span class="about-text ">Мы без исключения предоставляем <span class="purple-text"> &nbsp профессиональное обслуживание</span> &nbsp для всех.</span>
+
+              
+                  <span class="about-main-text-2 wow zoomIn"> НАШИ ПРЕИМУЩЕСТВА </span>
+
+                  <div class="about-plus">
+                    <div class="about-img plus1 wow"><span> Огромный выбор видов и вкусов табака</span></div>
+                    <div class="about-img plus2 wow"> <span> Приемлимая цена и акции</span></div>
+                    <div class="about-img plus3 wow"> <span> Много настольных игр и PlayStation</span></div>
+                  </div>
+            </div>
+        </section>
+    </div>
+
+<div class="section" id="section2"> 
+  <section class="menu-page "><a name="menu-page"></a>
+    <div class="menu-block"> 
+      <div class="about-main-text">МЕНЮ </div>
+      
+        <div class=" menu menu-1">
+          <a href="" class="icon arrow-left">
+           <i class="fas fa-arrow-circle-left "></i> </a> 
+            <a href="" class="icon arrow-right">
+              <i class="fas fa-arrow-circle-right "></i> </a> 
+            </div>
+    </div>
+    <div class='circle-menu'>
+        <i class="fas fa-circle circle-icon cir-1"></i>
+        <i class="fas fa-circle circle-icon cir-2"></i>
+        <i class="fas fa-circle circle-icon cir-3"></i>
+    </div>
+  
+  </section>
+</div>
+
+
+<div class="section" id="section2"> 
+    <section class="all-discount "><a name="discount-page"></a>
         
         <div id="discount">
-           
-            <img src="./img/discount2.png" id="second-promo">
-            <!-- <img src="./img/birthday.png" id="birthday-promo"> -->
-            <img src="./img/maindiscount.png" id="main-promo">
+          <span class="about-main-text">Акции </span>
+          <div class="discount-image">
+              <img src="./img/discount2.png" class='disc-img-first'>
+              <img src="./img/birthday.png" class='disc-img-second'>
+              <img src="./img/maindiscount.png" class='disc-img-third'>
+          </div>
+          <span class="discount-text2">Почуствуй Атмосферу </span>
+          <div class="gallery-wrapper" >
+
+            <a href="" class="icon arrow-left-photo"><i class="fas fa-arrow-circle-left "></i> </a>
+
+            <div class="gallery-item  " data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; ">
+                  <img class="img-responsive" src="./img/galery_1.jpg" alt="Кальянная">
+             </div>
+            <div class="gallery-item  " data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.5s; ">
+                <img class="img-responsive" src="./img/galery_2.jpg" alt="Кальянная">
+                </div>
+            <div class="gallery-item  " data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.9s;">
+                   <img class="img-responsive" src="./img/galery_3.jpg" alt="Кальянная">
+               </div>
+            <div class="gallery-item  " data-wow-delay="0.8s" style="visibility: visible; animation-delay: 1.3s; ">
+                      <img class="img-responsive" src="./img/galery_4.jpg" alt="Кальянная ">
+              </div>
+
+              <a href="" class="icon arrow-right-photo"><i class="fas fa-arrow-circle-right "></i> </a> 
+          </div>
           
-        </div>
+          <div class="gallery-wrapper-2 " >
+            <a href="" class="icon arrow-left-photo"> <i class="fas fa-arrow-circle-left "></i> </a>
+           
+            <div class="gallery-item  " data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; ">
+                <img class="img-responsive" src="./img/galery_5.jpg" alt="Кальянная ">
+                </div>
+            <div class="gallery-item  " data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.5s; ">
+                <img class="img-responsive" src="./img/galery_6.jpg" alt="Кальянная">
+               </div>
+               <div class="gallery-item  " data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.9s; ">
+                <img class="img-responsive" src="./img/galery_7.jpg" alt="Кальянная">
+               </div>
+               <div class="gallery-item  " data-wow-delay="0.8s" style="visibility: visible; animation-delay: 1.3s; ">
+                <img class="img-responsive" src="./img/galery_8.jpg" alt="Кальянная">
+                 </div>
+                 <a href="" class="icon arrow-right-photo"><i class="fas fa-arrow-circle-right "></i> </a> 
+                 
+            </div>
+      </div>
        
     </section>
 </div>
 
-  <div class="section" id="section2"><a name="about-page"></a>
-  <section class="about">  
-
-        <div id="about-us">
-        
-                <span class="about-main-text wow ">⚠️Что мы предлагаем:⚠️</span>
-                <span class="about-text wow">🔸Уютная Lounge-обстановка 👌</span>
-                <span class="about-text wow">🔸Огромный выбор различных видов и вкусов табака 🍉🍊💨</span>
-                <span class="about-text wow">🔸Ароматные китайские чаи☕️</span>
-                <span class="about-text wow">🔸Огромный выбор популярных настольных игр 🎲 и Play Station 🎮</span>
-                <span class="about-text wow">🔸Свободный Wi-Fi 🔥</span>
-                <span class="about-text wow">🔸Профессиональное обслуживание 💯</span>
-                <span class="about-text wow">🔸Приемлемая цена и акции 🧡</span> 
-            </div>
-        </section>
-    </div>
-    <div class="section" id="section3">
-    <div class="gallery-wrapper" >
-        <div class="gallery-item  " data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.6s; ">
-            
-                <img class="img-responsive" src="./img/galery_1.jpg" alt="Кальянная">
-  
-        </div>
-        <div class="gallery-item  " data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; ">
-           
-                <img class="img-responsive" src="./img/galery_2.jpg" alt="Кальянная">
-            
-        </div>
-        <div class="gallery-item  " data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.2s;">
-            
-                <img class="img-responsive" src="./img/galery_3.jpg" alt="Кальянная">
-            
-        </div>
-        <div class="gallery-item  " data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.2s; ">
-            
-                <img class="img-responsive" src="./img/galery_4.jpg" alt="Кальянная ">
-            
-        </div>
-        <div class="gallery-item  " data-wow-delay="1s" style="visibility: visible; animation-delay: 1s; ">
-           
-                <img class="img-responsive" src="./img/galery_5.jpg" alt="Кальянная ">
-            
-        </div>
-        <div class="gallery-item  " data-wow-delay="1.2s" style="visibility: visible; animation-delay: 1.2s; ">
-           
-                <img class="img-responsive" src="./img/galery_6.jpg" alt="Кальянная">
-          
-        </div>
-        <div class="gallery-item  " data-wow-delay="1.4s" style="visibility: visible; animation-delay: 1.4s; ">
-           
-                <img class="img-responsive" src="./img/galery_7.jpg" alt="Кальянная">
-            
-        </div>
-        <div class="gallery-item  " data-wow-delay="1.6s" style="visibility: visible; animation-delay: 1.6s;">
-           
-                <img class="img-responsive" src="./img/galery_8.jpg" alt="Кальянная">
-            
-        </div>
-        
-      
-    </div>
-    </div>
+ 
+   
 
 
-<div class="section" id="section4">
+<div class="section" id="section5">
 
-  <div class="shishaPage"><a name="shisha-page"></a>
+  <section class="shishaPage"><a name="shisha-page"></a>
 
             <fieldset id="first-fieldset">
                 
             <div class="form-text"> Соберите Ваш  кальян </div>
-                <div class="form-question">Какая крепкость?</div>
-                <div id=option-block>
-                    <label class="option " for="Shisha" >Легкий
-                       <input class="css-radio calc-handler form-input" id="easyShisha" type="radio" name="shisha" checked value="easy" data-price="150" data-site="Легкий кальян" />
-                   </label>
+                <div class="form-text-2">Крепость для <span class="chosen-shisha">  </span></div>
+                
+                <div id="tabac">
 
-                   <label class="option " for="Shisha" >Средний
-                   <input class="css-radio calc-handler form-input" id="mediumShisha" type="radio" name="shisha" value="medium" data-price="170" data-site=" Средний кальян" />
-                    </label>
-
-                   <label class="option" for="Shisha" >Крепкий 
-                       <input class="css-radio calc-handler form-input" id="hardShisha" type="radio" name="shisha" value="hard" data-price="200" data-site=" Крепкий кальян" />
-                   </label>
-               </div>
-
-                    <div id="tabac">
-
-                        <div class="tabac-wrap" for="easyShisha">
-                            <div class="calc-img sherbetti" name="sherbetti" value="sherbetti"> </div>
-                            <div  class="calc-img fumari" name="fumari"  value="fumari"></div>
-                        </div>
-                         
-                    
-                    <div class="tabac-wrap" for="mediumShisha">
-                        <div class="calc-img jibiar" name="jibiar"  value="jibiar"> </div>
-                        <div class="calc-img cult" name="cult"  value="cult"></div>
-                        <div class="calc-img dailyhookah" name="dailyhookah"  value="dailyhookah"></div>
-                    </div>
+                  <div class="tabac-wrap" for="easyShisha">
+                      <div class="calc-img sherbetti" name="sherbetti" value="sherbetti"> </div>
+                      <div  class="calc-img fumari" name="fumari"  value="fumari"></div>
+                  </div>
                    
-               
-                    <div class="tabac-wrap" for="hardShisha">
-                        <div class="calc-img tangiers" name="tangiers"  value="tangiers"></div>
-                        <div class="calc-img darkside" name="darkside"  value="darkside"> </div>
-                    </div>
-            </fieldset>
-      
-  </div>
-        
-</div>         
+              
+              <div class="tabac-wrap" for="mediumShisha">
+                  <div class="calc-img jibiar" name="jibiar"  value="jibiar"> </div>
+                  <div class="calc-img cult" name="cult"  value="cult"></div>
+                  <div class="calc-img dailyhookah" name="dailyhookah"  value="dailyhookah"></div>
+              </div>
+             
+         
+              <div class="tabac-wrap" for="hardShisha">
+                  <div class="calc-img tangiers" name="tangiers"  value="tangiers"></div>
+                  <div class="calc-img darkside" name="darkside"  value="darkside"> </div>
+              </div>
+            </div>
+                  <ul class="radio-group">
+                    <li>
+                            <input id="choice-a" type="radio" name="g" class="css-radio calc-handler form-input" data-price="185">
+                            <label for="choice-a option">
+                                <span><span></span></span>
+                                Легкий
+                            </label>
+                    </li>
+                    <li>
+                            <input id="choice-b" type="radio" name="g" class="css-radio calc-handler form-input"  data-price="235">
+                            <label for="choice-b option">
+                                <span><span></span></span>
+                                Средний
+                            </label>
+                    </li>
+                    <li>
+                            <input id="choice-c" type="radio" name="g" class="css-radio calc-handler form-input" data-price="255">
+                            <label for="choice-c option">
+                                <span><span></span></span>
+                               Тяжелый
+                            </label>
+                    </li>
+                   
+                </ul>
+              
 
+
+                </fieldset>
+        
+        
+      </section>         
+</div>
            
-<div class="section" id="section5">
- 
-  <div class="shishaItem">
+<div class="section" id="section6">
+  <div class='canvas'>
+    <canvas class="myCanvas"></canvas>
+</div>
+  <div class="shishaItem ">
     
 <div class="form-second-question">Выберите чашу</div>
       <div class="label-form"> 
@@ -304,11 +350,11 @@
           </div>
           <div class="checkbox-label base_value">
               <div class="colbs-header">Апельсиновая</div>
-              <div class="calc-img-chasha orange form-input"  alt="orange" data-price="40" data-image="orange" > </div>
+              <div class="calc-img-chasha orange form-input"  alt="orange" data-price="75" data-image="orange" > </div>
           </div>
           <div class="checkbox-label base_value">
                    <div class="colbs-header">Ананасовая</div>
-                   <div class="calc-img-chasha pineapple form-input" alt="pineapple" data-price="60" data-image="pineapple"> </div>
+                   <div class="calc-img-chasha pineapple form-input" alt="pineapple" data-price="165" data-image="pineapple"> </div>
           </div>
      
         <div class="range-input">
@@ -328,7 +374,7 @@
       </div>
   
 
-  <div id="kolbs">
+  <div class=" kolbs ">
       <div class="form-second-question">Что будет в колбе?</div>
 
       <div class="label-form">
@@ -359,9 +405,9 @@
 
 
 
-<div class="section" id="section6"><a name="contact-page"></a>
+<div class="section" id="section7">
     
-    <section class="contact-page">
+    <section class="contact-page"><a name="contact-page"></a>
         <div id="contact">
             <div class="form-text">
                 Связаться с нами
@@ -449,6 +495,7 @@
                     <i class="fab fa-facebook icon1">bogdan prodan</i></a>
                 </div>
             </div>
+            </section>
 
 </div>
 

@@ -201,7 +201,7 @@ function randOffset(n, variance)
           let tabacPrice = $(".calc-handler:checked").attr('data-price');
       
            
-            let rangePrice = $('.range').val() * 5;
+            let rangePrice = $('.range').val() * 4;
             
             if($('.range').val() < 2) {
                $(".range-val-text").text($('.range').val()+ ' '+ HOUR_STRING[0]);
@@ -223,44 +223,65 @@ function randOffset(n, variance)
 var windowHeight = $(window).height();
  
 	$(document).on('scroll', function() {
-		$('.wow').each(function() {
+		$('.about-img').each(function() {
 			var self = $(this),
 			height = self.offset().top + self.height();
-			if ($(document).scrollTop() + windowHeight >= height -500){
-        $('#about-us').css('display', 'flex');
+			if ($(document).scrollTop() + windowHeight >= height-100 ){
+        $('.about-img').css('display', 'block');
         self.addClass('bounceInLeft'); 
          $('.wow').css('opacity', '1');
        }
 
         else{
-          $('.wow').removeClass('bounceInLeft');
-          self.css('opacity', '0');
+          $('.about-img').removeClass(' wow bounceInLeft');
+          
           
         }
       });
 
-      $('.gallery-item ').each(function() {
+      $('.gallery-item').each(function() {
         var self = $(this),
         height = self.offset().top + self.height();
-        if ($(document).scrollTop() + windowHeight >= height-500){
+        if ($(document).scrollTop() + windowHeight >= height-400){
           $('.gallery-wrapper').css('display', 'flex');
-          self.addClass('bounceInLeft');
+          self.addClass(' wow zoomInLeft ');
           $('.gallery-item ').css({'opacity': '1'});
          
          }
+
+          if(($(document).scrollTop() + windowHeight >= height-400)){
+            $('.gallery-wrapper-2').css('display', 'none') ;
+            $('.wow').removeClass('bounceInLeft');
+            $('.gallery-item ').removeClass(' wow zoomInLeft ').addClass(' wow zoomInLeft ');
+          
+          }
   
           else{
-            $('.gallery-item ').removeClass('bounceInLeft').css('opacity', '0.3');
+            $('.gallery-item ').removeClass(' wow zoomInLeft ').css('opacity', '0.3');
             self.css('opacity', '0');
+            
           }
+
+         
         });
+      
+});
+      $('.arrow-right-photo').click(function(e){
+        e.preventDefault();
+        $('.gallery-wrapper ').css('display', 'none');
+        $('.gallery-wrapper-2 ').css({'opacity': '1', 'display':'flex'});
+      });
+      $('.arrow-left-photo').click(function(e){
+        e.preventDefault();
+        $('.gallery-wrapper-2 ').css('display', 'none');
+        $('.gallery-wrapper ').css('display', 'flex');
       });
 //
 
 $(".img-responsive").click(function(){	// Событие клика на маленькое изображение
   var img = $(this);	// Получаем изображение, на которое кликнули
 var src = img.attr('src'); // Достаем из этого изображения путь до картинки
-$(".gallery-wrapper").append("<div class='popup'>"+ //Добавляем в тело документа разметку всплывающего окна
+$(".gallery-wrapper, .gallery-wrapper-2").append("<div class='popup'>"+ //Добавляем в тело документа разметку всплывающего окна
          "<div class='popup_bg'></div>"+// Блок, который будет служить фоном затемненным
          "<div class='cl-btn-3'><span class='top'></span> <span class='bot'></span></div>" +
          "<img src='"+src+"' class='popup_img' />"+// Само увеличенное фото
@@ -274,6 +295,47 @@ $(".cl-btn-3").click(function(){	// Событие клика на затемн�
   }, 800);
 });
 });
+
+//menuclick
+
+$(".arrow-right").click(function(e){	
+  e.preventDefault();
+  if( $(".menu").hasClass('menu-1')){  
+    
+    $(".menu").removeClass('menu-1').addClass('menu-2 wow zoomInLeft').css({'display':'flex', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
+    $(".menu-1").css('display','none');
+    $(".cir-2").css('color','rgb(132, 0, 255)');
+    $(".cir-3, .cir-1").css('color','whitesmoke');
+  }
+  else if($(".menu").hasClass('menu-2')){
+    $(".menu").removeClass('menu-2').addClass('menu-3 wow zoomInLeft').css({'display':'flex', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
+    $(".menu-2").css('display','none');
+    $(".cir-2, .cir-1").css('color','whitesmoke');
+    $(".cir-3").css('color','rgb(132, 0, 255)');
+  }
+});
+
+
+$(".arrow-left").click(function(e){	
+  e.preventDefault();
+  if( $(".menu").hasClass('menu-3')){ 
+    $(".menu").removeClass('menu-3').addClass('menu-2 wow zoomInLeft').css({'display':'flex', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
+    $(".menu-3").css('display','none');
+    $(".cir-2").css('color','rgb(132, 0, 255)');
+    $(".cir-3, .cir-1").css('color','whitesmoke');
+  }
+
+  else if($(".menu").hasClass('menu-2')){
+    $(".menu").removeClass('menu-2').addClass('menu-1 wow zoomInLeft').css({'display':'flex', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
+    $(".menu-2").css('display','none');
+    $(".cir-1").css('color','rgb(132, 0, 255)');
+    $(".cir-3, .cir-2").css('color','whitesmoke');
+  }
+
+});
+
+
+
 
 
 //slider 
@@ -516,10 +578,11 @@ $('#rc-phone-icon').click(function(){
 //
 //myOrderForm
 
-$('.order-button').click(function(){
+$('.order-button, .order-table').click(function(){
   $('#fullpage').css('display', "none");
   $('body').css({'background': 'rgba(11, 10, 15, 0.966)','font-family': 'Roboto'});
   $('#myform').css('display', "block");
+
 });
 
 $('.css-radio-2').on('click', function () {
@@ -531,8 +594,9 @@ $('.css-radio-2').on('click', function () {
 
 $('.back-btn').click(function(){
   $('#fullpage').css('display', "table");
-  $('body').css({'background': 'none','font-family': 'Roboto'});
+  $('body').css({'background': 'none','font-family': "'Roboto',sans-serif"});
   $('#myform').css('display', "none");
+  location.reload();
 });
 
 
@@ -543,10 +607,11 @@ $('.for-adress').on('click',function(){
   $('.adress').css('display', "none");
  });
 
- $('.go-btn').on('click',function(){
-
-      $('#myform').css('display', "none");
+ $('.go-btn').on('click',function(e){
+   e.preventDefault();
       $('.succes-order').css('display', "block");
+      $('#myform').css('display', "none");
+      
   
      $('.order-close-btn').click(function(){
         $('.succes-order').css('display', "none");
