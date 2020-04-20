@@ -282,16 +282,20 @@ $(".img-responsive").click(function(){	// Событие клика на мал�
   var img = $(this);	// Получаем изображение, на которое кликнули
 var src = img.attr('src'); // Достаем из этого изображения путь до картинки
 $(".gallery-wrapper, .gallery-wrapper-2").append("<div class='popup'>"+ //Добавляем в тело документа разметку всплывающего окна
-         "<div class='popup_bg'></div>"+// Блок, который будет служить фоном затемненным
+         
+        "<div class='about-main-text-popup'>Почуствуй Атмосферу </div>"+
+        "<div class='popup_bg'></div>"+// Блок, который будет служить фоном затемненным
+      
          "<div class='cl-btn-3'><span class='top'></span> <span class='bot'></span></div>" +
          "<img src='"+src+"' class='popup_img' />"+// Само увеличенное фото
-         
-         "</div>" ); 
+          "</div>" ); 
+          $(".icon, .about-main-text").css('opacity', '0');
 $(".popup").fadeIn(800); // Медленно выводим изображение
 $(".cl-btn-3").click(function(){	// Событие клика на затемненный фон	   
   $(".popup").fadeOut(800);	// Медленно убираем всплывающее окно
   setTimeout(function() {	// Выставляем таймер
-    $(".popup").remove(); // Удаляем разметку всплывающего окна
+    $(".popup").remove();
+    $(".icon, .about-main-text").css('opacity', '1'); // Удаляем разметку всплывающего окна
   }, 800);
 });
 });
@@ -300,18 +304,25 @@ $(".cl-btn-3").click(function(){	// Событие клика на затемн�
 
 $(".arrow-right").click(function(e){	
   e.preventDefault();
+  console.log('sircle');
   if( $(".menu").hasClass('menu-1')){  
     
-    $(".menu").removeClass('menu-1').addClass('menu-2 wow zoomInLeft').css({'display':'flex', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
+    $(".menu").removeClass('menu-1').addClass('menu-2 wow zoomInLeft').css({'display':'block', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
     $(".menu-1").css('display','none');
     $(".cir-2").css('color','rgb(132, 0, 255)');
     $(".cir-3, .cir-1").css('color','whitesmoke');
   }
   else if($(".menu").hasClass('menu-2')){
-    $(".menu").removeClass('menu-2').addClass('menu-3 wow zoomInLeft').css({'display':'flex', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
+    $(".menu").removeClass('menu-2').addClass('menu-3 wow zoomInLeft').css({'display':'block', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
     $(".menu-2").css('display','none');
     $(".cir-2, .cir-1").css('color','whitesmoke');
     $(".cir-3").css('color','rgb(132, 0, 255)');
+  }
+  else if($(".menu").hasClass('menu-3')){
+    $(".menu").removeClass('menu-3').addClass('menu-1 wow zoomInLeft').css({'display':'block', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
+    $(".menu-3").css('display','none');
+    $(".cir-2, .cir-3").css('color','whitesmoke');
+    $(".cir-1").css('color','rgb(132, 0, 255)');
   }
 });
 
@@ -319,23 +330,57 @@ $(".arrow-right").click(function(e){
 $(".arrow-left").click(function(e){	
   e.preventDefault();
   if( $(".menu").hasClass('menu-3')){ 
-    $(".menu").removeClass('menu-3').addClass('menu-2 wow zoomInLeft').css({'display':'flex', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
+    $(".menu").removeClass('menu-3').addClass('menu-2 wow zoomInLeft').css({'display':'block', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
     $(".menu-3").css('display','none');
     $(".cir-2").css('color','rgb(132, 0, 255)');
     $(".cir-3, .cir-1").css('color','whitesmoke');
   }
 
   else if($(".menu").hasClass('menu-2')){
-    $(".menu").removeClass('menu-2').addClass('menu-1 wow zoomInLeft').css({'display':'flex', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
+    $(".menu").removeClass('menu-2').addClass('menu-1 wow zoomInLeft').css({'display':'block', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
     $(".menu-2").css('display','none');
     $(".cir-1").css('color','rgb(132, 0, 255)');
     $(".cir-3, .cir-2").css('color','whitesmoke');
+  }
+  else if($(".menu").hasClass('menu-1')){
+    $(".menu").removeClass('menu-1').addClass('menu-3 wow zoomInLeft').css({'display':'block', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
+    $(".menu-1").css('display','none');
+    $(".cir-3").css('color','rgb(132, 0, 255)');
+    $(".cir-1, .cir-2").css('color','whitesmoke');
   }
 
 });
 
 
+$(".cir-1").click(function(e){	
+  e.preventDefault();
 
+  $(".menu").removeClass('menu-2, menu-3').addClass('menu-1 wow zoomInLeft').css({'display':'block', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
+  $(".cir-2, .cir-3").css('color','whitesmoke');
+  $(".cir-1").css('color','rgb(132, 0, 255)');  
+  $(".menu-1").css({'display':'block', 'opacity':'1'}); 
+  $(".menu-2, .menu-3").css({'display':'none', 'opacity':'0'});
+ 
+});
+
+$(".cir-2").click(function(e){	
+  e.preventDefault(); 
+  $(".menu").removeClass('menu-3, menu-1').addClass('menu-2 wow zoomInLeft').css({'display':'block', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
+  $(".cir-1, .cir-3").css('color','whitesmoke');
+  $(".cir-2").css('color','rgb(132, 0, 255)'); 
+   $(".menu-2").css({'display':'block', 'opacity':'1'}); 
+   $(".menu-1, .menu-3").css('display','none').css({'display':'none', 'opacity':'0'});
+
+});
+$(".cir-3").click(function(e){	
+  e.preventDefault();
+
+  $(".menu").removeClass('menu-1, menu-2').addClass('menu-3 wow zoomInLeft').css({'display':'block', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
+  $(".cir-1, .cir-2").css('color','whitesmoke');
+  $(".cir-3").css('color','rgb(132, 0, 255)');  
+  $(".menu-3").css({'display':'block', 'opacity':'1'}); 
+  $(".menu-1, .menu-2").css('display','none').css({'display':'none', 'opacity':'0'});
+});
 
 
 //slider 
@@ -624,5 +669,15 @@ $('.for-adress').on('click',function(){
 
        });    
   
+       
+        $('.indx-0').click(function (){
+          if( $('.number-shisha').css('display','none')){
+            $('.number-shisha').fadeIn(500).css('display','block');
+          }
+          
+        });
+        
+          
+       
 })
 
