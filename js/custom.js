@@ -1,17 +1,27 @@
-$(document).ready(function(){   
- const HOUR_STRING = ['ЧАС', 'ЧАСА', 'ЧАСОВ'];
- 
- 
+
+
+//переход по якорям
+jQuery(function($){
+  $('.main-nav-links, .main-nav-bar').on('click.smoothscroll', function( e ){
+  var hash= this.hash,
+   _hash  = hash.replace(/#/,''), theHref = $(this).attr('href').replace(/#.*/, '');
+  if( theHref && location.href.replace(/#.*/,'') != theHref ) return;
+  var $target = _hash === '' ? $('body') : $( hash + ', a[name="'+ _hash +'"]').first();
+  if( ! $target.length ) return;
+  e.preventDefault();
+  $('html, body').stop().animate({ scrollTop: $target.offset().top - 0 }, 800, 'swing', function(){
+  window.location.hash = hash;
   
+  });
+  });
+  });
+
+$(document).ready(function(){   
 
  var canvasWidth = 1500;
  var canvasHeight = 1;
-
 var pCount = 0;
-
-
 var pCollection = new Array();
-
 var puffs = 1;
 var particlesPerPuff = 2000;
 var img = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/85280/smoke2.png';
@@ -29,10 +39,7 @@ for (var i1 = 0 ; i1 < puffs; i1++)
   }
 }
 
-
 draw(new Date().getTime())
-
-
 
 function addNewParticle(delay)
 {
@@ -44,26 +51,18 @@ function addNewParticle(delay)
   p.start = new Date().getTime() + delay;
   p.life = 12300;
   p.speedUp = 5;
-
-
-  p.speedRight = randBetween(0,5);
-
+  p.speedRight = randBetween(0,5)
   p.rot = randBetween(-1,1);
   p.red = Math.floor(randBetween(0,255));
   p.blue = Math.floor(randBetween(0,255));
   p.green = Math.floor(randBetween(0,255));
-
-
   p.startOpacity = 0.1
   p.newTop = p.top;
   p.newLeft = p.left;
   p.size = 10;
   p.growth =30;
-
   pCollection[pCount] = p;
   pCount++;
-
-
 }
 
 function draw(startT, totalT)
@@ -109,17 +108,8 @@ function draw(startT, totalT)
     }
   }
 
-
-
-  //Repeat if there's still a living particle
-  if (stillAlive)
-  {
-    requestAnimationFrame(function(){draw(startT,totalT);}); 
-  }
-  // else
-  // {
-  //   clog(timeDelta + ": stopped");
-  // }
+  requestAnimationFrame(function(){draw(startT,totalT);}); 
+ 
 }
 
 function randBetween(n1,n2)
@@ -140,8 +130,8 @@ function randOffset(n, variance)
 // canvas
   
 
-  
-  $('.kolbs-img').click(function(e){
+  var changeitem1 = ()=>{
+$('.kolbs-img').click(function(e){
     e.preventDefault();
   });
   
@@ -149,29 +139,32 @@ function randOffset(n, variance)
       e.preventDefault();
     });
   
-    $('.colbs').on('click', function () {
+    $('.calc-kolbs').on('change', function (e) {
+      
+     
       $('.colbs').fadeIn(250);
-      $('.colbs-header').removeClass("border-colbs-header");
-      $(this).fadeOut(450, summ).parent().find(".colbs-header").addClass("border-colbs-header");
+      $('.colbs-text').removeClass("border-colbs-header");
+      $(this).fadeOut(450, summ).parent().find(".colbs-text").addClass("border-colbs-header");
       $('.new-kolba').removeClass().addClass('new-kolba').hide().addClass($(this).attr('data-image')).fadeIn(600);
     });
 
-    $('.calc-img-chasha').on('click', function () {
+    $('.calc-img-chasha').on('change', function (e) {
+     
       $('.calc-img-chasha').fadeIn(250);
       $('.colbs-header').removeClass("border-chasha-header");
       $(this).fadeOut(450, summ).parent().find(".colbs-header").addClass("border-chasha-header");
       $('.new-chasha').removeClass().addClass('new-chasha').hide().addClass($(this).attr('data-image')).fadeIn(600);
     });
 
-    $('.css-radio').on('click', function () {
+    $('.css-radio').on('change', function () {
       $('.css-radio').parent().fadeIn(150);
-      $('.css-radio').parent().removeClass('option-radio-active');
-      $(this).parent().addClass('option-radio-active');
+      $('.css-radio').parent().find(".tabac-wrap").css("borer-bottom" , "2px solid rgb(139, 2, 250)");
      
     });
 
-  
-    //
+  }
+  changeitem1();
+
     //calculator
       
       $('.form-input').change(function () {
@@ -179,51 +172,64 @@ function randOffset(n, variance)
         summ();
       });
 
-  
       function summ() {
         let total=0;
         
-
         let chashaPrice = 0;
+        let chashaName;
+        let kolbsName;
+        let tabak;
           $('.calc-img-chasha').each(function() {
-              if ($(this).css("display") == "none")
-              chashaPrice = $(this).attr('data-price');
+              if ( $(this).css("display") == "none"){
+                 chashaPrice = $(this).attr('data-price');
+                 chashaName = $(this).attr('data-name');
+              }
+             else if( $('.calc-img-chasha:checked')){
+                chashaPrice = $('.calc-img-chasha:checked').attr('data-price');
+                chashaName = $('.calc-img-chasha:checked').attr('data-name');
+             }
+             
+              else chashaPrice===0;
           });
-          
           
           let colbPrice = 0;
           $('.colbs').each(function() {
-            if ($(this).css("display") == "none")
-            colbPrice = $(this).attr('data-price');
+            if ($(this).css("display") == "none"){
+               colbPrice = $(this).attr('data-price');
+               kolbsName = $(this).attr('data-name');
+            }
+           else if( $('.calc-kolbs:checked')){
+              colbPrice = $('.calc-kolbs:checked').attr('data-price');
+              kolbsName = $('.calc-kolbs:checked').attr('data-name');
+           }
+           else  colbPrice===0;
+             
           });
           
+          let tabacPrice = 0;
+          $('.calc-handler').each(function() {
+            if ($('.calc-handler:checked')){
+             tabacPrice = +$('.calc-handler:checked').attr('data-price');
+             tabak = $('.calc-handler:checked').attr('data-name');
+            }
+            else tabacPrice===0;
+          });
+          
+            total =+ +chashaPrice + +colbPrice + +tabacPrice ;
 
-          let tabacPrice = $(".calc-handler:checked").attr('data-price');
-      
-           
-            let rangePrice = $('.range').val() * 4;
-            
-            if($('.range').val() < 2) {
-               $(".range-val-text").text($('.range').val()+ ' '+ HOUR_STRING[0]);
-            } else if ($('.range').val() >=2 && $('.range').val() < 5) {
-              $(".range-val-text").text($('.range').val()+ ' '+ HOUR_STRING[1]);
-            } else $(".range-val-text").text($('.range').val()+ " " + HOUR_STRING[2]);
-
-            
+             $(".total_price_sum").text('Сумма заказа ' + total + " " + "UAH");
+             $(".form-price").text( 'Ваш заказ: ' + tabak + ' ' + kolbsName + ' и с'+ ' '+ chashaName + ' чашей.' + ' Cумма заказа ' + total + ' ' + 'UAH' );
              
-            total = +rangePrice + +tabacPrice + +chashaPrice + +colbPrice;
-
-             $(".total_price_sum").text(total + " " + "UAH");
-             $(".form-price").text("Cумма заказа" + ' '+total + " " + "UAH");
          
-
+             
       };
 
 // анимаци в области видимости
 var windowHeight = $(window).height();
- 
+
+
 	$(document).on('scroll', function() {
-		$('.about-img').each(function() {
+		$('.about-img, .bgicon, .icon-text ').each(function() {
 			var self = $(this),
 			height = self.offset().top + self.height();
 			if ($(document).scrollTop() + windowHeight >= height-100 ){
@@ -233,24 +239,34 @@ var windowHeight = $(window).height();
        }
 
         else{
-          $('.about-img').removeClass(' wow bounceInLeft');
+          $('.about-img, .bgicon, .icon-text').removeClass(' wow bounceInLeft');
           
-          
+          $('.map').removeClass(' wow zoomInLeft ');
         }
+
       });
+      $('.map').each(function() {
+        var self = $(this),
+        height = self.offset().top + self.height();
+        if ($(document).scrollTop() + windowHeight >= height -300){
+          self.addClass('wow zoomInLeft'); 
+       }else{
+        
+       }});
+
 
       $('.gallery-item').each(function() {
         var self = $(this),
         height = self.offset().top + self.height();
-        if ($(document).scrollTop() + windowHeight >= height-400){
-          $('.gallery-wrapper').css('display', 'flex');
+        if ($(document).scrollTop() + windowHeight >= height-300){
+          $('.gallery-wrapper').css('display', 'flex').removeClass('hidden');
           self.addClass(' wow zoomInLeft ');
           $('.gallery-item ').css({'opacity': '1'});
          
          }
 
-          if(($(document).scrollTop() + windowHeight >= height-400)){
-            $('.gallery-wrapper-2').css('display', 'none') ;
+          if(($(document).scrollTop() + windowHeight >= height-300)){
+            $('.gallery-wrapper-2').addClass('hidden') ;
             $('.wow').removeClass('bounceInLeft');
             $('.gallery-item ').removeClass(' wow zoomInLeft ').addClass(' wow zoomInLeft ');
           
@@ -259,24 +275,144 @@ var windowHeight = $(window).height();
           else{
             $('.gallery-item ').removeClass(' wow zoomInLeft ').css('opacity', '0.3');
             self.css('opacity', '0');
-            
+            $('.map').removeClass(' wow zoomInLeft ');
           }
 
          
         });
       
 });
+
+//click po strelkam
+
       $('.arrow-right-photo').click(function(e){
         e.preventDefault();
-        $('.gallery-wrapper ').css('display', 'none');
-        $('.gallery-wrapper-2 ').css({'opacity': '1', 'display':'flex'});
+        if($('.gallery-wrapper-2 ').hasClass('hidden')){
+          $('.gallery-wrapper').addClass('hidden');
+          $('.gallery-wrapper-2 ').removeClass('hidden').css({'opacity': '1', 'display':'flex'});
+        }
+        
+        else if ($('.gallery-wrapper').hasClass('hidden')){
+          $('.gallery-wrapper-2').addClass('hidden');
+          $('.gallery-wrapper').removeClass('hidden').css({'opacity': '1', 'display':'flex'});
+        }
+        
+        
       });
+
       $('.arrow-left-photo').click(function(e){
         e.preventDefault();
-        $('.gallery-wrapper-2 ').css('display', 'none');
-        $('.gallery-wrapper ').css('display', 'flex');
+        if($('.gallery-wrapper-2 ').hasClass('hidden')){
+          $('.gallery-wrapper').addClass('hidden');
+          $('.gallery-wrapper-2 ').removeClass('hidden').css({'opacity': '1', 'display':'flex'});
+        }
+        
+        else if ($('.gallery-wrapper').hasClass('hidden')){
+          $('.gallery-wrapper-2').addClass('hidden');
+          $('.gallery-wrapper').removeClass('hidden').css({'opacity': '1', 'display':'flex'});
+        }
+        
+        
       });
-//
+//clik po inx kalianov
+
+      $('.indx-0').click(function (){
+          
+        if( $('.number-shisha').hasClass('hidden')){
+          $('.number-shisha').removeClass('hidden').fadeIn(400).css('display','block');
+        }
+
+        else if( $('.number-shisha').css('display','block')){
+          $('.number-shisha').fadeOut(500).addClass('hidden');
+        }
+        
+      });
+
+      $('.indx-1').click(function (){
+        $('.chosen-indx').text('1').removeClass('indx-2').removeClass('indx-3').removeClass('indx-1').addClass('indx-1');
+        $('.number-shisha').removeClass("hidden").fadeIn(500);
+        $('.third-shahta, .chasha-3, .kolb-3, .second-shahta, .chasha-2, .kolb-2').addClass('hidden');
+        $('.first-shahta, .chasha-1, .kolb-1').fadeIn(200);
+        $('.first-shahta').css('margin-left', '0px');
+        $('.number-shisha').fadeOut(500).addClass('hidden');
+      });
+
+      $('.indx-2').click(function (){
+        $('.chosen-indx').text('2').removeClass('indx-1').removeClass('indx-3').addClass('indx-2');
+        $('.number-shisha').removeClass("hidden").fadeIn(500);
+        $('.second-shahta, .chasha-2, .kolb-2').removeClass('hidden').fadeIn(200);
+        $('.third-shahta').addClass('hidden');
+        $('.first-shahta').css({'margin-left': '-100px'});
+        $('.second-shahta').css({'margin-left': '90px'});
+        $('.number-shisha').fadeOut(500).addClass('hidden');
+      })
+      $('.indx-3').click(function (){
+        $('.chosen-indx').text('3').removeClass('indx-1').removeClass('indx-2').addClass('indx-3');
+        $('.number-shisha').removeClass("hidden").fadeIn(500);
+        $('.third-shahta, .chasha-3, .kolb-3, .second-shahta').removeClass('hidden').fadeIn(200);
+        $('.second-shahta').css('margin-left', '-15px');
+        $('.third-shahta').css('margin-left','-10px');
+        $('.first-shahta').css('margin-left', '-120px');
+        $('.number-shisha').fadeOut(500).addClass('hidden');
+      })
+
+//click po strelkam na kaliane
+      $('.arrow-right-shisha').click(function(e){
+        console.log('right');
+        e.preventDefault();
+        if($('.chosen-indx').hasClass('indxfirst')){
+             $('.third-shahta, .chasha-3, .kolb-3').fadeOut(300).addClass('hidden'); 
+             $('.chosen-indx').text('2').removeClass('indx-1').removeClass('indxfirst').removeClass('indx-3').addClass('indx-2');  
+             $('.second-shahta, .chasha-2, .kolb-2, .first-shahta, .chasha-1, .kolb-1').removeClass('hidden').fadeIn(300);
+             $('.first-shahta').css({'margin-left': '-120px'});
+             $('.second-shahta').css({'margin-left': '90px'});
+              
+        }
+        else if($('.chosen-indx').hasClass('indx-2')){
+          $('.chosen-indx').text('3').removeClass('indx-2').removeClass('indx-1').addClass('indx-3').removeClass('indxfirst');
+          $('.third-shahta, .chasha-3, .kolb-3, .second-shahta, .chasha-2, .kolb-2, .first-shahta, .chasha-1, .kolb-1').removeClass('hidden').fadeIn(300);
+          $('.second-shahta').css('margin-left', '-15px');
+          $('.third-shahta').css('margin-left','-10px');
+          $('.first-shahta').css('margin-left', '-120px');
+        }
+        else if($('.chosen-indx').hasClass('indx-3')){
+          $('.chosen-indx').text('1').removeClass('indx-2').removeClass('indx-3').addClass('indx-1').addClass('indxfirst');
+          $('.third-shahta, .chasha-3, .kolb-3, .second-shahta, .chasha-2, .kolb-2').fadeOut(00).addClass('hidden');
+          $('.first-shahta, .chasha-1, .kolb-1').removeClass('hidden').fadeIn(200);
+          $('.first-shahta').css('margin-left', '0px');
+          
+        }});
+
+          $('.arrow-left-shisha').click(function(e){
+            console.log('left');
+            e.preventDefault();
+            if($('.chosen-indx').hasClass('indxfirst')){
+              $('.chosen-indx').text('3').removeClass('indx-2').removeClass('indx-1').removeClass('indxfirst').addClass('indx-3');
+              $('.third-shahta, .chasha-3, .kolb-3, .second-shahta, .chasha-2, .kolb-2, .first-shahta, .chasha-1, .kolb-1').removeClass('hidden').fadeIn(300);
+              $('.second-shahta').css('margin-left', '-15px');
+              $('.third-shahta').css('margin-left','-10px');
+              $('.first-shahta').css('margin-left', '-120px');
+              }
+            else if($('.chosen-indx').hasClass('indx-3')){  
+              $('.third-shahta, .chasha-3, .kolb-3').fadeOut(300).addClass('hidden');  
+              $('.second-shahta').css({'margin-left': '90px'});
+              $('.chosen-indx').text('2').removeClass('indx-3').removeClass('indx-1').removeClass('indxfirst').addClass('indx-2');
+              $('.first-shahta, .chasha-1, .kolb-1, .second-shahta, .chasha-2, .kolb-2,').removeClass('hidden').fadeIn(300);
+              $('.first-shahta').css('margin-left', '-100px');
+         }
+         else if($('.chosen-indx').hasClass('indx-2')){
+           $('.chosen-indx').text('1').removeClass('indx-2').removeClass('indx-3').removeClass('indxfirst').addClass('indx-1');
+           $('.third-shahta, .chasha-3, .kolb-3, .second-shahta, .chasha-2, .kolb-2').fadeOut(300).addClass('hidden');
+           $('.first-shahta, .chasha-1, .kolb-1').removeClass('hidden').fadeIn(300);
+           $('.first-shahta').css('margin-left', '0px');
+           $('.chosen-indx').addClass('indxfirst');
+         }
+          });
+       
+       });
+
+
+//photohover
 
 $(".img-responsive").click(function(){	// Событие клика на маленькое изображение
   var img = $(this);	// Получаем изображение, на которое кликнули
@@ -304,7 +440,6 @@ $(".cl-btn-3").click(function(){	// Событие клика на затемн�
 
 $(".arrow-right").click(function(e){	
   e.preventDefault();
-  console.log('sircle');
   if( $(".menu").hasClass('menu-1')){  
     
     $(".menu").removeClass('menu-1').addClass('menu-2 wow zoomInLeft').css({'display':'block', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
@@ -326,7 +461,7 @@ $(".arrow-right").click(function(e){
   }
 });
 
-
+//menuslider
 $(".arrow-left").click(function(e){	
   e.preventDefault();
   if( $(".menu").hasClass('menu-3')){ 
@@ -351,35 +486,33 @@ $(".arrow-left").click(function(e){
 
 });
 
-
 $(".cir-1").click(function(e){	
   e.preventDefault();
 
-  $(".menu").removeClass('menu-2, menu-3').addClass('menu-1 wow zoomInLeft').css({'display':'block', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
+  $(".menu").removeClass('menu-2').removeClass('menu-3').addClass('menu-1 wow zoomInLeft').css({'display':'block', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
   $(".cir-2, .cir-3").css('color','whitesmoke');
   $(".cir-1").css('color','rgb(132, 0, 255)');  
   $(".menu-1").css({'display':'block', 'opacity':'1'}); 
-  $(".menu-2, .menu-3").css({'display':'none', 'opacity':'0'});
+  $(".menu-2, .menu-3").css({'display':'none'});
  
 });
 
 $(".cir-2").click(function(e){	
   e.preventDefault(); 
-  $(".menu").removeClass('menu-3, menu-1').addClass('menu-2 wow zoomInLeft').css({'display':'block', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
+  $(".menu").removeClass('menu-3').removeClass('menu-1').addClass('menu-2 wow zoomInLeft').css({'display':'block', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
   $(".cir-1, .cir-3").css('color','whitesmoke');
   $(".cir-2").css('color','rgb(132, 0, 255)'); 
    $(".menu-2").css({'display':'block', 'opacity':'1'}); 
-   $(".menu-1, .menu-3").css('display','none').css({'display':'none', 'opacity':'0'});
+   $(".menu-1, .menu-3").css('display','none').css({'display':'none'});
 
 });
 $(".cir-3").click(function(e){	
   e.preventDefault();
-
-  $(".menu").removeClass('menu-1, menu-2').addClass('menu-3 wow zoomInLeft').css({'display':'block', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
+  $(".menu").removeClass('menu-1').removeClass('menu-2').addClass('menu-3 wow zoomInLeft').css({'display':'block', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
   $(".cir-1, .cir-2").css('color','whitesmoke');
   $(".cir-3").css('color','rgb(132, 0, 255)');  
   $(".menu-3").css({'display':'block', 'opacity':'1'}); 
-  $(".menu-1, .menu-2").css('display','none').css({'display':'none', 'opacity':'0'});
+  $(".menu-1, .menu-2").css('display','none').css({'display':'none'});
 });
 
 
@@ -623,10 +756,10 @@ $('#rc-phone-icon').click(function(){
 //
 //myOrderForm
 
-$('.order-button, .order-table').click(function(){
+$('.order-table').click(function(){
   $('#fullpage').css('display', "none");
-  $('body').css({'background': 'rgba(11, 10, 15, 0.966)','font-family': 'Roboto'});
-  $('#myform').css('display', "block");
+  $('body').css({'background': '#040021','font-family': 'Roboto'});
+  $('.myform').css('display', "flex");
 
 });
 
@@ -640,13 +773,22 @@ $('.css-radio-2').on('click', function () {
 $('.back-btn').click(function(){
   $('#fullpage').css('display', "table");
   $('body').css({'background': 'none','font-family': "'Roboto',sans-serif"});
-  $('#myform').css('display', "none");
+  $('.myform').css('display', "none");
   location.reload();
+});
+
+$('.back-btn-shisha').click(function(){
+  var url = "http://127.0.0.1:5503/index.html#shisha-page";
+
+  $('#fullpage').css('display', "table");
+  $('body').css({'background': 'none','font-family': "'Roboto',sans-serif"});
+  $('.myform-2').css('display', "none");
+    $(location).attr('href',url);
 });
 
 
 $('.for-adress').on('click',function(){
-  $('.adress').css('display', "table");
+  $('.adress').css('display', " table");
  });
  $('.for-place').on('click',function(){
   $('.adress').css('display', "none");
@@ -655,29 +797,21 @@ $('.for-adress').on('click',function(){
  $('.go-btn').on('click',function(e){
    e.preventDefault();
       $('.succes-order').css('display', "block");
-      $('#myform').css('display', "none");
-      
+      $('.myform').css('display', "none");
+      $('.myform-2').css('display', "none");})
   
      $('.order-close-btn').click(function(){
         $('.succes-order').css('display', "none");
-        $('#myform').css('display', "none");
+        $('.myform').css('display', "none");
         $('#fullpage').css('display', "table");
         $('body').css({'background': 'none','font-family': 'Roboto'});
         location.reload();
 
         });
 
-       });    
-  
-       
-        $('.indx-0').click(function (){
-          if( $('.number-shisha').css('display','none')){
-            $('.number-shisha').fadeIn(500).css('display','block');
-          }
-          
-        });
-        
-          
-       
-})
-
+       $('.shisha-order').click(function(){
+        $('#fullpage').css('display', "none");
+        $('body').css({'background': '#040021','font-family': 'Roboto'});
+        $('.myform-2').css('display', "flex");
+      
+      });
