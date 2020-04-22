@@ -49,7 +49,7 @@ function addNewParticle(delay)
   p.left = randBetween(-500,900);
 
   p.start = new Date().getTime() + delay;
-  p.life = 12300;
+  p.life = 12000;
   p.speedUp = 5;
   p.speedRight = randBetween(0,5)
   p.rot = randBetween(-1,1);
@@ -89,15 +89,15 @@ function draw(startT, totalT)
 
     if (td > 0)
     {
-      if (td <= p.life )
+      
       { stillAlive = true; }
 
       //attributes that change over time
-      var newTop = p.top - (p.speedUp * (td/1000));
-      var newLeft = p.left + (p.speedRight * (td/1000));
+      var newTop = p.top - (p.speedUp * (td/1500));
+      var newLeft = p.left + (p.speedRight * (td/2000));
       var newOpacity = Math.max(p.startOpacity * (1-frac),0);
 
-      var newSize = p.size + (p.growth * (td/1000));
+      var newSize = p.size + (p.growth * (td/1200));
       p.newTop = newTop;
       p.newLeft = newLeft;
 
@@ -127,10 +127,8 @@ function randOffset(n, variance)
   return n * r;
 }
 
-// canvas
+// canvasfinish
   
-
-  var changeitem1 = ()=>{
 $('.kolbs-img').click(function(e){
     e.preventDefault();
   });
@@ -139,8 +137,8 @@ $('.kolbs-img').click(function(e){
       e.preventDefault();
     });
   
-    $('.calc-kolbs').on('change', function (e) {
-      
+    $('.calc-kolbs, .colbs').on('change', function (e) {
+      e.preventDefault();
      
       $('.colbs').fadeIn(250);
       $('.colbs-text').removeClass("border-colbs-header");
@@ -149,139 +147,71 @@ $('.kolbs-img').click(function(e){
     });
 
     $('.calc-img-chasha').on('change', function (e) {
-     
+      e.preventDefault();
       $('.calc-img-chasha').fadeIn(250);
       $('.colbs-header').removeClass("border-chasha-header");
       $(this).fadeOut(450, summ).parent().find(".colbs-header").addClass("border-chasha-header");
       $('.new-chasha').removeClass().addClass('new-chasha').hide().addClass($(this).attr('data-image')).fadeIn(600);
     });
 
-    $('.css-radio').on('change', function () {
+    $('.css-radio').on('click', function () {
       $('.css-radio').parent().fadeIn(150);
-      $('.css-radio').parent().find(".tabac-wrap").css("borer-bottom" , "2px solid rgb(139, 2, 250)");
+      $('.css-radio').parent().removeClass('option-radio-active');
+      $(this).parent().addClass('option-radio-active');
      
     });
 
-  }
-  changeitem1();
+  
+  
 
     //calculator
-      
-      $('.form-input').change(function () {
-
-        summ();
-      });
-
-      function summ() {
-        let total=0;
-        
-        let chashaPrice = 0;
+    let colbPrice = 0;
+    let total=0;
+    let chashaPrice = 0;
+    let tabacPrice = 0;
         let chashaName;
         let kolbsName;
         let tabak;
-          $('.calc-img-chasha').each(function() {
-              if ( $(this).css("display") == "none"){
-                 chashaPrice = $(this).attr('data-price');
-                 chashaName = $(this).attr('data-name');
-              }
-             else if( $('.calc-img-chasha:checked')){
-                chashaPrice = $('.calc-img-chasha:checked').attr('data-price');
-                chashaName = $('.calc-img-chasha:checked').attr('data-name');
-             }
-             
-              else chashaPrice===0;
-          });
-          
-          let colbPrice = 0;
-          $('.colbs').each(function() {
-            if ($(this).css("display") == "none"){
-               colbPrice = $(this).attr('data-price');
-               kolbsName = $(this).attr('data-name');
-            }
-           else if( $('.calc-kolbs:checked')){
-              colbPrice = $('.calc-kolbs:checked').attr('data-price');
-              kolbsName = $('.calc-kolbs:checked').attr('data-name');
-           }
-           else  colbPrice===0;
-             
-          });
-          
-          let tabacPrice = 0;
-          $('.calc-handler').each(function() {
-            if ($('.calc-handler:checked')){
-             tabacPrice = +$('.calc-handler:checked').attr('data-price');
-             tabak = $('.calc-handler:checked').attr('data-name');
-            }
-            else tabacPrice===0;
-          });
-          
-            total =+ +chashaPrice + +colbPrice + +tabacPrice ;
 
-             $(".total_price_sum").text('Сумма заказа ' + total + " " + "UAH");
+      $('.form-input').on('change',function () {
+            summ();
+      });
+
+      function summ() {
+        
+         $('.calc-img-chasha').on('click',function() {
+            
+              chashaPrice = +$(this).attr('data-price');
+                 chashaName = $(this).attr('data-name');
+                 
+              });
+
+          
+             $('.calc-kolbs').on('click',function() {
+              
+               colbPrice = +$(this).attr('data-price');
+               kolbsName = $(this).attr('data-name');
+               
+               
+            });
+           
+              $('.calc-handler').on('click',function() {
+               
+                 tabacPrice = +$(this).attr('data-price');
+                  tabak = $(this).attr('data-name');
+                
+                  
+                });
+         
+            total =  +chashaPrice + +colbPrice + +tabacPrice ;
+             if(isNaN(total) ) total = 0;
+
+            $(".total_price_sum").text('Сумма заказа ' + total + " " + "UAH");
              $(".form-price").text( 'Ваш заказ: ' + tabak + ' ' + kolbsName + ' и с'+ ' '+ chashaName + ' чашей.' + ' Cумма заказа ' + total + ' ' + 'UAH' );
              
          
              
       };
-
-// анимаци в области видимости
-var windowHeight = $(window).height();
-
-
-	$(document).on('scroll', function() {
-		$('.about-img, .bgicon, .icon-text ').each(function() {
-			var self = $(this),
-			height = self.offset().top + self.height();
-			if ($(document).scrollTop() + windowHeight >= height-100 ){
-        $('.about-img').css('display', 'block');
-        self.addClass('bounceInLeft'); 
-         $('.wow').css('opacity', '1');
-       }
-
-        else{
-          $('.about-img, .bgicon, .icon-text').removeClass(' wow bounceInLeft');
-          
-          $('.map').removeClass(' wow zoomInLeft ');
-        }
-
-      });
-      $('.map').each(function() {
-        var self = $(this),
-        height = self.offset().top + self.height();
-        if ($(document).scrollTop() + windowHeight >= height -300){
-          self.addClass('wow zoomInLeft'); 
-       }else{
-        
-       }});
-
-
-      $('.gallery-item').each(function() {
-        var self = $(this),
-        height = self.offset().top + self.height();
-        if ($(document).scrollTop() + windowHeight >= height-300){
-          $('.gallery-wrapper').css('display', 'flex').removeClass('hidden');
-          self.addClass(' wow zoomInLeft ');
-          $('.gallery-item ').css({'opacity': '1'});
-         
-         }
-
-          if(($(document).scrollTop() + windowHeight >= height-300)){
-            $('.gallery-wrapper-2').addClass('hidden') ;
-            $('.wow').removeClass('bounceInLeft');
-            $('.gallery-item ').removeClass(' wow zoomInLeft ').addClass(' wow zoomInLeft ');
-          
-          }
-  
-          else{
-            $('.gallery-item ').removeClass(' wow zoomInLeft ').css('opacity', '0.3');
-            self.css('opacity', '0');
-            $('.map').removeClass(' wow zoomInLeft ');
-          }
-
-         
-        });
-      
-});
 
 //click po strelkam
 
@@ -815,3 +745,55 @@ $('.for-adress').on('click',function(){
         $('.myform-2').css('display', "flex");
       
       });
+
+// анимаци в области видимости
+var windowHeight = $(window).height();
+
+
+	$(document).on('scroll', function() {
+		$('.about-plus, .bgicon, .icon-text ').each(function() {
+			var self = $(this),
+			height = self.offset().top + self.height();
+			if ($(document).scrollTop() + windowHeight >= height -100 ){
+        
+        self.addClass('bounceInLeft'); 
+         
+       }
+      $('.about-img, .bgicon, .icon-text').removeClass('bounceInLeft');
+         
+});
+      $('.map').each(function() {
+        var self = $(this),
+        height = self.offset().top + self.height();
+        if ($(document).scrollTop() + windowHeight >= height -300){
+          self.addClass('wow zoomInLeft'); 
+       }else{
+        
+       }});
+
+
+      $('.gallery-item').each(function() {
+        var self = $(this),
+        height = self.offset().top + self.height();
+        if ($(document).scrollTop() + windowHeight >= height-300){
+          $('.gallery-wrapper').css('display', 'flex').removeClass('hidden');
+          self.addClass(' wow zoomInLeft ');
+          $('.gallery-item ').css({'opacity': '1'});
+         
+         }
+
+         if(($(document).scrollTop() + windowHeight >= height-300)){
+            $('.gallery-wrapper-2').addClass('hidden') ;
+            $('.wow').removeClass('bounceInLeft');
+            $('.gallery-item ').removeClass(' wow zoomInLeft ').addClass(' wow zoomInLeft ');
+          
+          }
+  
+          else{
+            $('.gallery-item ').removeClass(' wow zoomInLeft ').css('opacity', '0.3');
+            self.css('opacity', '0');
+            $('.map').removeClass(' wow zoomInLeft ');
+          }
+ });
+      
+});
