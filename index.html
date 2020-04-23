@@ -11,15 +11,15 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/fullpage.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-    <title>diploma</title>
+    <title>DiplomaProdan</title>
 </head>
 <body>
   <form class="myform table-order fadeInDown" > 
   
     <header>Резерв Cтола</header>
-  <div class="area">
-    <div class="row">
-      <div class="col2">
+    <div class="area">
+      <div class="row">
+       <div class="col2">
         <input type="text" name="firstname" class="form-name" id="fistname"  required minlength="3" maxlength='20'>
         <label for="fistname">Имя</label>
       </div>
@@ -27,31 +27,28 @@
         <input type="text" name="lastname" id="lastname" maxlength='20'>
         <label for="lastname">Фамилия</label>
       </div>
-    </div>
+      </div>
     <div class="row">
       <input type="tel" name="phone" class="form-phone" id="form-phone" required minlength="6" maxlength='12'>
       <label for="form-phone">Телефон</label>
     </div>
-   
     <div class="row">
       <input type="datetime-local" name="time" id="form-time" maxlength="10">
       <label for="form-time">Время</label>
     </div>
- <div class="row-button">
+    <div class="row-button">
     <input type="submit" value="Заказать" class="btn go-btn">
     <input type="submit" value="Вернутся" class="btn back-btn" href="#main-page" />
+    </div>
   </div>
-  </div>
-
 </form>
     
 <form class="myform-2 shisha-order-button fadeInDown" ></a>
-  
   <header>Заказ Кальяна</header>
-<div class="text-in-order">
-<div class="form-price"> Cумма заказа </div>
-<div class="area">
-  <div class="row">
+  <div class="text-in-order">
+    <div class="form-price"> Cумма заказа </div>
+    <div class="area">
+    <div class="row">
     <div class="col2">
       <input type="text" name="firstname" class="form-name" id="fistname"  required minlength="3" maxlength='20'>
       <label for="fistname">Имя</label>
@@ -60,32 +57,32 @@
       <input type="text" name="lastname" id="lastname" maxlength='20'>
       <label for="lastname">Фамилия</label>
     </div>
-  </div>
-  <div class="row">
+    </div>
+    <div class="row">
     <input type="tel" name="phone" class="form-phone" id="form-phone" required minlength="6" maxlength='12'>
     <label for="form-phone">Телефон</label>
-  </div>
-  <div class="row-place">
+    </div>
+    <div class="row-place">
     <label class="place" for="adress" >В заведении 
       <input class="css-radio-2 for-place" type="radio" name='for'/>
-  </label>
-  <label class="place" for="adress" >На доставку
+    </label>
+    <label class="place" for="adress" >На доставку
     <input class="css-radio-2 for-adress" type="radio"  name='for'/>
-</label>
-  </div>
-  <div class="row adress" >
+    </label>
+    </div>
+    <div class="row adress" >
     <input type="text" name="address" class="form-adress"vid='form-adress' minlength="3" maxlength='30' >
     <label for="form-adress">Адресс доставки</label>
-  </div>
-  <div class="row">
+    </div>
+    <div class="row">
     <input type="datetime-local" name="time" id="form-time" maxlength="10">
     <label for="form-time">Время</label>
+    </div>
+    <div class="row-button">
+      <input type="submit" value="Заказать" class="btn go-btn">
+      <input type="submit" value="Вернутся" class="btn back-btn-shisha"/><a href="shisha-page"></a>
+    </div>
   </div>
-<div class="row-button">
-  <input type="submit" value="Заказать" class="btn go-btn">
-  <input type="submit" value="Вернутся" class="btn back-btn-shisha"/><a href="shisha-page"></a>
-</div>
-</div>
 </div>
 </form>
    
@@ -93,25 +90,23 @@
     Спасибо за заказ.<br> Мы свяжемся с Вами в течении 10 минут.
     <div class='cl-btn-3 order-close-btn'><span class='top'></span> <span class='bot'></span></div>
   </div>
+  
+<div id="fullpage"> 
 
-  
-  
-<div id="fullpage">
-  
     <div class="section " id="section0" >
       <div id="rc-phone">
         <div id="rc-phone-form" class="closed">
             <div id="rc-phone-icon" class="fa fa-phone">        
-            </div>
-            <div id="rc-phone-form-wrap" class="rc-parent-form">
-                <form class="orderForm hotorder-form">
+        </div>
+          <div id="rc-phone-form-wrap" class="rc-parent-form">
+             <form class="orderForm hotorder-form">
                 <div id="rc-recall">Перезвоним за 2 минуты!</div>
-            <input type="tel" id="rc-phone-input" name="phone" placeholder="Телефон" maxlength="20">
-                <button id="rc-phone-button" type="submit" value=""><i class="fa fa-phone"></i></button>                    
-                </form>
-            </div>
+                 <input type="tel" id="rc-phone-input" name="phone" placeholder="Телефон" maxlength="20">
+                 <button id="rc-phone-button" type="submit" value=""><i class="fa fa-phone"></i></button>                    
+              </form>
+           </div>
         </div>
-        </div>
+      </div>
        <header id="header" class="fadeInDown">
             <div id="main-nav">
                 <div id="nav-img">
@@ -123,37 +118,35 @@
                     <div class="main-nav-bar-right">
                       <div class="main-nav-bar">
                         <a href="#about-page" class="main-nav-links">О НАС</a>
-                      </div>
+                    </div>
                       
-                        <div class="main-nav-bar">
-                          <a href="#menu-page" class="main-nav-links">МЕНЮ</a>
-                           </div>
-                           <div class="main-nav-bar">  
+                    <div class="main-nav-bar">
+                      <a href="#menu-page" class="main-nav-links">МЕНЮ</a>
+                    </div>
+                      <div class="main-nav-bar">  
                         <a href="#discount-page" class="main-nav-links">АКЦИИ</a>
-                       </div>
+                      </div>
                         <div class="main-nav-bar">
                             <a href="#shisha-page" class="main-nav-links">КАЛЬЯН</a>
-                          </div>
-                          <div class="main-nav-bar">
+                         </div>
+                        <div class="main-nav-bar">
                             <a href="#reviews-page" class="main-nav-links">ОТЗЫВЫ</a>
-                          </div>
-                  
-                    <div class="main-nav-bar">
+                        </div>
+                       <div class="main-nav-bar">
                          <a href="#contact-page" class="main-nav-links">КОНТАКТЫ</a>
-                    </div>
-
-                    <a class="icon nav-phone " href="tel:+380660580166">+380660580166 </a>
-                    </div>
-                 </div>
+                       </div>
+                        <a class="icon nav-phone " href="tel:+380660580166">+380660580166 </a>
+                  </div>
+             </div>
     </header>
     
     <section class="video-page "><a name="main-page"></a>
         <div class='main-video'> 
           <video  preload="true" autoplay="true" loop="true" muted="muted">
             <source src="./img/new-video.mp4" type="video/mp4" id="vid">
-        </video>
-        <div class="main-video-bg"></div>
-      </div>
+          </video>
+            <div class="main-video-bg"></div>
+         </div>
        
       
         <div class="main-article">
@@ -162,79 +155,71 @@
                     <div class="first-text">Hookah</div>
                      <div class="first-text">Lounge</div>
                      <span class="second-text">Место, куда хочется возвращаться!</span>
-                    <a href='#make-order-table' class='order-table'><span>Забронировать столик</span></a>
-                </div>
+                      <a href='#make-order-table' class='order-table'><span>Забронировать столик</span></a>
+            </div>
           <div class="right-article">
                  <ul class="main-nav-bar-icon">
                   <li class ="header_icon">
                         <a class="icon " href="mailto:bogdanprodan20@gmail.com">
                           <i class="fab fa-facebook-square "></i></a>
-                   </li>
+                  </li>
                     <li class="header_icon" >
                         <a class="icon  " href="">
-                          <i class="fab fa-youtube  "></i></a>
-                      </li>
+                          <i class="fa fa-youtube-square" aria-hidden="true"></i></a>
+                    </li>
                       <li class="header_icon">
                         <a class="icon " href="https://www.instagram.com/bogdan_prodan/">
                           <i class="fab fa-instagram  "></i></a>
-                       </li>
+                      </li>
                   </ul>
-              </div>
         </div>
-      </section>
+      </div>
+    </section>
 </div>
 
 <div class="section" id="section1">
   <section class="about"> <a name="about-page"></a> 
-
-        <div id="about-us">
-                
-                  <span class="about-main-text"> О НАС </span>
+      <div id="about-us">
+          <span class="about-main-text"> О НАС </span>
                 <span class="about-text-1 "> Мы  &nbsp; -<span class="purple-text"> &nbsp; Space Hoohak Lounge  </span> &nbsp; работаем в этой свере уже 3 года.</span>
                 <span class="about-text ">Нам очень приятно, что количество наших клиевнтов растет с каждым днем - это значит, что наша работа и старания не напрасны.</span>
                 <span class="about-text ">Наша главная задача - предоставить клиентам отличный отдых в <span class="purple-text">&nbsp;  уютной Lounge-обстановке</span>.</span>
                 <br>  
                 <span class="about-text "> У нас вы можете рассалибтся попивая <span class="purple-text"> &nbsp; чашечку ароматного китайского чая</span> &nbsp; или же вкуснейший коктейль.  </span>
                    <span class="about-text ">Наши клиенты - это наша основная мотивация что бы быть лучше и расширяться.</span>
-                  <span class="about-text ">Мы без исключения предоставляем <span class="purple-text"> &nbsp;профессиональное обслуживание</span> &nbsp; для всех.</span>
-
-              
-                  <span class="about-main-text-2"> НАШИ ПРЕИМУЩЕСТВА </span>
-
-                  <div class="about-plus">
+                    <span class="about-text ">Мы без исключения предоставляем <span class="purple-text"> &nbsp;профессиональное обслуживание</span> &nbsp; для всех.</span>
+                
+                    <span class="about-main-text-2"> НАШИ ПРЕИМУЩЕСТВА </span>
+                    <div class="about-plus">
                     <div class="about-img plus1 "><span> Огромный выбор видов и вкусов табака</span></div>
                     <div class="about-img plus2  "> <span> Приемлимая цена и акции</span></div>
                     <div class="about-img plus3 "> <span> Много настольных игр и PlayStation</span></div>
-                  </div>
-            </div>
-        </section>
-    </div>
+                    </div>
+        </div>
+    </section>
+  </div>
 
 <div class="section" id="section2"> 
   <section class="menu-page "><a name="menu-page"></a>
-    
-      <div class="menu-text">МЕНЮ </div>
-      
-        <div class=" menu menu-1">
+    <div class="menu-text">МЕНЮ </div>
+      <div class=" menu menu-1">
           <a href="" class="icon arrow-left">
            <i class="fas fa-arrow-circle-left "></i> </a> 
             <a href="" class="icon arrow-right">
               <i class="fas fa-arrow-circle-right "></i> </a> 
-        </div>
+      </div>
   
     <div class='circle-menu'>
         <i class="fas fa-circle circle-icon cir-1"></i>
         <i class="fas fa-circle circle-icon cir-2"></i>
         <i class="fas fa-circle circle-icon cir-3"></i>
     </div>
-  
   </section>
 </div>
 
 
 <div class="section" id="section3"> 
     <section class="all-discount "><a name="discount-page"></a>
-        
         <div id="discount">
           <span class="about-main-text">Акции </span>
           <div class="discount-image">
@@ -244,64 +229,53 @@
           </div>
           <span class="discount-text2">Почуствуй Атмосферу </span>
           <div class="gallery-wrapper" >
-
             <a href="" class="icon arrow-left-photo"><i class="fas fa-arrow-circle-left "></i> </a>
-
-            <div class="gallery-item  " data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; ">
+               <div class="gallery-item  " data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; ">
                   <img class="img-responsive" src="./img/galery_1.jpg" alt="Кальянная">
              </div>
-            <div class="gallery-item  " data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.5s; ">
+                 <div class="gallery-item  " data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.5s; ">
                 <img class="img-responsive" src="./img/galery_2.jpg" alt="Кальянная">
                 </div>
-            <div class="gallery-item  " data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.9s;">
+                  <div class="gallery-item  " data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.9s;">
                    <img class="img-responsive" src="./img/galery_3.jpg" alt="Кальянная">
-               </div>
-            <div class="gallery-item  " data-wow-delay="0.8s" style="visibility: visible; animation-delay: 1.3s; ">
+                  </div>
+                  <div class="gallery-item  " data-wow-delay="0.8s" style="visibility: visible; animation-delay: 1.3s; ">
                       <img class="img-responsive" src="./img/galery_4.jpg" alt="Кальянная ">
-              </div>
-
-              <a href="" class="icon arrow-right-photo"><i class="fas fa-arrow-circle-right "></i> </a> 
+                     </div>
+                  <a href="" class="icon arrow-right-photo"><i class="fas fa-arrow-circle-right "></i> </a> 
           </div>
           
           <div class="gallery-wrapper-2 hidden" >
             <a href="" class="icon arrow-left-photo"> <i class="fas fa-arrow-circle-left "></i> </a>
-           
             <div class="gallery-item  " data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; ">
                 <img class="img-responsive" src="./img/galery_5.jpg" alt="Кальянная ">
-                </div>
-            <div class="gallery-item  " data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.5s; ">
+            </div>
+                <div class="gallery-item  " data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.5s; ">
                 <img class="img-responsive" src="./img/galery_6.jpg" alt="Кальянная">
-               </div>
+                </div>
                <div class="gallery-item  " data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.9s; ">
                 <img class="img-responsive" src="./img/galery_7.jpg" alt="Кальянная">
                </div>
-               <div class="gallery-item  " data-wow-delay="0.8s" style="visibility: visible; animation-delay: 1.3s; ">
-                <img class="img-responsive" src="./img/galery_8.jpg" alt="Кальянная">
+                  <div class="gallery-item  " data-wow-delay="0.8s" style="visibility: visible; animation-delay: 1.3s; ">
+                    <img class="img-responsive" src="./img/galery_8.jpg" alt="Кальянная">
                  </div>
                  <a href="" class="icon arrow-right-photo"><i class="fas fa-arrow-circle-right "></i> </a> 
-                 
-            </div>
-      </div>
-       
-    </section>
+                </div>
+         </div>
+      </section>
 </div>
-
- 
-   
 
 
 <div class="section" id="section4">
-
-  <section class="shishaPage"><a name="shisha-page"></a>
+<section class="shishaPage"><a name="shisha-page"></a>
     <div class='canvas'>
       <canvas class="myCanvas"></canvas>
-  </div>
+    </div>
             <div id="first-fieldset">
-                
-            <div class="form-text"> Соберите Ваш  Кальян </div>
+                <div class="form-text"> Соберите Ваш  Кальян </div>
               <div class="form-text-2">Крепость табака </span></div>
             <div class="label-form">   
-              <div class="form-second-question">Выберите чашу для <span class="chosen-сolba">  </span></div>
+              <div class="form-second-question">Выберите чашу <span class="chosen-сolba">  </span></div>
               <div class="form-third-question">Cколько нужно кальянов 
                 <span class="shisha-index">
                   <span class='index-shisha chosen-indx indx-0 indxfirst'>1</span>
@@ -311,9 +285,7 @@
                   <span class="index-shisha indx-2">2</span>
                   <span class="index-shisha indx-3">3</span>
                   </span>
-                 
-                
-                </div>
+              </div>
              
              <ul class="radio-group-2">
                <li>
@@ -372,15 +344,15 @@
              </ul>
              <div class="chasha-block block-colbs">
                <div class="checkbox-label base_value">
-                     <div class="colbs-header"><span class="colbs-text">Вода</span></div>
+                     <div class="colbs-header"><span class="colbs-text ct1">Вода</span></div>
                      <div class="colbWater calc-kolbs colbs form-input " data-price="0" data-image="colbWater" data-name='на воде'></div>
                  </div>
                  <div class="checkbox-label base_value">
-                     <div class="colbs-header"><span class="colbs-text">Молоко</span></div>
+                     <div class="colbs-header"><span class="colbs-text ct2">Молоко</span></div>
                      <div class="colbMilk colbs calc-kolbs form-input" data-price="20" data-image="colbMilk" data-name='на молоке'></div>
                  </div>
                  <div class="checkbox-label base_value">
-                     <div class="colbs-header"><span class="colbs-text">Алкоголь</span></div>
+                     <div class="colbs-header"><span class="colbs-text ct3">Алкоголь</span></div>
                      <div class="colbAlk colbs calc-kolbs form-input" data-price="40" data-image="colbAlk"  data-name='на алкоголе'></div>
                  </div>
              </div>
@@ -449,15 +421,12 @@
 
                   <a href="" class="icon arrow-left-shisha"><i class="fas fa-arrow-circle-left "></i> </a>
                   <a href="" class="icon arrow-right-shisha"><i class="fas fa-arrow-circle-right "></i> </a>
-                </div>
-          
-      </div>
+              </div>
+         </div>
     </section>         
 </div>
            
-
 <div class="section" id="section6">
-    
     <section class="review-page"><a name="reviews-page"></a>
         <div id="contact">
             <div class="form-text reviews">
@@ -473,10 +442,10 @@
                               <img  src="./img/slider-img-1.jpg" class="slider-img" alt="phonto"> <span class="slider__item_name">KYIVSTONER</span>
                             </div>
                             <span class="slider__item_testimonial">
-                             
-                              <span class="slider__item_text">
+                             <span class="slider__item_text">
                                 Залетел с компанией, бармен всех угостил пивом, кальян сделали быстро,
-                                была крутая музыка. <br>РЕСПЕКТ ЗА ТАКОЕ МЕСТО.
+                                была крутая музыка. Братики все остались довольны, еще и еду можно заказывать.
+                                Будем теперь часто сюда ходить. Кальянщик Саня просто пушки делает.
 
                               </span>
                             </span>
@@ -489,7 +458,8 @@
                             </div>
                             <span class="slider__item_testimonial">
                              <span class="slider__item_text">
-                                Лучший кальян в моей жизни, уютная атмосфера и диваны. Топовая музыка и стильные столики дополняют интерьер.<br> Обязательно прийдем еще.
+                                Лучший кальян в моей жизни, уютная атмосфера и диваны. Топовая музыка и стильные столики дополняют интерьер.
+                                Случайно во время прогулки решил заглянуть - и не пожалел.<br> Обязательно прийдем еще.
                               </span>
                             </span>
                           </div>
@@ -501,7 +471,8 @@
                             </div>
                             <span class="slider__item_testimonial">
                              <span class="slider__item_text">
-                                Пришел сюда по приглашению Лео, не ожидал увидеть такой сервис. Очень круто, ребята молодцы.<br> Китайчские чаи-великолепны.
+                                Пришел сюда на др к  Лео, не ожидал увидеть такой сервис и стиль. Очень круто, ребята молодцы.<br> 
+                                Китайчские чаи-великолепны, а огромный выбор игр не даст вам заскучать.<br>Почему только одно такое место на весь город (
                               </span>
                             </span>
                           </div>
@@ -513,13 +484,42 @@
                               <span class="slider__item_name">Надечка</span>
                             </div>
                             <span class="slider__item_testimonial">
-                            
-                             <span class="slider__item_text"> Была тут с подругами на 8 Марта) <br> Все вообще супер,  мы все остались  очень довольны)
-                                Коктейли - бомба!
+                            <span class="slider__item_text"> Была тут с подругами на 8 Марта - праздник конечно удался на славу) <br> 
+                              Персонал и подарки сделал, и обслужили на высшем уровне. Девочки теперь каждую неделю сюда зовут. 
+                              Все было супер,  мы все остались  очень довольны)
                               </span>
                             </span>
                           </div>
                         </div>
+                        <div class="slider__item slider__item_5">
+                          <div class="slider__item_inner">
+                            <div class="slider__item_img">
+                              <img src="./img/slider-img-4.png" class="slider-img" alt="photo">  
+                              <span class="slider__item_name">Надечка</span>
+                            </div>
+                            <span class="slider__item_testimonial">
+                            <span class="slider__item_text"> Была тут с подругами на 8 Марта - праздник конечно удался на славу) <br> 
+                              Персонал и подарки сделал, и обслужили на высшем уровне. Девочки теперь каждую неделю сюда зовут. 
+                              Все было супер,  мы все остались  очень довольны)
+                                
+                            </span>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="slider__item slider__item_3">
+                          <div class="slider__item_inner">
+                            <div class="slider__item_img">
+                              <img src="./img/slider-img-3.png" class="slider-img" alt="photo">  <span class="slider__item_name">Brad Pitt</span>
+                            </div>
+                            <span class="slider__item_testimonial">
+                             <span class="slider__item_text">
+                                Пришел сюда на др к  Лео, не ожидал увидеть такой сервис и стиль. Очень круто, ребята молодцы.<br> 
+                                Китайчские чаи-великолепны, а огромный выбор игр не даст вам заскучать.<br>Почему только одно такое место на весь город (
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                        <!-- control slides -->
                       </div>
                     </div>
                     <a class="slider__control slider__control_prev fas fa-arrow-circle-left" href="#" role="button"></a>
@@ -534,30 +534,28 @@
 </div>
 
 <div class="section" id="section7">
-    
-  <section class="contact-page"><a name="contact-page"></a>
+   <section class="contact-page"><a name="contact-page"></a>
     <div class="form-text reviews">
       Контакты
    </div>
         <div class="contact-info">
           <img src="./img/logo.png" class="logo-img" alt=''>
                      <div class="bgicon ">
-
                         <a > <i class="fa fa-clock-o icon1 " aria-hidden="true"></i> </a>
-                        
                         <a href="tel:+380660580166"  class="icon1">
                          <a><i class="fa fa-phone icon1" aria-hidden="true"></i></a> 
                          <a><i class="fa fa-map-marker icon1" aria-hidden="true"></i></a> 
-                          
                           <a href="spacehookahlounge@gmail.com" class="icon1"><i class="fa fa-envelope icon1" aria-hidden="true"></i></a>
-                    </div>
+                     </div>
             
                   <div class="icon-text ">
-                     <div>ВС - ЧТ : 15:00-02:00 <br> ПТ - СБ : 14:00-03:00 
+                     <div class="border-fot-textshort">ВС - ЧТ : 15:00-02:00 <br> ПТ - СБ : 14:00-03:00 
                     </div>
-                    <span >+380660580166</span>
-                      <span>Нижнеднепровская -&nbsp;17</span>
-                       <span >spacehookahlounge@gmail.com</span>
+                    <div class="tel-text-footer border-fot-textshort"><a href="tel:+380660580166">+380(66)058-01-66</a>
+                      <br> 
+                      <a href="tel:+380660580166">+380(66)058-01-66</a></div>
+                      <span class='border-fot-textlong'><a href='https://2gis.ua/dnepropetrovsk/firm/14777965558930367' target="blank">Нижнеднепровская 	&mdash; 17</a></span>
+                       <span class='border-fot-textlong' >  <a href="mailto:spacehookahlounge@gmail.com">spacehookahlounge@gmail.com </a></span>
                   </div> 
                   
                     <div class="map"><div class="map-marker"> <div class="mapframe">

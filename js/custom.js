@@ -12,8 +12,8 @@ jQuery(function($){
   $('html, body').stop().animate({ scrollTop: $target.offset().top - 0 }, 800, 'swing', function(){
   window.location.hash = hash;
   
-  });
-  });
+      });
+    });
   });
 
 $(document).ready(function(){   
@@ -139,7 +139,6 @@ $('.kolbs-img').click(function(e){
   
     $('.calc-kolbs, .colbs').on('change', function (e) {
       e.preventDefault();
-     
       $('.colbs').fadeIn(250);
       $('.colbs-text').removeClass("border-colbs-header");
       $(this).fadeOut(450, summ).parent().find(".colbs-text").addClass("border-colbs-header");
@@ -178,40 +177,28 @@ $('.kolbs-img').click(function(e){
       });
 
       function summ() {
-        
-         $('.calc-img-chasha').on('click',function() {
-            
-              chashaPrice = +$(this).attr('data-price');
-                 chashaName = $(this).attr('data-name');
+        $('.calc-img-chasha').on('click',function() {
+            chashaPrice = +$(this).attr('data-price');
+               chashaName = $(this).attr('data-name');
                  
-              });
+          });
 
-          
-             $('.calc-kolbs').on('click',function() {
-              
+          $('.calc-kolbs').on('click',function() {
                colbPrice = +$(this).attr('data-price');
                kolbsName = $(this).attr('data-name');
-               
-               
-            });
+           });
            
-              $('.calc-handler').on('click',function() {
-               
-                 tabacPrice = +$(this).attr('data-price');
-                  tabak = $(this).attr('data-name');
-                
-                  
-                });
+            $('.calc-handler').on('click',function() {
+                tabacPrice = +$(this).attr('data-price');
+                tabak = $(this).attr('data-name');
+              });
          
             total =  +chashaPrice + +colbPrice + +tabacPrice ;
              if(isNaN(total) ) total = 0;
 
             $(".total_price_sum").text('Сумма заказа ' + total + " " + "UAH");
              $(".form-price").text( 'Ваш заказ: ' + tabak + ' ' + kolbsName + ' и с'+ ' '+ chashaName + ' чашей.' + ' Cумма заказа ' + total + ' ' + 'UAH' );
-             
-         
-             
-      };
+       };
 
 //click po strelkam
 
@@ -226,8 +213,6 @@ $('.kolbs-img').click(function(e){
           $('.gallery-wrapper-2').addClass('hidden');
           $('.gallery-wrapper').removeClass('hidden').css({'opacity': '1', 'display':'flex'});
         }
-        
-        
       });
 
       $('.arrow-left-photo').click(function(e){
@@ -241,13 +226,10 @@ $('.kolbs-img').click(function(e){
           $('.gallery-wrapper-2').addClass('hidden');
           $('.gallery-wrapper').removeClass('hidden').css({'opacity': '1', 'display':'flex'});
         }
-        
-        
-      });
+     });
 //clik po inx kalianov
 
       $('.indx-0').click(function (){
-          
         if( $('.number-shisha').hasClass('hidden')){
           $('.number-shisha').removeClass('hidden').fadeIn(400).css('display','block');
         }
@@ -371,7 +353,6 @@ $(".cl-btn-3").click(function(){	// Событие клика на затемн�
 $(".arrow-right").click(function(e){	
   e.preventDefault();
   if( $(".menu").hasClass('menu-1')){  
-    
     $(".menu").removeClass('menu-1').addClass('menu-2 wow zoomInLeft').css({'display':'block', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
     $(".menu-1").css('display','none');
     $(".cir-2").css('color','rgb(132, 0, 255)');
@@ -418,7 +399,6 @@ $(".arrow-left").click(function(e){
 
 $(".cir-1").click(function(e){	
   e.preventDefault();
-
   $(".menu").removeClass('menu-2').removeClass('menu-3').addClass('menu-1 wow zoomInLeft').css({'display':'block', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
   $(".cir-2, .cir-3").css('color','whitesmoke');
   $(".cir-1").css('color','rgb(132, 0, 255)');  
@@ -464,7 +444,7 @@ var slideShow = (function () {
       _indicatorIndexMax = _sliderItems.length - 1,
       _stepTouch = 50,
       _config = {
-        isAutoplay: false, // автоматическая смена слайдов
+        isAutoplay: true, // автоматическая смена слайдов
         directionAutoplay: 'next', // направление смены слайдов
         delayAutoplay: 5000, // интервал между автоматической сменой слайдов
         isPauseOnHover: true // устанавливать ли паузу при поднесении курсора к слайдеру
@@ -690,15 +670,13 @@ $('.order-table').click(function(){
   $('#fullpage').css('display', "none");
   $('body').css({'background': '#040021','font-family': 'Roboto'});
   $('.myform').css('display', "flex");
-
 });
 
 $('.css-radio-2').on('click', function () {
   $('.css-radio-2').parent().fadeIn(150);
   $('.css-radio-2').parent().removeClass('option-radio2-active');
   $(this).parent().addClass('option-radio2-active');
- 
-});
+ });
 
 $('.back-btn').click(function(){
   $('#fullpage').css('display', "table");
@@ -709,13 +687,11 @@ $('.back-btn').click(function(){
 
 $('.back-btn-shisha').click(function(){
   var url = "http://127.0.0.1:5503/index.html#shisha-page";
-
   $('#fullpage').css('display', "table");
   $('body').css({'background': 'none','font-family': "'Roboto',sans-serif"});
   $('.myform-2').css('display', "none");
     $(location).attr('href',url);
 });
-
 
 $('.for-adress').on('click',function(){
   $('.adress').css('display', " table");
@@ -739,7 +715,7 @@ $('.for-adress').on('click',function(){
 
         });
 
-       $('.shisha-order').click(function(){
+      $('.shisha-order').click(function(){
         $('#fullpage').css('display', "none");
         $('body').css({'background': '#040021','font-family': 'Roboto'});
         $('.myform-2').css('display', "flex");
@@ -749,28 +725,21 @@ $('.for-adress').on('click',function(){
 // анимаци в области видимости
 var windowHeight = $(window).height();
 
-
 	$(document).on('scroll', function() {
-		$('.about-plus, .bgicon, .icon-text ').each(function() {
+		$('.about-plus, .bgicon, .icon-text, .logo-img ').each(function() {
 			var self = $(this),
 			height = self.offset().top + self.height();
-			if ($(document).scrollTop() + windowHeight >= height -100 ){
-        
-        self.addClass('bounceInLeft'); 
-         
-       }
-      $('.about-img, .bgicon, .icon-text').removeClass('bounceInLeft');
-         
+			if ($(document).scrollTop() + windowHeight >= height -300 ){
+         self.addClass('bounceInLeft'); 
+        }
+      
 });
       $('.map').each(function() {
         var self = $(this),
         height = self.offset().top + self.height();
         if ($(document).scrollTop() + windowHeight >= height -300){
           self.addClass('wow zoomInLeft'); 
-       }else{
-        
        }});
-
 
       $('.gallery-item').each(function() {
         var self = $(this),
@@ -779,7 +748,6 @@ var windowHeight = $(window).height();
           $('.gallery-wrapper').css('display', 'flex').removeClass('hidden');
           self.addClass(' wow zoomInLeft ');
           $('.gallery-item ').css({'opacity': '1'});
-         
          }
 
          if(($(document).scrollTop() + windowHeight >= height-300)){
@@ -787,9 +755,7 @@ var windowHeight = $(window).height();
             $('.wow').removeClass('bounceInLeft');
             $('.gallery-item ').removeClass(' wow zoomInLeft ').addClass(' wow zoomInLeft ');
           
-          }
-  
-          else{
+          }else{
             $('.gallery-item ').removeClass(' wow zoomInLeft ').css('opacity', '0.3');
             self.css('opacity', '0');
             $('.map').removeClass(' wow zoomInLeft ');
@@ -797,3 +763,4 @@ var windowHeight = $(window).height();
  });
       
 });
+
