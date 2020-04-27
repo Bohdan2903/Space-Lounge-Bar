@@ -17,6 +17,14 @@ jQuery(function($){
   });
 
 $(document).ready(function(){   
+  $('.menu').slick();
+  $('.gallery-wrapper').slick({
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    dots:false,
+    prevArrow:'<a href="" class="icon arrow-left-photo"> <i class="fas fa-arrow-circle-left "></i> </a>',
+    nextArrow: '<a href="" class="icon arrow-right-photo"><i class="fas fa-arrow-circle-right "></i> </a> '
+  });
 
  var canvasWidth = 1500;
  var canvasHeight = 1;
@@ -200,33 +208,7 @@ $('.kolbs-img').click(function(e){
              $(".form-price").text( 'Ваш заказ: ' + tabak + ' ' + kolbsName + ' и с'+ ' '+ chashaName + ' чашей.' + ' Cумма заказа ' + total + ' ' + 'UAH' );
        };
 
-//click po strelkam
 
-      $('.arrow-right-photo').click(function(e){
-        e.preventDefault();
-        if($('.gallery-wrapper-2 ').hasClass('hidden')){
-          $('.gallery-wrapper').addClass('hidden');
-          $('.gallery-wrapper-2 ').removeClass('hidden').css({'opacity': '1', 'display':'flex'});
-        }
-        
-        else if ($('.gallery-wrapper').hasClass('hidden')){
-          $('.gallery-wrapper-2').addClass('hidden');
-          $('.gallery-wrapper').removeClass('hidden').css({'opacity': '1', 'display':'flex'});
-        }
-      });
-
-      $('.arrow-left-photo').click(function(e){
-        e.preventDefault();
-        if($('.gallery-wrapper-2 ').hasClass('hidden')){
-          $('.gallery-wrapper').addClass('hidden');
-          $('.gallery-wrapper-2 ').removeClass('hidden').css({'opacity': '1', 'display':'flex'});
-        }
-        
-        else if ($('.gallery-wrapper').hasClass('hidden')){
-          $('.gallery-wrapper-2').addClass('hidden');
-          $('.gallery-wrapper').removeClass('hidden').css({'opacity': '1', 'display':'flex'});
-        }
-     });
 //clik po inx kalianov
 
       $('.indx-0').click(function (){
@@ -326,10 +308,10 @@ $('.kolbs-img').click(function(e){
 
 //photohover
 
-$(".img-responsive").click(function(){	// Событие клика на маленькое изображение
-  var img = $(this);	// Получаем изображение, на которое кликнули
+$(".img-responsive").click(function(){
+  var img = $(this);	
 var src = img.attr('src'); // Достаем из этого изображения путь до картинки
-$(".gallery-wrapper, .gallery-wrapper-2").append("<div class='popup'>"+ //Добавляем в тело документа разметку всплывающего окна
+$("#discount").append("<div class='popup'>"+ //Добавляем в тело документа разметку всплывающего окна
          
         "<div class='about-main-text-popup'>Почуствуй Атмосферу </div>"+
         "<div class='popup_bg'></div>"+// Блок, который будет служить фоном затемненным
@@ -338,311 +320,170 @@ $(".gallery-wrapper, .gallery-wrapper-2").append("<div class='popup'>"+ //Доб
          "<img src='"+src+"' class='popup_img' />"+// Само увеличенное фото
           "</div>" ); 
           $(".icon, .about-main-text").css('opacity', '0');
-$(".popup").fadeIn(800); // Медленно выводим изображение
-$(".cl-btn-3").click(function(){	// Событие клика на затемненный фон	   
+$(".popup").fadeIn(800); 
+$(".cl-btn-3").click(function(){	   
   $(".popup").fadeOut(800);	// Медленно убираем всплывающее окно
-  setTimeout(function() {	// Выставляем таймер
+  setTimeout(function() {	
     $(".popup").remove();
     $(".icon, .about-main-text").css('opacity', '1'); // Удаляем разметку всплывающего окна
   }, 800);
 });
 });
 
-//menuclick
-
-$(".arrow-right").click(function(e){	
-  e.preventDefault();
-  if( $(".menu").hasClass('menu-1')){  
-    $(".menu").removeClass('menu-1').addClass('menu-2 wow zoomInLeft').css({'display':'block', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
-    $(".menu-1").css('display','none');
-    $(".cir-2").css('color','rgb(132, 0, 255)');
-    $(".cir-3, .cir-1").css('color','whitesmoke');
-  }
-  else if($(".menu").hasClass('menu-2')){
-    $(".menu").removeClass('menu-2').addClass('menu-3 wow zoomInLeft').css({'display':'block', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
-    $(".menu-2").css('display','none');
-    $(".cir-2, .cir-1").css('color','whitesmoke');
-    $(".cir-3").css('color','rgb(132, 0, 255)');
-  }
-  else if($(".menu").hasClass('menu-3')){
-    $(".menu").removeClass('menu-3').addClass('menu-1 wow zoomInLeft').css({'display':'block', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
-    $(".menu-3").css('display','none');
-    $(".cir-2, .cir-3").css('color','whitesmoke');
-    $(".cir-1").css('color','rgb(132, 0, 255)');
-  }
-});
-
-//menuslider
-$(".arrow-left").click(function(e){	
-  e.preventDefault();
-  if( $(".menu").hasClass('menu-3')){ 
-    $(".menu").removeClass('menu-3').addClass('menu-2 wow zoomInLeft').css({'display':'block', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
-    $(".menu-3").css('display','none');
-    $(".cir-2").css('color','rgb(132, 0, 255)');
-    $(".cir-3, .cir-1").css('color','whitesmoke');
-  }
-
-  else if($(".menu").hasClass('menu-2')){
-    $(".menu").removeClass('menu-2').addClass('menu-1 wow zoomInLeft').css({'display':'block', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
-    $(".menu-2").css('display','none');
-    $(".cir-1").css('color','rgb(132, 0, 255)');
-    $(".cir-3, .cir-2").css('color','whitesmoke');
-  }
-  else if($(".menu").hasClass('menu-1')){
-    $(".menu").removeClass('menu-1').addClass('menu-3 wow zoomInLeft').css({'display':'block', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
-    $(".menu-1").css('display','none');
-    $(".cir-3").css('color','rgb(132, 0, 255)');
-    $(".cir-1, .cir-2").css('color','whitesmoke');
-  }
-
-});
-
-$(".cir-1").click(function(e){	
-  e.preventDefault();
-  $(".menu").removeClass('menu-2').removeClass('menu-3').addClass('menu-1 wow zoomInLeft').css({'display':'block', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
-  $(".cir-2, .cir-3").css('color','whitesmoke');
-  $(".cir-1").css('color','rgb(132, 0, 255)');  
-  $(".menu-1").css({'display':'block', 'opacity':'1'}); 
-  $(".menu-2, .menu-3").css({'display':'none'});
- 
-});
-
-$(".cir-2").click(function(e){	
-  e.preventDefault(); 
-  $(".menu").removeClass('menu-3').removeClass('menu-1').addClass('menu-2 wow zoomInLeft').css({'display':'block', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
-  $(".cir-1, .cir-3").css('color','whitesmoke');
-  $(".cir-2").css('color','rgb(132, 0, 255)'); 
-   $(".menu-2").css({'display':'block', 'opacity':'1'}); 
-   $(".menu-1, .menu-3").css('display','none').css({'display':'none'});
-
-});
-$(".cir-3").click(function(e){	
-  e.preventDefault();
-  $(".menu").removeClass('menu-1').removeClass('menu-2').addClass('menu-3 wow zoomInLeft').css({'display':'block', 'animation-delay': '0.2s', 'opacity':'1'}).removeClass('wow zoomInLeft');
-  $(".cir-1, .cir-2").css('color','whitesmoke');
-  $(".cir-3").css('color','rgb(132, 0, 255)');  
-  $(".menu-3").css({'display':'block', 'opacity':'1'}); 
-  $(".menu-1, .menu-2").css('display','none').css({'display':'none'});
-});
 
 
 //slider 
-var slideShow = (function () {
+var multiItemSlider = (function () {
   return function (selector, config) {
     var
-      _slider = document.querySelector(selector), // основный элемент блока
-      _sliderContainer = _slider.querySelector('.slider__items'), // контейнер для .slider-item
-      _sliderItems = _slider.querySelectorAll('.slider__item'), // коллекция .slider-item
-      _sliderControls = _slider.querySelectorAll('.slider__control'), // элементы управления
-      _currentPosition = 0, // позиция левого активного элемента
-      _transformValue = 0, // значение транфсофрмации .slider_wrapper
-      _transformStep = 100, // величина шага (для трансформации)
-      _itemsArray = [], // массив элементов
-      _timerId,
-      _indicatorItems,
-      _indicatorIndex = 0,
-      _indicatorIndexMax = _sliderItems.length - 1,
-      _stepTouch = 50,
+      _mainElement = document.querySelector(selector), // основный элемент блока
+      _sliderWrapper = _mainElement.querySelector('.slider__wrapper'), // обертка для .slider-item
+      _sliderItems = _mainElement.querySelectorAll('.slider__item'), // элементы (.slider-item)
+      _sliderControls = _mainElement.querySelectorAll('.slider__control'), // элементы управления
+      _sliderControlLeft = _mainElement.querySelector('.slider__control_left'), // кнопка "LEFT"
+      _sliderControlRight = _mainElement.querySelector('.slider__control_right'), // кнопка "RIGHT"
+      _wrapperWidth = parseFloat(getComputedStyle(_sliderWrapper).width), // ширина обёртки
+      _itemWidth = parseFloat(getComputedStyle(_sliderItems[0]).width), // ширина одного элемента    
+      _positionLeftItem = 0, // позиция левого активного элемента
+      _transform = 0, // значение транфсофрмации .slider_wrapper
+      _step = _itemWidth / _wrapperWidth * 100, // величина шага (для трансформации)
+      _items = [], // массив элементов
+      _interval = 0,
       _config = {
-        isAutoplay: true, // автоматическая смена слайдов
-        directionAutoplay: 'next', // направление смены слайдов
-        delayAutoplay: 5000, // интервал между автоматической сменой слайдов
-        isPauseOnHover: true // устанавливать ли паузу при поднесении курсора к слайдеру
+        isCycling: false, // автоматическая смена слайдов
+        direction: 'right', // направление смены слайдов
+        interval: 5000, // интервал между автоматической сменой слайдов
+        pause: true // устанавливать ли паузу при поднесении курсора к слайдеру
       };
 
-    // настройка конфигурации слайдера в зависимости от полученных ключей
     for (var key in config) {
       if (key in _config) {
         _config[key] = config[key];
       }
     }
 
-    // наполнение массива _itemsArray
-    for (var i = 0, length = _sliderItems.length; i < length; i++) {
-      _itemsArray.push({ item: _sliderItems[i], position: i, transform: 0 });
+    // наполнение массива _items
+    _sliderItems.forEach(function (item, index) {
+      _items.push({ item: item, position: index, transform: 0 });
+    });
+
+    var position = {
+      getItemMin: function () {
+        var indexItem = 0;
+        _items.forEach(function (item, index) {
+          if (item.position < _items[indexItem].position) {
+            indexItem = index;
+          }
+        });
+        return indexItem;
+      },
+      getItemMax: function () {
+        var indexItem = 0;
+        _items.forEach(function (item, index) {
+          if (item.position > _items[indexItem].position) {
+            indexItem = index;
+          }
+        });
+        return indexItem;
+      },
+      getMin: function () {
+        return _items[position.getItemMin()].position;
+      },
+      getMax: function () {
+        return _items[position.getItemMax()].position;
+      }
     }
 
-    // переменная position содержит методы с помощью которой можно получить минимальный и максимальный индекс элемента, а также соответствующему этому индексу позицию
-    var position = {
-      getItemIndex: function (mode) {
-        var index = 0;
-        for (var i = 0, length = _itemsArray.length; i < length; i++) {
-          if ((_itemsArray[i].position < _itemsArray[index].position && mode === 'min') || (_itemsArray[i].position > _itemsArray[index].position && mode === 'max')) {
-            index = i;
-          }
+    var _transformItem = function (direction) {
+      var nextItem;
+      if (direction === 'right') {
+        _positionLeftItem++;
+        if ((_positionLeftItem + _wrapperWidth / _itemWidth - 1) > position.getMax()) {
+          nextItem = position.getItemMin();
+          _items[nextItem].position = position.getMax() + 1;
+          _items[nextItem].transform += _items.length * 100;
+          _items[nextItem].item.style.transform = 'translateX(' + _items[nextItem].transform + '%)';
         }
-        return index;
-      },
-      getItemPosition: function (mode) {
-        return _itemsArray[position.getItemIndex(mode)].position;
+        _transform -= _step;
       }
-    };
-
-    // функция, выполняющая смену слайда в указанном направлении
-    var _move = function (direction) {
-      var nextItem, currentIndicator = _indicatorIndex;;
-      if (direction === 'next') {
-        _currentPosition++;
-        if (_currentPosition > position.getItemPosition('max')) {
-          nextItem = position.getItemIndex('min');
-          _itemsArray[nextItem].position = position.getItemPosition('max') + 1;
-          _itemsArray[nextItem].transform += _itemsArray.length * 100;
-          _itemsArray[nextItem].item.style.transform = 'translateX(' + _itemsArray[nextItem].transform + '%)';
+      if (direction === 'left') {
+        _positionLeftItem--;
+        if (_positionLeftItem < position.getMin()) {
+          nextItem = position.getItemMax();
+          _items[nextItem].position = position.getMin() - 1;
+          _items[nextItem].transform -= _items.length * 100;
+          _items[nextItem].item.style.transform = 'translateX(' + _items[nextItem].transform + '%)';
         }
-        _transformValue -= _transformStep;
-        _indicatorIndex = _indicatorIndex + 1;
-        if (_indicatorIndex > _indicatorIndexMax) {
-          _indicatorIndex = 0;
-        }
-      } else {
-        _currentPosition--;
-        if (_currentPosition < position.getItemPosition('min')) {
-          nextItem = position.getItemIndex('max');
-          _itemsArray[nextItem].position = position.getItemPosition('min') - 1;
-          _itemsArray[nextItem].transform -= _itemsArray.length * 100;
-          _itemsArray[nextItem].item.style.transform = 'translateX(' + _itemsArray[nextItem].transform + '%)';
-        }
-        _transformValue += _transformStep;
-        _indicatorIndex = _indicatorIndex - 1;
-        if (_indicatorIndex < 0) {
-          _indicatorIndex = _indicatorIndexMax;
-        }
+        _transform += _step;
       }
-      _sliderContainer.style.transform = 'translateX(' + _transformValue + '%)';
-      _indicatorItems[currentIndicator].classList.remove('active');
-      _indicatorItems[_indicatorIndex].classList.add('active');
-    };
+      _sliderWrapper.style.transform = 'translateX(' + _transform + '%)';
+    }
 
-    // функция, осуществляющая переход к слайду по его порядковому номеру
-    var _moveTo = function (index) {
-      var i = 0, direction = (index > _indicatorIndex) ? 'next' : 'prev';
-      while (index !== _indicatorIndex && i <= _indicatorIndexMax) {
-        _move(direction);
-        i++;
-      }
-    };
-
-    // функция для запуска автоматической смены слайдов через промежутки времени
-    var _startAutoplay = function () {
-      if (!_config.isAutoplay) {
+    var _cycle = function (direction) {
+      if (!_config.isCycling) {
         return;
       }
-      _stopAutoplay();
-      _timerId = setInterval(function () {
-        _move(_config.directionAutoplay);
-      }, _config.delayAutoplay);
-    };
+      _interval = setInterval(function () {
+        _transformItem(direction);
+      }, _config.interval);
+    }
 
-    // функция, отключающая автоматическую смену слайдов
-    var _stopAutoplay = function () {
-      clearInterval(_timerId);
-    };
-
-    // функция, добавляющая индикаторы к слайдеру
-    var _addIndicators = function () {
-      var indicatorsContainer = document.createElement('ol');
-      indicatorsContainer.classList.add('slider__indicators');
-      for (var i = 0, length = _sliderItems.length; i < length; i++) {
-        var sliderIndicatorsItem = document.createElement('li');
-        if (i === 0) {
-          sliderIndicatorsItem.classList.add('active');
-        }
-        sliderIndicatorsItem.setAttribute("data-slide-to", i);
-        indicatorsContainer.appendChild(sliderIndicatorsItem);
+    // обработчик события click для кнопок "назад" и "вперед"
+    var _controlClick = function (e) {
+      if (e.target.classList.contains('slider__control')) {
+        e.preventDefault();
+        var direction = e.target.classList.contains('slider__control_right') ? 'right' : 'left';
+        _transformItem(direction);
+        clearInterval(_interval);
+        _cycle(_config.direction);
       }
-      _slider.appendChild(indicatorsContainer);
-      _indicatorItems = _slider.querySelectorAll('.slider__indicators > li')
     };
 
-    var _isTouchDevice = function () {
-      return !!('ontouchstart' in window || navigator.maxTouchPoints);
-    };
-
-    // функция, осуществляющая установку обработчиков для событий 
     var _setUpListeners = function () {
-      var _startX = 0;
-      if (_isTouchDevice()) {
-        _slider.addEventListener('touchstart', function (e) {
-          _startX = e.changedTouches[0].clientX;
-          _startAutoplay();
-        });
-        _slider.addEventListener('touchend', function (e) {
-          var
-            _endX = e.changedTouches[0].clientX,
-            _deltaX = _endX - _startX;
-          if (_deltaX > _stepTouch) {
-            _move('prev');
-          } else if (_deltaX < -_stepTouch) {
-            _move('next');
-          }
-          _startAutoplay();
-        });
-      } else {
-        for (var i = 0, length = _sliderControls.length; i < length; i++) {
-          _sliderControls[i].classList.add('slider__control_show');
-        }
-      }
-      _slider.addEventListener('click', function (e) {
-        if (e.target.classList.contains('slider__control')) {
-          e.preventDefault();
-          _move(e.target.classList.contains('slider__control_next') ? 'next' : 'prev');
-          _startAutoplay();
-        } else if (e.target.getAttribute('data-slide-to')) {
-          e.preventDefault();
-          _moveTo(parseInt(e.target.getAttribute('data-slide-to')));
-          _startAutoplay();
-        }
+      // добавление к кнопкам "назад" и "вперед" обрботчика _controlClick для событя click
+      _sliderControls.forEach(function (item) {
+        item.addEventListener('click', _controlClick);
       });
-      document.addEventListener('visibilitychange', function () {
-        if (document.visibilityState === "hidden") {
-          _stopAutoplay();
-        } else {
-          _startAutoplay();
-        }
-      }, false);
-      if (_config.isPauseOnHover && _config.isAutoplay) {
-        _slider.addEventListener('mouseenter', function () {
-          _stopAutoplay();
+      if (_config.pause && _config.isCycling) {
+        _mainElement.addEventListener('mouseenter', function () {
+          clearInterval(_interval);
         });
-        _slider.addEventListener('mouseleave', function () {
-          _startAutoplay();
+        _mainElement.addEventListener('mouseleave', function () {
+          clearInterval(_interval);
+          _cycle(_config.direction);
         });
-      }
-    };
-
-    // добавляем индикаторы к слайдеру
-    _addIndicators();
-    // установливаем обработчики для событий
-    _setUpListeners();
-    // запускаем автоматическую смену слайдов, если установлен соответствующий ключ
-    _startAutoplay();
-
-    return {
-      // метод слайдера для перехода к следующему слайду
-      next: function () {
-        _move('next');
-      },
-      // метод слайдера для перехода к предыдущему слайду          
-      left: function () {
-        _move('prev');
-      },
-      // метод отключающий автоматическую смену слайдов
-      stop: function () {
-        _config.isAutoplay = false;
-        _stopAutoplay();
-      },
-      // метод запускающий автоматическую смену слайдов
-      cycle: function () {
-        _config.isAutoplay = true;
-        _startAutoplay();
       }
     }
+
+    // инициализация
+    _setUpListeners();
+    _cycle(_config.direction);
+
+    return {
+      right: function () { // метод right
+        _transformItem('right');
+      },
+      left: function () { // метод left
+        _transformItem('left');
+      },
+      stop: function () { // метод stop
+        _config.isCycling = false;
+        clearInterval(_interval);
+      },
+      cycle: function () { // метод cycle 
+        _config.isCycling = true;
+        clearInterval(_interval);
+        _cycle();
+      }
+    }
+
   }
 }());
 
-slideShow('.slider', {
-  isAutoplay: true
-});
+var slider = multiItemSlider('.slider', {
+  isCycling: true
+})
+
 
 
 //phone
@@ -749,18 +590,39 @@ var windowHeight = $(window).height();
           self.addClass(' wow zoomInLeft ');
           $('.gallery-item ').css({'opacity': '1'});
          }
-
-         if(($(document).scrollTop() + windowHeight >= height-300)){
-            $('.gallery-wrapper-2').addClass('hidden') ;
-            $('.wow').removeClass('bounceInLeft');
-            $('.gallery-item ').removeClass(' wow zoomInLeft ').addClass(' wow zoomInLeft ');
-          
-          }else{
+          else{
             $('.gallery-item ').removeClass(' wow zoomInLeft ').css('opacity', '0.3');
             self.css('opacity', '0');
             $('.map').removeClass(' wow zoomInLeft ');
           }
- });
+            });
+
+           
       
 });
+//
+
+$(".toggle-icon").on('click',function() {
+  $('section').each(function (){
+  if($('section').hasClass('hidden')){
+    $('section').removeClass('hidden');
+  } else $('section').addClass('hidden');;
+  });
+
+  $('#nav-container').toggleClass("pushed");
+  $('.main-nav-bar-img').addClass('hidden');
+  $('.logo-main').addClass('hidden');
+  if( $('.main-nav-bar-img').hasClass('hidden')){
+    $('.main-nav-bar-img').removeClass('hidden');
+  };
+  
+  if($('.menu-header-phone').hasClass('hidden')){
+      $('.menu-header-phone').removeClass('hidden');
+    }
+  else {
+    $('.menu-header-phone').addClass('hidden');
+    $('.logo-main').removeClass('hidden');
+  }
+});
+
 
