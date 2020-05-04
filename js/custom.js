@@ -1,6 +1,4 @@
 
-
-//переход по якорям
 jQuery(function($){
   $('.main-nav-links, .main-nav-bar').on('click.smoothscroll', function( e ){
   var hash= this.hash,
@@ -9,16 +7,48 @@ jQuery(function($){
   var $target = _hash === '' ? $('body') : $( hash + ', a[name="'+ _hash +'"]').first();
   if( ! $target.length ) return;
   e.preventDefault();
-  $('html, body').stop().animate({ scrollTop: $target.offset().top - 0 }, 800, 'swing', function(){
-  window.location.hash = hash;
+  $('html, body').stop().animate({ scrollTop: $target.offset().top -5}, 900, 'swing', function(){
+  window.location.hash = hash -5;
   
       });
     });
   });
 
+
+
 $(document).ready(function(){   
-  $('.menu').slick();
-  $('.gallery-wrapper').slick({
+ 
+  var phoneWidth = $(window).width();
+  if(phoneWidth > 768){
+    $('.menu').slick({
+      dots:true,
+      dotsClass: 'my-dots'
+    });
+    $('.back-btn-shisha').click(function(){
+      var url = "http://127.0.0.1:5503/index.html#5thPage";
+      $('#fullpage').removeClass('hidden');
+      $('body').css({'background': 'none','font-family': "'Roboto',sans-serif"});
+      $('.myform-2').css('display', "none");
+        $(location).attr('href',url);
+    });
+    $('.shisha-order').click(function(){
+      $('#fullpage').addClass('hidden');
+      $('body').css({'background': '#040021','font-family': 'Roboto'});
+      $('.myform-2').css('display', "flex");
+    });
+
+    $('.slider').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      dots:false,
+      autoplay: true,
+      autoplaySpeed:2500,
+      speed:1000,
+      prevArrow:'<a href="" class="icon arrow-left-slider"> <i class="fas fa-arrow-circle-left "></i> </a>',
+      nextArrow: '<a href="" class="icon arrow-right-slider"><i class="fas fa-arrow-circle-right "></i> </a> '
+    });
+
+    $('.gallery-wrapper').slick({
     slidesToShow: 4,
     slidesToScroll: 4,
     dots:false,
@@ -26,6 +56,130 @@ $(document).ready(function(){
     nextArrow: '<a href="" class="icon arrow-right-photo"><i class="fas fa-arrow-circle-right "></i> </a> '
   });
 
+  };
+
+ 
+  if(phoneWidth < 768){
+    $('.slider').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      dots:false,
+      autoplay: true,
+      autoplaySpeed:2500,
+      speed:1000,
+      prevArrow:'<a href="" class="icon arrow-left-slider"> <i class="fas fa-arrow-circle-left "></i> </a>',
+      nextArrow: '<a href="" class="icon arrow-right-slider"><i class="fas fa-arrow-circle-right "></i> </a> '
+    });
+
+  $('.main-nav-links').on('click', function( e ){ 
+    e.preventDefault();
+        if( $('section').hasClass('hidden')){ 
+          $('section').removeClass('hidden');
+           $('#nav-container').removeClass("pushed");
+          $('.menu-header-phone ').addClass('hidden');  
+          $('.logo-img').removeClass("hidden");
+          var t = 1000;
+          var d = $(this).attr('data-href') ? $(this).attr('data-href') : $(this).attr('href'); 
+          $('html,body').stop().animate({ scrollTop: $(d).offset().top }, t);
+           
+      } else {
+        $('section').addClass('hidden'); 
+          $('.menu-header-phone ').removeClass('hidden'); 
+          $('#nav-container').addClass("pushed");
+      }});
+
+    $('.menu-phone').slick({
+      dots:true,
+      dotsClass: 'my-dots-menu',
+      prevArrow:false,
+      nextArrow: false
+    });
+
+    $('.gallery-wrapper').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      dots:false,
+      prevArrow:'<a href="" class="icon arrow-left-photo"> <i class="fas fa-arrow-circle-left "></i> </a>',
+      nextArrow: '<a href="" class="icon arrow-right-photo"><i class="fas fa-arrow-circle-right "></i> </a> '
+    });
+
+    $('.tabac-wrap-phone').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      dots:false,
+      prevArrow:'<a href="" class="arrow-left-tabac  icon"> <i class="fas fa-arrow-circle-left "></i> </a>',
+      nextArrow: '<a href="" class="arrow-right-tabac icon"><i class="fas fa-arrow-circle-right "></i> </a> '
+    });
+
+    
+    $('.check-order-text').on('click', function () {
+      if($('#main-shahta-phone').hasClass('hidden')){
+        $('section, #header-mob').addClass('hidden');
+        $('#main-shahta-phone').removeClass('hidden');
+      } else {
+        $('#main-shahta-phone').addClass('hidden');
+        $('section, #header-mob').removeClass('hidden');
+      }
+      });
+
+    $('.back-shahta-btn').on('click', function (e) {
+      var url = "http://127.0.0.1:5503/index.html#shisha-page";
+      
+      e.preventDefault();
+      if($('#main-shahta-phone').hasClass('hidden')){
+
+        $('section, #header-mob').removeClass('hidden');
+        
+      } else {
+        $('#main-shahta-phone').addClass('hidden');
+        $('section, #header-mob').removeClass('hidden');
+        $(location).attr('href',url);
+      }});
+
+      $('.shisha-order').click(function(){
+        $('section').addClass('hidden');
+        $('body').css({'background': '#040021','font-family': 'Roboto'});
+        $('.myform-2').css('display', "flex").removeClass('hidden');
+      });
+
+      $('.back-btn-shisha').click(function(){
+        var url = "http://127.0.0.1:5503/index.html#shisha-page";
+        $('section').removeClass('hidden');
+        
+        $('.myform-2').addClass('hidden');
+          $(location).attr('href',url);
+      });
+
+
+  };
+
+
+//photohover
+if(phoneWidth > 768){
+$(".img-responsive").click(function(){
+  var img = $(this);	
+var src = img.attr('src'); // Достаем из этого изображения путь до картинки
+$("#discount").append("<div class='popup'>"+ //Добавляем в тело документа разметку всплывающего окна
+         
+        "<div class='about-main-text-popup'>Почуствуй Атмосферу </div>"+
+        "<div class='popup_bg'></div>"+// Блок, который будет служить фоном затемненным
+      
+         "<div class='cl-btn-3'><span class='top'></span> <span class='bot'></span></div>" +
+         "<img src='"+src+"' class='popup_img' />"+// Само увеличенное фото
+          "</div>" ); 
+          $(".icon, .about-main-text").css('opacity', '0');
+$(".popup").fadeIn(800); 
+$(".cl-btn-3").click(function(){	   
+  $(".popup").fadeOut(800);	// Медленно убираем всплывающее окно
+  setTimeout(function() {	
+    $(".popup").remove();
+    $(".icon, .about-main-text").css('opacity', '1'); // Удаляем разметку всплывающего окна
+  }, 800);
+});
+});
+
+
+//canvas
  var canvasWidth = 1500;
  var canvasHeight = 1;
 var pCount = 0;
@@ -136,6 +290,9 @@ function randOffset(n, variance)
 }
 
 // canvasfinish
+};
+
+
   
 $('.kolbs-img').click(function(e){
     e.preventDefault();
@@ -168,7 +325,6 @@ $('.kolbs-img').click(function(e){
      
     });
 
-  
   
 
     //calculator
@@ -204,7 +360,7 @@ $('.kolbs-img').click(function(e){
             total =  +chashaPrice + +colbPrice + +tabacPrice ;
              if(isNaN(total) ) total = 0;
 
-            $(".total_price_sum").text('Сумма заказа ' + total + " " + "UAH");
+            $(".total_price_sum, .total_price_sum-phone").text('Сумма заказа ' + total + " " + "UAH");
              $(".form-price").text( 'Ваш заказ: ' + tabak + ' ' + kolbsName + ' и с'+ ' '+ chashaName + ' чашей.' + ' Cумма заказа ' + total + ' ' + 'UAH' );
        };
 
@@ -306,184 +462,10 @@ $('.kolbs-img').click(function(e){
        });
 
 
-//photohover
-
-$(".img-responsive").click(function(){
-  var img = $(this);	
-var src = img.attr('src'); // Достаем из этого изображения путь до картинки
-$("#discount").append("<div class='popup'>"+ //Добавляем в тело документа разметку всплывающего окна
-         
-        "<div class='about-main-text-popup'>Почуствуй Атмосферу </div>"+
-        "<div class='popup_bg'></div>"+// Блок, который будет служить фоном затемненным
-      
-         "<div class='cl-btn-3'><span class='top'></span> <span class='bot'></span></div>" +
-         "<img src='"+src+"' class='popup_img' />"+// Само увеличенное фото
-          "</div>" ); 
-          $(".icon, .about-main-text").css('opacity', '0');
-$(".popup").fadeIn(800); 
-$(".cl-btn-3").click(function(){	   
-  $(".popup").fadeOut(800);	// Медленно убираем всплывающее окно
-  setTimeout(function() {	
-    $(".popup").remove();
-    $(".icon, .about-main-text").css('opacity', '1'); // Удаляем разметку всплывающего окна
-  }, 800);
-});
-});
 
 
 
-//slider 
-var multiItemSlider = (function () {
-  return function (selector, config) {
-    var
-      _mainElement = document.querySelector(selector), // основный элемент блока
-      _sliderWrapper = _mainElement.querySelector('.slider__wrapper'), // обертка для .slider-item
-      _sliderItems = _mainElement.querySelectorAll('.slider__item'), // элементы (.slider-item)
-      _sliderControls = _mainElement.querySelectorAll('.slider__control'), // элементы управления
-      _sliderControlLeft = _mainElement.querySelector('.slider__control_left'), // кнопка "LEFT"
-      _sliderControlRight = _mainElement.querySelector('.slider__control_right'), // кнопка "RIGHT"
-      _wrapperWidth = parseFloat(getComputedStyle(_sliderWrapper).width), // ширина обёртки
-      _itemWidth = parseFloat(getComputedStyle(_sliderItems[0]).width), // ширина одного элемента    
-      _positionLeftItem = 0, // позиция левого активного элемента
-      _transform = 0, // значение транфсофрмации .slider_wrapper
-      _step = _itemWidth / _wrapperWidth * 100, // величина шага (для трансформации)
-      _items = [], // массив элементов
-      _interval = 0,
-      _config = {
-        isCycling: false, // автоматическая смена слайдов
-        direction: 'right', // направление смены слайдов
-        interval: 5000, // интервал между автоматической сменой слайдов
-        pause: true // устанавливать ли паузу при поднесении курсора к слайдеру
-      };
-
-    for (var key in config) {
-      if (key in _config) {
-        _config[key] = config[key];
-      }
-    }
-
-    // наполнение массива _items
-    _sliderItems.forEach(function (item, index) {
-      _items.push({ item: item, position: index, transform: 0 });
-    });
-
-    var position = {
-      getItemMin: function () {
-        var indexItem = 0;
-        _items.forEach(function (item, index) {
-          if (item.position < _items[indexItem].position) {
-            indexItem = index;
-          }
-        });
-        return indexItem;
-      },
-      getItemMax: function () {
-        var indexItem = 0;
-        _items.forEach(function (item, index) {
-          if (item.position > _items[indexItem].position) {
-            indexItem = index;
-          }
-        });
-        return indexItem;
-      },
-      getMin: function () {
-        return _items[position.getItemMin()].position;
-      },
-      getMax: function () {
-        return _items[position.getItemMax()].position;
-      }
-    }
-
-    var _transformItem = function (direction) {
-      var nextItem;
-      if (direction === 'right') {
-        _positionLeftItem++;
-        if ((_positionLeftItem + _wrapperWidth / _itemWidth - 1) > position.getMax()) {
-          nextItem = position.getItemMin();
-          _items[nextItem].position = position.getMax() + 1;
-          _items[nextItem].transform += _items.length * 100;
-          _items[nextItem].item.style.transform = 'translateX(' + _items[nextItem].transform + '%)';
-        }
-        _transform -= _step;
-      }
-      if (direction === 'left') {
-        _positionLeftItem--;
-        if (_positionLeftItem < position.getMin()) {
-          nextItem = position.getItemMax();
-          _items[nextItem].position = position.getMin() - 1;
-          _items[nextItem].transform -= _items.length * 100;
-          _items[nextItem].item.style.transform = 'translateX(' + _items[nextItem].transform + '%)';
-        }
-        _transform += _step;
-      }
-      _sliderWrapper.style.transform = 'translateX(' + _transform + '%)';
-    }
-
-    var _cycle = function (direction) {
-      if (!_config.isCycling) {
-        return;
-      }
-      _interval = setInterval(function () {
-        _transformItem(direction);
-      }, _config.interval);
-    }
-
-    // обработчик события click для кнопок "назад" и "вперед"
-    var _controlClick = function (e) {
-      if (e.target.classList.contains('slider__control')) {
-        e.preventDefault();
-        var direction = e.target.classList.contains('slider__control_right') ? 'right' : 'left';
-        _transformItem(direction);
-        clearInterval(_interval);
-        _cycle(_config.direction);
-      }
-    };
-
-    var _setUpListeners = function () {
-      // добавление к кнопкам "назад" и "вперед" обрботчика _controlClick для событя click
-      _sliderControls.forEach(function (item) {
-        item.addEventListener('click', _controlClick);
-      });
-      if (_config.pause && _config.isCycling) {
-        _mainElement.addEventListener('mouseenter', function () {
-          clearInterval(_interval);
-        });
-        _mainElement.addEventListener('mouseleave', function () {
-          clearInterval(_interval);
-          _cycle(_config.direction);
-        });
-      }
-    }
-
-    // инициализация
-    _setUpListeners();
-    _cycle(_config.direction);
-
-    return {
-      right: function () { // метод right
-        _transformItem('right');
-      },
-      left: function () { // метод left
-        _transformItem('left');
-      },
-      stop: function () { // метод stop
-        _config.isCycling = false;
-        clearInterval(_interval);
-      },
-      cycle: function () { // метод cycle 
-        _config.isCycling = true;
-        clearInterval(_interval);
-        _cycle();
-      }
-    }
-
-  }
-}());
-
-var slider = multiItemSlider('.slider', {
-  isCycling: true
-})
-
+// s
 
 
 //phone
@@ -526,13 +508,6 @@ $('.back-btn').click(function(){
   location.reload();
 });
 
-$('.back-btn-shisha').click(function(){
-  var url = "http://127.0.0.1:5503/index.html#shisha-page";
-  $('#fullpage').css('display', "table");
-  $('body').css({'background': 'none','font-family': "'Roboto',sans-serif"});
-  $('.myform-2').css('display', "none");
-    $(location).attr('href',url);
-});
 
 $('.for-adress').on('click',function(){
   $('.adress').css('display', " table");
@@ -556,46 +531,48 @@ $('.for-adress').on('click',function(){
 
         });
 
-      $('.shisha-order').click(function(){
-        $('#fullpage').css('display', "none");
-        $('body').css({'background': '#040021','font-family': 'Roboto'});
-        $('.myform-2').css('display', "flex");
-      
-      });
+    
 
 // анимаци в области видимости
 var windowHeight = $(window).height();
+var windowWidth = $(window).width();
 
 	$(document).on('scroll', function() {
 		$('.about-plus, .bgicon, .icon-text, .logo-img ').each(function() {
 			var self = $(this),
 			height = self.offset().top + self.height();
-			if ($(document).scrollTop() + windowHeight >= height -300 ){
+			if ($(document).scrollTop() + windowHeight >= height -300 && windowWidth > 768 ){
          self.addClass('bounceInLeft'); 
-        }
+        };
+
+      if($(document).scrollTop() + windowHeight >= height -500 &&  windowWidth <768){
+        self.addClass('bounceInLeft'); 
+        $('.about-img').each(function() {
+          $(this).addClass('bounceInLeft');
+      })}
       
 });
       $('.map').each(function() {
         var self = $(this),
         height = self.offset().top + self.height();
-        if ($(document).scrollTop() + windowHeight >= height -300){
+        if ($(document).scrollTop() + windowHeight >= height -300 && windowWidth > 768){
           self.addClass('wow zoomInLeft'); 
        }});
 
-      $('.gallery-item').each(function() {
+      $('.gallery-wrapper').each(function() {
         var self = $(this),
         height = self.offset().top + self.height();
-        if ($(document).scrollTop() + windowHeight >= height-300){
-          $('.gallery-wrapper').css('display', 'flex').removeClass('hidden');
-          self.addClass(' wow zoomInLeft ');
-          $('.gallery-item ').css({'opacity': '1'});
-         }
-          else{
-            $('.gallery-item ').removeClass(' wow zoomInLeft ').css('opacity', '0.3');
-            self.css('opacity', '0');
-            $('.map').removeClass(' wow zoomInLeft ');
+        if ($(document).scrollTop() + windowHeight >= height-20  && windowWidth > 768 ){
+          $('.gallery-wrapper').css('display', 'flex');
+          $('.gallery-item').addClass('wow zoomInLeft').css('opacity', '1');
+          
           }
-            });
+
+         if ($(document).scrollTop() + windowHeight >= height - 500 && windowWidth < 768 ){
+          $('.gallery-wrapper').css({'opacity': '1', 'display':'flex'});
+          $('.gallery-item').addClass('wow zoomInLeft').css('opacity', '1');
+         }
+          });
 
            
       
@@ -606,22 +583,19 @@ $(".toggle-icon").on('click',function() {
   $('section').each(function (){
   if($('section').hasClass('hidden')){
     $('section').removeClass('hidden');
+    $('.logo-main').removeClass('hidden');
   } else $('section').addClass('hidden');;
   });
 
-  $('#nav-container').toggleClass("pushed");
-  $('.main-nav-bar-img').addClass('hidden');
+ 
+  if( $('.menu-header-phone').hasClass('hidden')){
+    $('.menu-header-phone').removeClass('hidden'); 
+    $('#nav-container').toggleClass("pushed");
   $('.logo-main').addClass('hidden');
-  if( $('.main-nav-bar-img').hasClass('hidden')){
-    $('.main-nav-bar-img').removeClass('hidden');
-  };
-  
-  if($('.menu-header-phone').hasClass('hidden')){
-      $('.menu-header-phone').removeClass('hidden');
-    }
-  else {
+  } else {
     $('.menu-header-phone').addClass('hidden');
     $('.logo-main').removeClass('hidden');
+    $('#nav-container').toggleClass("pushed");
   }
 });
 
