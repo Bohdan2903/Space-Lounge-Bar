@@ -17,7 +17,9 @@ jQuery(function($){
 
 
 $(document).ready(function(){   
- 
+  $("#form-time").focus( function() {
+    $(this).attr({type: 'datetime-local'});
+  });
   var phoneWidth = $(window).width();
   if(phoneWidth > 768){
     $('.menu').slick({
@@ -517,12 +519,14 @@ $('.for-adress').on('click',function(){
  });
 
  $('.go-btn').on('click',function(e){
-   e.preventDefault();
+      e.preventDefault();
       $('.succes-order').css('display', "block");
       $('.myform').css('display', "none");
-      $('.myform-2').css('display', "none");})
+      $('.myform-2').css('display', "none");
+    })
   
-     $('.order-close-btn').click(function(){
+     $('.order-close-btn').click(function(e){
+         
         $('.succes-order').css('display', "none");
         $('.myform').css('display', "none");
         $('#fullpage').css('display', "table");

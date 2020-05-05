@@ -2043,7 +2043,9 @@ display: flex;
               flex-direction: column;
       margin-left:25%;
     }
-    
+    .myform::placeholder{
+      display: none;
+    }
     .myform header {
       padding-top: 20px;
       color: whitesmoke;
