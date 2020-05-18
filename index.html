@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">  
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,500i,700&display=swap&subset=cyrillic-ext" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
     <link href="css/reset.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/mobile.css" rel="stylesheet">
@@ -15,75 +14,41 @@
     <title>DiplomaProdan</title>
 </head>
 <body>
-  <form class="myform table-order fadeInDown" > 
-  
-    <header>Резерв Cтола</header>
-    <div class="area">
-      <div class="row">
-       <div class="col2">
-        <input type="text" name="firstname" class="form-name" id="fistname" placeholder="Имя" required minlength="3" maxlength='20'>
-        <label for="fistname">Имя</label>
-      </div>
-      <div class="col2">
-        <input type="text" name="lastname" id="lastname" placeholder="Фамилия" maxlength='20'>
-        <label for="lastname">Фамилия</label>
-      </div>
-      </div>
-    <div class="row">
-      <input type="tel" name="phone" class="form-phone" placeholder="Номер телефона" id="form-phone" required minlength="6" maxlength='12'>
-      <label for="form-phone">Телефон</label>
-    </div>
-    <div class="row">
-      <input type="text" name="time" id="form-time" placeholder="Укажите время">
-      <label for="form-time">Время</label>
-    </div>
-    <div class="row-button">
-    <input type="submit" value="Заказать" class="btn go-btn">
-    <input type="submit" value="Вернутся" class="btn back-btn" href="#main-page" />
-    </div>
+  <!-- прелоадер -->
+  <div id="preloader">
+    <div id="loader"></div>
   </div>
-</form>
     
-<form class="myform-2 shisha-order-button fadeInDown" ></a>
+<form class="myform-2 shisha-order-button fadeInDown" action="" enctype="text/plain">
+  <a href="#5thPage" class="icon "><i class="fas fa-arrow-circle-left back-btn-shisha "></i> </a> 
   <header>Заказ Кальяна</header>
   <div class="text-in-order">
-    <div class="form-price"> Cумма заказа </div>
-    <div class="area">
-    <div class="row">
-    <div class="col2">
-      <input type="text" name="firstname" class="form-name" id="fistname"  required minlength="3" maxlength='20'>
-      <label for="fistname">Имя</label>
+    <div class="form-left-text">
+       <div class="form-price-header"> Ваш заказ:  </div>
+       <div class="form-text-sum"></div>
+        <div class="form-price"></div>
     </div>
-    <div class="col2">
-      <input type="text" name="lastname" id="lastname" maxlength='20'>
-      <label for="lastname">Фамилия</label>
-    </div>
-    </div>
-    <div class="row">
-    <input type="tel" name="phone" class="form-phone" id="form-phone" required minlength="6" maxlength='12'>
-    <label for="form-phone">Телефон</label>
-    </div>
-    <div class="row-place">
-    <label class="place" for="adress" >В заведении 
-      <input class="css-radio-2 for-place" type="radio" name='for'/>
-    </label>
-    <label class="place" for="adress" >На доставку
-    <input class="css-radio-2 for-adress" type="radio"  name='for'/>
-    </label>
-    </div>
-    <div class="row adress" >
-    <input type="text" name="address" class="form-adress"vid='form-adress' minlength="3" maxlength='30' >
-    <label for="form-adress">Адресс доставки</label>
-    </div>
-    <div class="row">
-    <input type="datetime-local" name="time" id="form-time" maxlength="10">
-    <label for="form-time">Время</label>
-    </div>
-    <div class="row-button">
-      <input type="submit" value="Заказать" class="btn go-btn">
-      <input type="submit" value="Вернутся" class="btn back-btn-shisha"/><a href="shisha-page"></a>
-    </div>
-  </div>
+   
+       <div class="area">
+        <div class="row">
+          <div class="col2">
+            <input type="text" name="firstname" class="form-name" id="fistname" placeholder="Имя" required minlength="3" maxlength='20'>
+          </div>
+           <div class="col2">
+             <input type="text" name="lastname" id="lastname" placeholder="Фамилия" maxlength='20'>
+            </div>
+        </div>
+         <div class="row">
+         <input type="tel" name="phone" class="form-phone" placeholder="Номер телефона" id="form-phone" required minlength="6" maxlength='12'>
+         </div>
+        <div class="row">
+         <input type="text" name="time" class="form-time" placeholder="Укажите время">
+        </div>
+        <div class="row">
+           <button class='btn go-btn'><span>Заказать</span></button>
+         </div>
+       
+      </div>
 </div>
 </form>
    
@@ -112,27 +77,27 @@
        <header id="header" class="fadeInDown">
        <div id="main-nav">
                 <div id="nav-img">
-                    <a href="#main-page" class="main-nav-bar">
+                    <a href="#main" class="main-nav-bar">
                         <img src="./img/logo.png" class="logo-img" alt=''>
                     </a>
                 </div>
             
                     <div class="main-nav-bar-right">
                       <div class="main-nav-bar">
-                        <a href="#about-page" class="main-nav-links">О НАС</a>
+                        <a href="#about" class="main-nav-links">О НАС</a>
                     </div>
                       <div class="main-nav-bar">
-                        <a href="#menu-page" class="main-nav-links">МЕНЮ</a>
+                        <a href="#menu" class="main-nav-links">МЕНЮ</a>
                       </div>
                         <div class="main-nav-bar">  
-                          <a href="#discount-page" class="main-nav-links">АКЦИИ</a>
+                          <a href="#discount" class="main-nav-links">АКЦИИ</a>
                         </div>
                           <div class="main-nav-bar">
-                              <a href="#shisha-page" class="main-nav-links">КАЛЬЯН</a>
+                              <a href="#shisha" class="main-nav-links">КАЛЬЯН</a>
                            </div>
                           
                          <div class="main-nav-bar">
-                           <a href="#contact-page" class="main-nav-links">КОНТАКТЫ</a>
+                           <a href="#contact" class="main-nav-links">КОНТАКТЫ</a>
                          </div>
                         <a class="icon nav-phone " href="tel:+380660580166">+380660580166 </a>
                   </div>
@@ -143,13 +108,13 @@
       <img src="./img/logo.png" class="logo-img logo-main " alt=''>
       <nav class="menu-header-phone hidden">
           <ul class="main-nav-bar-text">
-            <a href="#about-page" class="main-nav-links"> <img src="./img/logo.png" class="logo-img hamburger" alt=''></a></li>
-            <li><a href="#about-page" class="main-nav-links">О НАС</a></li>
-            <li><a href="#menu-page" class="main-nav-links">МЕНЮ</a></li>
-            <li><a href="#discount-page" class="main-nav-links">АКЦИИ</a></li>
-            <li><a href="#shisha-page" class="main-nav-links">КАЛЬЯН</a></li>
-            <li><a href="#reviews-page" class="main-nav-links">ОТЗЫВЫ</a></li>
-            <li><a href="#contact-page" class="main-nav-links">КОНТАКТЫ</a></li> 
+            <a href="#main" class="main-nav-links"> <img src="./img/logo.png" class="logo-img hamburger" alt=''></a></li>
+            <li><a href="#about" class="main-nav-links">О НАС</a></li>
+            <li><a href="#menu" class="main-nav-links">МЕНЮ</a></li>
+            <li><a href="#discount" class="main-nav-links">АКЦИИ</a></li>
+            <li><a href="#shisha" class="main-nav-links">КАЛЬЯН</a></li>
+            <li><a href="#reviews" class="main-nav-links">ОТЗЫВЫ</a></li>
+            <li><a href="#contact" class="main-nav-links">КОНТАКТЫ</a></li> 
             <ul class="main-nav-bar-icon-phone">
             <li class ="header_icon">
                   <a class="icon " href="mailto:bogdanprodan20@gmail.com">
@@ -177,8 +142,7 @@
        </div><!-- /nav-container -->
     </header>    
 
-
-    <section class="video-page "><a name="main-page"></a>
+    <section class="video-page "><a name="main"></a>
         <div class='main-video'> 
           <video  preload="true" autoplay="true" loop="true" muted="muted" data-keepplaying>
             <source src="./img/new-video.mp4" type="video/mp4" id="vid">
@@ -198,19 +162,45 @@
                      <span class="second-text">Место, куда хочется возвращаться!</span>
                       <a href='#make-order-table' class='order-table'><span>Забронировать столик</span></a>
             </div>
+            <form class="myform table-order fadeInDown" action="" enctype="text/plain"> 
+              <header>Резерв Cтола</header>
+              <div class="area">
+                <div class="row">
+                 <div class="col2">
+                  <input type="text" name="firstname" class="form-name" id="fistname" placeholder="Имя" required minlength="3" maxlength='20'>
+                
+                </div>
+                <div class="col2">
+                  <input type="text" name="lastname" id="lastname" placeholder="Фамилия" maxlength='20'>
+                  
+                </div>
+                </div>
+              <div class="row">
+                <input type="tel" name="phone" class="form-phone" placeholder="Номер телефона" id="form-phone" required minlength="6" maxlength='12'>
+                
+              </div>
+              <div class="row">
+                <input type="text" name="time" class="form-time" placeholder="Укажите время">
+              </div>
+              <div class="row-button">
+              <input type="submit" value="Заказать" class="btn go-btn">
+              <input type="button" value="Вернутся" class="btn back-btn" href="#main-page" />
+              </div>
+            </div>
+          </form>
           <div class="right-article">
                  <ul class="main-nav-bar-icon">
                   <li class ="header_icon">
                         <a class="icon " href="mailto:bogdanprodan20@gmail.com">
-                          <i class="fab fa-facebook-square "></i></a>
+                          <img src='./img/Facebook.png' /> </a>
                   </li>
                     <li class="header_icon" >
                         <a class="icon  " href="">
-                          <i class="fa fa-youtube-square" aria-hidden="true"></i></a>
+                          <img src='./img/INSTA.png' /> </a>
                     </li>
                       <li class="header_icon">
                         <a class="icon " href="https://www.instagram.com/bogdan_prodan/">
-                          <i class="fab fa-instagram-square"></i></a>
+                          <img src='./img/YouTube.png' /> </a>
                       </li>
                   </ul>
         </div>
@@ -219,7 +209,7 @@
 </div>
 
 <div class="section" id="section1">
-  <section class="about"> <a name="about-page"></a> 
+  <section class="about"> <a name="about"></a> 
       <div id="about-us">
           <span class="about-main-text"> О Нас </span>
                 <span class="about-text-1 "> Мы  &nbsp; -<span class="purple-text"> &nbsp; Space Hoohak Lounge  </span> &nbsp; работаем в этой свере уже 3 года.</span>
@@ -241,7 +231,7 @@
   </div>
 
 <div class="section" id="section2"> 
-  <section class="menu-page "><a name="menu-page"></a>
+  <section class="menu-page "><a name="menu"></a>
     <div class="menu-text">Меню </div>
 
       <div class="menu">
@@ -265,7 +255,7 @@
 
 
 <div class="section" id="section3"> 
-    <section class="all-discount "><a name="discount-page"></a>
+    <section class="all-discount "><a name="discount"></a>
         <div id="discount">
           <span class="about-main-text">Акции </span>
           <div class="discount-image">
@@ -305,9 +295,8 @@
       </section>
 </div>
 
-
 <div class="section" id="section4">
-<section class="shishaPage"><a name="shisha-page"></a>
+<section class="shishaPage"><a name="shisha"></a>
     <div class='canvas'>
       <canvas class="myCanvas"></canvas>
     </div>
@@ -559,7 +548,7 @@
  </div>
            
 <div class="section" id="section6">
-    <section class="review-page"><a name="contact-page"></a>
+    <section class="review-page"><a name="contact"></a>
         <div id="contact">
             <div class="form-text reviews">
                Отзывы
@@ -717,14 +706,28 @@
 <script type="text/javascript" src="./js/fullpage.js"></script>
 <script type="text/javascript" src="./js/slick-min.js"></script>
 <script type="text/javascript">
-var doFullpage = document.documentElement.clientWidth;
-                if (doFullpage > 768) {
-                  var myFullpage = new fullpage('#fullpage', {
-                  anchors: ['1stPage', '2ndPage', '3rdPage', '4thpage', '5thPage', '6thPage'],
-                  lazyLoad: true,
-                   scrollBar:true
-                  });
-                };
+$('#fullpage').fullpage({
+       anchors: ['1stPage', '2ndPage', '3rdPage', '4thpage', '5thPage', '6thPage'],
+       lazyLoad: true,
+      scrollBar:true,
+      responsiveWidth: 1000
+      });
+ $(window).resize( function() {
+    if($(window).width() < 1000){
+        $('#fullpage').fullpage({
+        anchors: false,
+        lazyLoad: false,
+        scrollBar:false,
+        
+      });
+      }
+  });
+
+ 
+    
+     
+</script>
+
     
 </script>
 </body>

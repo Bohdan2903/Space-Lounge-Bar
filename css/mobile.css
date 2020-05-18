@@ -1,11 +1,11 @@
 
-  @media (max-width: 480px){
+  @media (max-width: 1000px){
     .right-article{
-            display: none;
+      display: none !important;
     }
       
     #header{
-        display: none;
+      display: none !important;
     }
     #header-mob{
         display: block;
@@ -19,9 +19,9 @@
       .logo-img{
           width:60px;
           height: 50px;
-          margin-left: 20px;
-            -o-object-fit: contain;
-           object-fit: contain;
+          margin-left: 5vw;
+          -o-object-fit: contain;
+          object-fit: contain;
         }
         .hamburger{
             margin-left: -1px;
@@ -30,9 +30,9 @@
         #nav-container{
         display: flex;
         position: absolute;
-        left: 0;
-        height: 50px;
-        margin-left: 80vw;
+        right: 0;
+        margin-right: 5vw;
+        height: 49px;
         top: 0;
         z-index: 20;
         }
@@ -40,6 +40,7 @@
         .toggle-icon {
             display: block;
             z-index: 100;
+            top: 4px;
             position: relative;
             width: 100%;
             -webkit-transition: margin 600ms;
@@ -52,9 +53,9 @@
             display: block;
             width: 30px;
             height: 4px;
-            margin-top: 10px;
-            border-right: 2.8em solid #fff;
-            border-left: 0.6em rgba(132, 0, 255, 0.952);;
+            margin-top: 8px;
+            border-right: 2.5em solid #fff;
+            border-left: 0.6em rgba(132, 0, 255, 0.952);
             -webkit-box-sizing: border-box;
             -moz-box-sizing: border-box;
             box-sizing: border-box;
@@ -85,7 +86,7 @@
         .pushed .bar:nth-of-type(2) {
                 margin-left: 0px;
                 transform: rotate(-145deg) translateY(0px);
-                -webkit-transform: rotate(-140deg) translateY(0px);
+                -webkit-transform: rotate(-140deg) translateY(4px);
                 -moz-transform: rotate(-145deg) translateY(0px);
                 -ms-transform: rotate(-145deg) translateY(0px);
                 -o-transform: rotate(-145deg) translateY(0px);
@@ -93,7 +94,7 @@
             .pushed .bar:nth-of-type(3) {
                 margin-left: 6px;
                 transform: rotate(-45deg) translateY(-20px) translateX(20PX);
-                -webkit-transform: rotate(-40deg) translateY(-15px) translateX(5PX);
+                -webkit-transform: rotate(-41deg) translateY(-14px) translateX(6PX);
                 -moz-transform: rotate(-45deg) translateY(-20px) translateX(20PX);
                 -ms-transform: rotate(-45deg) translateY(-20px) translateX(20PX);
                 -o-transform: rotate(-45deg) translateY(-20px) translateX(20PX);
@@ -173,10 +174,10 @@
       .main-video{
         width:100%;
         height: auto;
-        min-height: 112vh;
+        min-height: 114vh;
         z-index: 3;
         position: relative;
-        top: -13vh;
+        top: -15vh;
         right: 0;
         overflow: hidden;
         background: url('../img/new-video.mp4') no-repeat;
@@ -330,7 +331,7 @@
       display: -ms-flexbox;
       display: flex;
       height: 1200px;
-      top: 30px;
+      top: 60px;
       position: relative;
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
@@ -351,7 +352,7 @@
           position: relative;
           background: url('../img/bag-page2-mob.png');
           background-size: cover;
-          top: -30px;
+          top: -65px;
         }
         .about-main-text-popup{
           text-align: center;
@@ -511,27 +512,7 @@
         }
         
         .menu{
-          /* POSITION: RELATIVE; */
-          background-size: contain;
-          width: 70%;
-          height: 78%;
-          margin-left: 18%;
-          margin-top: -4%;
-          z-index: 7;
-          transition: all 1s ease-out;
-          z-index: 7;
-          -webkit-transition: all 1s ease-out;
-          -moz-transition: all 1s ease-out;
-          -ms-transition: all 1s ease-out;
-          -o-transition: all 1s ease-out;
-        }
-        
-        .menu:hover{
-          transform: scale(1.11);
-          -webkit-transform: scale(1.11);
-          -moz-transform: scale(1.11);
-          -ms-transform: scale(1.11);
-          -o-transform: scale(1.11);
+          display: none !important;
         }
         .circle-menu{
           display: -webkit-box;
@@ -669,7 +650,6 @@
         .gallery-wrapper{
           height: auto;
           z-index: 10;
-          opacity: 0.3;
           display: flex !important;
           margin-top: 50px;
           width: 90%;
@@ -695,8 +675,7 @@
           margin-left: 10%;
           margin-bottom: 10px;
         }
-        .menu{display: none;}
-
+        
         .menu-phone-img{
           width: 90%;
           height: 75vh;
@@ -1005,8 +984,8 @@
         }
         .shishaPage{
           position: relative;
-          background: url('../img/shisha-page-phonebg.png');
-          background-size: contain;
+          background: url('../img/shisha-page-phonebg.png') no-repeat;
+          background-size: cover;
           width: 100%;
           height: 1270px;
           top: -50px;
@@ -1071,11 +1050,10 @@
         
         .dailyhookah{
           height: 100px !important;
-          margin-left: 10px;
         }
         .cult{
-          margin-left: 25%;
           height: 97px !important;
+          margin-left: 7vw;
         }
         
         .form-text-2{
@@ -1125,7 +1103,7 @@
         width: 25px;
         position: absolute;
         height: 25PX;
-        margin-left: 0px;
+        margin-left: -5%;
         z-index: 50;
         margin-top: 99px;
         opacity: 0;
@@ -1140,7 +1118,7 @@
         position: relative;
         z-index: 10;
         top: 100px;
-        left: -170px;
+        left: -165px;
         border-radius: 50%;
         width: 20px;
         height: 20px;
@@ -1172,16 +1150,18 @@
        }
        .tabac-wrap-img{
          display: flex !important;
-         width: 65% !important;
-         height: 150px;
+         width: 80% !important;
+         position: relative;
+         left: 14%;
          justify-content: center;
+         max-width: 300px;
+         height: 150px;
          text-align: center;
-         margin-left: 17%;
        }
        .tabac-wrap-img label p{
         position: relative;
         top: 105px;
-        left: -166px;
+        left: -160px;
         font-size: 16px;
         color: whitesmoke;
     }
@@ -1501,9 +1481,9 @@ cursor: pointer;
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
-          top: 780px;
-          left: 0%;
-          width: 62%;
+          top: 775px;
+          left: 10px;
+          width: 70%;
           -webkit-box-pack: justify;
           -ms-flex-pack: justify;
           justify-content: space-between;
@@ -1511,7 +1491,7 @@ cursor: pointer;
           margin-top: 150px;
           font-size: 16px;
           color: whitesmoke;
-          margin-left: 21%;
+          margin-left: 16%;
           font-weight: bold;
           font-family: 'Golos';
           position: absolute;
@@ -1608,9 +1588,8 @@ cursor: pointer;
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
-          top: 530px;
-          left: 1px;
-          width: 61.7%;
+          top: 545px;
+          width: 68%;
           -webkit-box-pack: justify;
           -ms-flex-pack: justify;
           justify-content: space-between;
@@ -1618,7 +1597,7 @@ cursor: pointer;
           margin-top: 140px;
           font-size: 16px;
           color: whitesmoke;
-          margin-left: 22%;
+          margin-left: 19%;
           font-weight: bold;
           font-family: 'Golos';
           position: absolute;
@@ -1637,6 +1616,7 @@ cursor: pointer;
           object-fit: contain;
          }
          .tangiers{
+           margin-left: 9vw;
            width: 90px !important;
            height: 90px !important;
            border-radius: 50%;
@@ -1644,15 +1624,14 @@ cursor: pointer;
            -moz-border-radius: 50%;
            -ms-border-radius: 50%;
            -o-border-radius: 50%;
-           margin-left: 25%;
            object-fit: cover;
            }
             .sherbetti{
-              margin-left: 25%;
               height: 92px!important;
+              margin-left: 8vw;
             }
             .darkside{
-              height: 95px !important;
+              height: 92px !important;
               margin-left: 10px;
             }
             .fumari{
@@ -1684,7 +1663,7 @@ cursor: pointer;
               -webkit-box-pack: justify;
               -ms-flex-pack: justify;
               justify-content: space-between;
-              width: 27%;
+              width: 30%;
             }
             .block-colbs{
               display: none;
@@ -1711,12 +1690,12 @@ cursor: pointer;
             .colbMilk {
               background: url('../img/milkshisha-removebg-preview.png') no-repeat;
               background-size:contain;
-              margin-left: 22% !important;
+              margin-left: 30% !important;
             }
             .colbAlk {
               background: url('../img/alcoshisha-removebg-preview.png') no-repeat;
               background-size: contain;
-              margin-left: 39% !important;
+              margin-left: 40% !important;
             }
             .colbs{
               width: 60px;
@@ -1729,7 +1708,7 @@ cursor: pointer;
             }
             .colbs-header {
               position: absolute;
-              top: 130px;
+              top: 120px;
               color: whitesmoke;
               margin-left: 8px;
               font-size: 16px;
@@ -1763,10 +1742,10 @@ cursor: pointer;
               margin-left: 5vw;
             }
             .ct2{
-              margin-left: 5vw;
+              margin-left: 6vw;
             }
             .ct3{
-              margin-left: 7vw;
+              margin-left: 8vw;
             }
             .check-order{
               display: block;
@@ -2013,7 +1992,7 @@ cursor: pointer;
         width:100%;
         position: relative;
         top: 60px;
-        height: 1100px;
+        height: 1300px;
         display: flex;
         flex-direction: column;
         }
@@ -2177,7 +2156,6 @@ cursor: pointer;
           text-align: center;
           position: relative;
           outline: none;
-          target: blanc;
           margin-top: 35px;
           line-height: 90px;
         }
