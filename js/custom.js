@@ -553,8 +553,8 @@ $(".toggle-icon").on('click',function() {
            var $target = _hash === '' ? $('body') : $( hash + ', a[name="'+ _hash +'"]').first();
            if( ! $target.length ) return;
            e.preventDefault();
-           $('html, body').stop().animate({ scrollTop: $target.offset().top -30}, 900, 'swing', function(){
-           window.location.hash = hash;
+           $('html, body').stop().animate({ scrollTop: $target.offset().top -40}, 900, 'swing', function(){
+           window.location.hash = hash -40;
                });
           
          
@@ -622,5 +622,3 @@ $(".toggle-icon").on('click',function() {
         });
       }
   };//finish changeVersion//
-
-  
