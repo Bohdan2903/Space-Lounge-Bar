@@ -1,4 +1,5 @@
 
+
   
   @media (min-width: 1001px){
     .contact-info-phone{
@@ -137,6 +138,8 @@
       font-family: 'Golos';
     }
     .text-in-order{
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
     }
     
@@ -813,12 +816,14 @@ margin-left: 45px;
       border-bottom: 3px solid rgb(139, 2, 250);
     } 
     .menu-1{
-      object-fit: cover;
+      -o-object-fit: cover;
+         object-fit: cover;
       width: 99%!important;
       height: 60% !important;
     }
     .menu-2{
-      object-fit: cover;
+      -o-object-fit: cover;
+         object-fit: cover;
       width: 95%!important;
       height: 58% !important;
       padding-top: 20px;
@@ -829,7 +834,8 @@ margin-left: 45px;
       width: 95%!important;
       padding-top: 20px;
       height: 60% !important;
-      object-fit: cover;
+      -o-object-fit: cover;
+         object-fit: cover;
     }
     
     .menu{
@@ -982,8 +988,8 @@ margin-left: 45px;
         height: 0;
         width: 100%;
         z-index: -1;
-        background: -webkit-gradient(linear,left top, left bottom,from(rgb(166, 61, 252)),color-stop(rgb(144, 26, 255)),color-stop(rgb(132, 0, 255)),to(rgb(109, 2, 250)));
         background: -o-linear-gradient(top,rgb(166, 61, 252),rgb(144, 26, 255),rgb(132, 0, 255),rgb(109, 2, 250));
+        background: -webkit-gradient(linear,left top, left bottom,from(rgb(166, 61, 252)),color-stop(rgb(144, 26, 255)),color-stop(rgb(132, 0, 255)),to(rgb(109, 2, 250)));
         background: linear-gradient(180deg,rgb(166, 61, 252),rgb(144, 26, 255),rgb(132, 0, 255),rgb(109, 2, 250));
         -webkit-transition: .8s cubic-bezier(.165,.84,.44,1);
         -o-transition: .8s cubic-bezier(.165,.84,.44,1);
@@ -1297,6 +1303,8 @@ margin-left: 45px;
     }
     .about-img{
       z-index: 10;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       position: relative;
       width: 130px;
@@ -1375,7 +1383,12 @@ margin-left: 45px;
     #contact-us{
     width:100%;
     height: 100%;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     }
     .mapframe{
@@ -1498,8 +1511,8 @@ margin-left: 45px;
           height: 0;
           width: 100%;
           z-index: -1;
-          background: -webkit-gradient(linear,left top, left bottom,from(rgb(166, 61, 252)),color-stop(rgb(144, 26, 255)),color-stop(rgb(132, 0, 255)),to(rgb(109, 2, 250)));
           background: -o-linear-gradient(top,rgb(166, 61, 252),rgb(144, 26, 255),rgb(132, 0, 255),rgb(109, 2, 250));
+          background: -webkit-gradient(linear,left top, left bottom,from(rgb(166, 61, 252)),color-stop(rgb(144, 26, 255)),color-stop(rgb(132, 0, 255)),to(rgb(109, 2, 250)));
           background: linear-gradient(180deg,rgb(166, 61, 252),rgb(144, 26, 255),rgb(132, 0, 255),rgb(109, 2, 250));
           -webkit-transition: .8s cubic-bezier(.165,.84,.44,1);
           -o-transition: .8s cubic-bezier(.165,.84,.44,1);
@@ -1746,8 +1759,12 @@ margin-left: 45px;
       width: 81%;
       position: relative;
       top: 40px;
+      display: -webkit-box !important;
+      display: -ms-flexbox !important;
       display: flex !important;
-      justify-content: space-between;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
       left: 10%;
       overflow: hidden;
     }
@@ -1758,6 +1775,8 @@ margin-left: 45px;
     width: 10;
     margin-left: 6%;
     width: 85% !important;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
     display: flex !important;
     border-radius: 5px;
     background: rgba(3, 0, 5, 0.192);
@@ -1791,8 +1810,11 @@ margin-left: 45px;
       width: 100%;
       position: relative;
       left: 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
     }
     
     @media (min-width: 576px) {
@@ -2160,7 +2182,10 @@ margin-left: 45px;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      flex-direction: column;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
       -webkit-box-pack: justify;
       -ms-flex-pack: justify;
     }
@@ -2316,16 +2341,25 @@ margin-left: 45px;
       font-family: 'Golos';
       color: whitesmoke;
       border-bottom: 2px solid rgb(139, 2, 250);
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
       width: fit-content;
       height: auto;
       margin-top: 30px;
     }
     .form-left-text{
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: column;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
       width: 50%;
     }
     .form-right-text{
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       
     }
@@ -2425,7 +2459,10 @@ margin-left: 45px;
       opacity: 0;
     }
     .radio-group {
-      flex-direction: column;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -2462,6 +2499,8 @@ margin-left: 45px;
       -o-border-radius: 50%;
     }
     .radio-group-2 {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       padding-left: 10px;
        width: 17%;
@@ -2837,8 +2876,8 @@ margin-left: 45px;
         height: 0;
         width: 100%;
         z-index: -1;
-        background: -webkit-gradient(linear,left top, left bottom,from(rgb(166, 61, 252)),color-stop(rgb(144, 26, 255)),color-stop(rgb(132, 0, 255)),to(rgb(109, 2, 250)));
         background: -o-linear-gradient(top,rgb(166, 61, 252),rgb(144, 26, 255),rgb(132, 0, 255),rgb(109, 2, 250));
+        background: -webkit-gradient(linear,left top, left bottom,from(rgb(166, 61, 252)),color-stop(rgb(144, 26, 255)),color-stop(rgb(132, 0, 255)),to(rgb(109, 2, 250)));
         background: linear-gradient(180deg,rgb(166, 61, 252),rgb(144, 26, 255),rgb(132, 0, 255),rgb(109, 2, 250));
         -webkit-transition: .8s cubic-bezier(.165,.84,.44,1);
         -o-transition: .8s cubic-bezier(.165,.84,.44,1);
