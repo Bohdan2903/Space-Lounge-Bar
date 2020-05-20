@@ -9,6 +9,322 @@ $( window ).on('load', changeVersion);
   });
 
  
+
+jQuery(function($){
+  
+  $('.main-nav-links, .main-nav-bar').on('click.smoothscroll', function( e ){
+  var hash= this.hash,
+   _hash  = hash.replace(/#/,''), theHref = $(this).attr('href').replace(/#.*/, '');
+  if( theHref && location.href.replace(/#.*/,'') != theHref ) return;
+  var $target = _hash === '' ? $('body') : $( hash + ', a[name="'+ _hash +'"]').first();
+  if( ! $target.length ) return;
+  e.preventDefault();
+  $('html, body').stop().animate({ scrollTop: $target.offset().top -5}, 900, 'swing', function(){
+  window.location.hash = hash -5;
+  
+      });
+    });
+  });
+
+
+$(document).ready(function(){
+ changeVersion();
+  
+  $('#preloader').fadeOut();
+  $('#loader').fadeOut();
+  $('#fullpage').сss('display', 'table');
+
+  });
+    //calculator
+
+    $('.kolbs-img').click(function(e){
+      e.preventDefault();
+    });
+    
+      $('.calc-img').click(function(e){
+        e.preventDefault();
+      });
+    
+      $('.calc-kolbs, .colbs').on('change', function (e) {
+        e.preventDefault();
+        $('.colbs').fadeIn(250);
+        $('.colbs-text').removeClass("border-colbs-header");
+        $(this).fadeOut(450, summ).parent().find(".colbs-text").addClass("border-colbs-header");
+        $('.new-kolba').removeClass().addClass('new-kolba').hide().addClass($(this).attr('data-image')).fadeIn(600);
+      });
+  
+      $('.calc-img-chasha').on('change', function (e) {
+        e.preventDefault();
+        $('.calc-img-chasha').fadeIn(250);
+        $('.colbs-header').removeClass("border-chasha-header");
+        $(this).fadeOut(450, summ).parent().find(".colbs-header").addClass("border-chasha-header");
+        $('.new-chasha').removeClass().addClass('new-chasha').hide().addClass($(this).attr('data-image')).fadeIn(600);
+      });
+  
+      $('.css-radio').on('click', function () {
+        $('.css-radio').parent().fadeIn(150);
+        $('.css-radio').parent().removeClass('option-radio-active');
+        $(this).parent().addClass('option-radio-active');
+       
+      });
+
+    let colbPrice = 0;
+    let total=0;
+    let chashaPrice = 0;
+    let tabacPrice = 0;
+        let chashaName;
+        let kolbsName;
+        let tabak;
+
+      $('.form-input').on('change',function () {
+            summ();
+      });
+
+      function summ() {
+        $('.calc-img-chasha').on('click',function() {
+            chashaPrice = +$(this).attr('data-price');
+               chashaName = $(this).attr('data-name');
+                 
+          });
+
+          $('.calc-kolbs').on('click',function() {
+               colbPrice = +$(this).attr('data-price');
+               kolbsName = $(this).attr('data-name');
+           });
+           
+            $('.calc-handler').on('click',function() {
+                tabacPrice = +$(this).attr('data-price');
+                tabak = $(this).attr('data-name');
+              });
+         
+            total =  +chashaPrice + +colbPrice + +tabacPrice ;
+             if(isNaN(total) ) total = 0;
+
+            $(".total_price_sum, .total_price_sum-phone").text('Сумма заказа ' + total + " " + "UAH");
+             $(".form-text-sum").text( tabak + ' ' + kolbsName + ' и с'+ ' '+ chashaName + ' чашей.');
+             $(".form-price").text( 'Cумма заказа ' + total + ' ' + 'UAH' );
+       };
+//clik po inx kalianov
+
+      $('.indx-0').click(function (){
+        if( $('.number-shisha').hasClass('hidden')){
+          $('.number-shisha').removeClass('hidden').fadeIn(400).css('display','block');
+        }
+
+        else if( $('.number-shisha').css('display','block')){
+          $('.number-shisha').fadeOut(500).addClass('hidden');
+        }
+        
+      });
+
+      $('.indx-1').click(function (){
+        $('.chosen-indx').text('1').removeClass('indx-2').removeClass('indx-3').removeClass('indx-1').addClass('indx-1');
+        $('.number-shisha').removeClass("hidden").fadeIn(500);
+        $('.third-shahta, .chasha-3, .kolb-3, .second-shahta, .chasha-2, .kolb-2').addClass('hidden');
+        $('.first-shahta, .chasha-1, .kolb-1').fadeIn(200);
+        $('.first-shahta').css('margin-left', '0px');
+        $('.number-shisha').fadeOut(500).addClass('hidden');
+      });
+
+      $('.indx-2').click(function (){
+        $('.chosen-indx').text('2').removeClass('indx-1').removeClass('indx-3').addClass('indx-2');
+        $('.number-shisha').removeClass("hidden").fadeIn(500);
+        $('.second-shahta, .chasha-2, .kolb-2').removeClass('hidden').fadeIn(200);
+        $('.third-shahta').addClass('hidden');
+        $('.first-shahta').css({'margin-left': '-100px'});
+        $('.second-shahta').css({'margin-left': '90px'});
+        $('.number-shisha').fadeOut(500).addClass('hidden');
+      })
+      $('.indx-3').click(function (){
+        $('.chosen-indx').text('3').removeClass('indx-1').removeClass('indx-2').addClass('indx-3');
+        $('.number-shisha').removeClass("hidden").fadeIn(500);
+        $('.third-shahta, .chasha-3, .kolb-3, .second-shahta').removeClass('hidden').fadeIn(200);
+        $('.second-shahta').css('margin-left', '-15px');
+        $('.third-shahta').css('margin-left','-10px');
+        $('.first-shahta').css('margin-left', '-120px');
+        $('.number-shisha').fadeOut(500).addClass('hidden');
+      })
+
+//click po strelkam na kaliane
+      $('.arrow-right-shisha').click(function(e){
+        console.log('right');
+        e.preventDefault();
+        if($('.chosen-indx').hasClass('indxfirst') || $('.chosen-indx').hasClass('indx-1')){
+             $('.third-shahta, .chasha-3, .kolb-3').fadeOut(300).addClass('hidden'); 
+             $('.chosen-indx').text('2').removeClass('indx-1').removeClass('indxfirst').removeClass('indx-3').addClass('indx-2');  
+             $('.second-shahta, .chasha-2, .kolb-2, .first-shahta, .chasha-1, .kolb-1').removeClass('hidden').fadeIn(300);
+             $('.first-shahta').css({'margin-left': '-120px'});
+             $('.second-shahta').css({'margin-left': '90px'});
+              
+        }
+        else if($('.chosen-indx').hasClass('indx-2')){
+          $('.chosen-indx').text('3').removeClass('indx-2').removeClass('indx-1').addClass('indx-3').removeClass('indxfirst');
+          $('.third-shahta, .chasha-3, .kolb-3, .second-shahta, .chasha-2, .kolb-2, .first-shahta, .chasha-1, .kolb-1').removeClass('hidden').fadeIn(300);
+          $('.second-shahta').css('margin-left', '-15px');
+          $('.third-shahta').css('margin-left','-10px');
+          $('.first-shahta').css('margin-left', '-120px');
+        }
+        else if($('.chosen-indx').hasClass('indx-3')){
+          $('.chosen-indx').text('1').removeClass('indx-2').removeClass('indx-3').addClass('indx-1').addClass('indxfirst');
+          $('.third-shahta, .chasha-3, .kolb-3, .second-shahta, .chasha-2, .kolb-2').fadeOut(00).addClass('hidden');
+          $('.first-shahta, .chasha-1, .kolb-1').removeClass('hidden').fadeIn(200);
+          $('.first-shahta').css('margin-left', '0px');
+          
+        }});
+
+          $('.arrow-left-shisha').click(function(e){
+            console.log('left');
+            e.preventDefault();
+            if($('.chosen-indx').hasClass('indxfirst') || $('.chosen-indx').hasClass('indx-1')){
+              $('.chosen-indx').text('3').removeClass('indx-2').removeClass('indx-1').removeClass('indxfirst').addClass('indx-3');
+              $('.third-shahta, .chasha-3, .kolb-3, .second-shahta, .chasha-2, .kolb-2, .first-shahta, .chasha-1, .kolb-1').removeClass('hidden').fadeIn(300);
+              $('.second-shahta').css('margin-left', '-15px');
+              $('.third-shahta').css('margin-left','-10px');
+              $('.first-shahta').css('margin-left', '-120px');
+              }
+            else if($('.chosen-indx').hasClass('indx-3')){  
+              $('.third-shahta, .chasha-3, .kolb-3').fadeOut(300).addClass('hidden');  
+              $('.second-shahta').css({'margin-left': '90px'});
+              $('.chosen-indx').text('2').removeClass('indx-3').removeClass('indx-1').removeClass('indxfirst').addClass('indx-2');
+              $('.first-shahta, .chasha-1, .kolb-1, .second-shahta, .chasha-2, .kolb-2,').removeClass('hidden').fadeIn(300);
+              $('.first-shahta').css('margin-left', '-100px');
+         }
+         else if($('.chosen-indx').hasClass('indx-2')){
+           $('.chosen-indx').text('1').removeClass('indx-2').removeClass('indx-3').removeClass('indxfirst').addClass('indx-1');
+           $('.third-shahta, .chasha-3, .kolb-3, .second-shahta, .chasha-2, .kolb-2').fadeOut(300).addClass('hidden');
+           $('.first-shahta, .chasha-1, .kolb-1').removeClass('hidden').fadeIn(300);
+           $('.first-shahta').css('margin-left', '0px');
+           $('.chosen-indx').addClass('indxfirst');
+         }
+          });
+      
+//phone
+
+$('#rc-phone-icon').click(function(){
+  if($(this).hasClass('fa-times')){
+   $(this).removeClass('fa-times');
+   $(this).addClass('fa-phone');
+   $('#rc-phone-form').animate({width:'50px'});
+   setTimeout(function(){$('#rc-phone-form').addClass('closed');}, 600);
+  } 
+  });
+ $('#rc-phone-form').click(function(){
+   if($(this).hasClass('closed')){
+     $('#rc-phone-icon').removeClass('fa-phone');
+     $('#rc-phone-icon').addClass('fa-times');
+     $('#rc-phone-form').animate({width:'605%'}).removeClass('closed');
+     setTimeout(function(){$('#rc-phone-form').addClass('opened');}, 600);
+   }
+ });
+//
+//myOrderForm
+
+$('.order-table').click(function(){
+  
+  $('.table-order').css('display', "flex");
+});
+
+$('.css-radio-2').on('click', function () {
+  $('.css-radio-2').parent().fadeIn(150);
+  $('.css-radio-2').parent().removeClass('option-radio2-active');
+  $(this).parent().addClass('option-radio2-active');
+ });
+
+$('.back-btn').click(function(){
+  
+  $('.table-order').css('display', "none");
+  
+});
+
+
+$('.for-adress').on('click',function(){
+  $('.adress').css('display', " table");
+ });
+ $('.for-place').on('click',function(){
+  $('.adress').css('display', "none");
+ });
+
+ $('.go-btn').on('click',function(){
+      
+      $('.succes-order').css('display', "block");
+      $('.myform').css('display', "none");
+      $('.myform-2').css('display', "none");
+    
+    })
+  
+     $('.order-close-btn').click(function(e){
+         
+        $('.succes-order').css('display', "none");
+        $('.myform, .myform-2').css('display', "none");
+        $('#fullpage').css('display', "table");
+        $('body').css({'background': 'none','font-family': 'Roboto'});
+        location.reload();
+
+        });
+
+// анимаци в области видимости
+var windowHeight = $(window).height();
+var windowWidth = $(window).width();
+
+	$(document).on('scroll', function() {
+		$('.about-plus, .bgicon, .icon-text, .logo-img ').each(function() {
+			var self = $(this),
+			height = self.offset().top + self.height();
+			if ($(document).scrollTop() + windowHeight >= height -300 && windowWidth > 768 ){
+         self.addClass('bounceInLeft'); 
+        };
+
+      if($(document).scrollTop() + windowHeight >= height -500 &&  windowWidth <768){
+        self.addClass('bounceInLeft'); 
+        $('.about-img').each(function() {
+          $(this).addClass('bounceInLeft');
+      })}
+      
+});
+      $('.map').each(function() {
+        var self = $(this),
+        height = self.offset().top + self.height();
+        if ($(document).scrollTop() + windowHeight >= height -300 && windowWidth > 768){
+          self.addClass('wow zoomInLeft'); 
+       }});
+
+      $('.gallery-wrapper').each(function() {
+        var self = $(this),
+        height = self.offset().top + self.height();
+        if ($(document).scrollTop() + windowHeight >= height-20  && windowWidth > 768 ){
+          $('.gallery-wrapper').css('display', 'flex');
+          $('.gallery-item').addClass('wow zoomInLeft').css('opacity', '1');
+          
+          }
+
+         if ($(document).scrollTop() + windowHeight >= height - 500 && windowWidth < 768 ){
+          $('.gallery-wrapper').css({'opacity': '1', 'display':'flex'});
+          $('.gallery-item').addClass('wow zoomInLeft').css('opacity', '1');
+         }
+          });
+});
+
+$(".toggle-icon").on('click',function() {
+  $('section').each(function (){
+  if($('section').hasClass('hidden')){
+    $('section').removeClass('hidden');
+    $('.logo-main').removeClass('hidden');
+  } else $('section').addClass('hidden');;
+  });
+
+ 
+  if( $('.menu-header-phone').hasClass('hidden')){
+    $('.menu-header-phone').removeClass('hidden'); 
+    $('#nav-container').toggleClass("pushed");
+  $('.logo-main').addClass('hidden');
+  } else {
+    $('.menu-header-phone').addClass('hidden');
+    $('.logo-main').removeClass('hidden');
+    $('#nav-container').toggleClass("pushed");
+  }
+});
+
+
   function changeVersion(){ 
    
     let phoneWidth = 1000;
@@ -305,324 +621,6 @@ $( window ).on('load', changeVersion);
           $(location).attr('href',url);
         });
       }
-  };
+  };//finish changeVersion//
 
-
-jQuery(function($){
-  
-  $('.main-nav-links, .main-nav-bar').on('click.smoothscroll', function( e ){
-  var hash= this.hash,
-   _hash  = hash.replace(/#/,''), theHref = $(this).attr('href').replace(/#.*/, '');
-  if( theHref && location.href.replace(/#.*/,'') != theHref ) return;
-  var $target = _hash === '' ? $('body') : $( hash + ', a[name="'+ _hash +'"]').first();
-  if( ! $target.length ) return;
-  e.preventDefault();
-  $('html, body').stop().animate({ scrollTop: $target.offset().top -5}, 900, 'swing', function(){
-  window.location.hash = hash -5;
-  
-      });
-    });
-  });
-
-
-$(document).ready(function(){
-
-  $('#preloader').fadeOut();
-  $('#loader').fadeOut();
-  $('#fullpage').сss('display', 'table');
-  
-  changeVersion();
-  
-  
-  
-$('.kolbs-img').click(function(e){
-    e.preventDefault();
-  });
-  
-    $('.calc-img').click(function(e){
-      e.preventDefault();
-    });
-  
-    $('.calc-kolbs, .colbs').on('change', function (e) {
-      e.preventDefault();
-      $('.colbs').fadeIn(250);
-      $('.colbs-text').removeClass("border-colbs-header");
-      $(this).fadeOut(450, summ).parent().find(".colbs-text").addClass("border-colbs-header");
-      $('.new-kolba').removeClass().addClass('new-kolba').hide().addClass($(this).attr('data-image')).fadeIn(600);
-    });
-
-    $('.calc-img-chasha').on('change', function (e) {
-      e.preventDefault();
-      $('.calc-img-chasha').fadeIn(250);
-      $('.colbs-header').removeClass("border-chasha-header");
-      $(this).fadeOut(450, summ).parent().find(".colbs-header").addClass("border-chasha-header");
-      $('.new-chasha').removeClass().addClass('new-chasha').hide().addClass($(this).attr('data-image')).fadeIn(600);
-    });
-
-    $('.css-radio').on('click', function () {
-      $('.css-radio').parent().fadeIn(150);
-      $('.css-radio').parent().removeClass('option-radio-active');
-      $(this).parent().addClass('option-radio-active');
-     
-    });
-  });
-    //calculator
-    let colbPrice = 0;
-    let total=0;
-    let chashaPrice = 0;
-    let tabacPrice = 0;
-        let chashaName;
-        let kolbsName;
-        let tabak;
-
-      $('.form-input').on('change',function () {
-            summ();
-      });
-
-      function summ() {
-        $('.calc-img-chasha').on('click',function() {
-            chashaPrice = +$(this).attr('data-price');
-               chashaName = $(this).attr('data-name');
-                 
-          });
-
-          $('.calc-kolbs').on('click',function() {
-               colbPrice = +$(this).attr('data-price');
-               kolbsName = $(this).attr('data-name');
-           });
-           
-            $('.calc-handler').on('click',function() {
-                tabacPrice = +$(this).attr('data-price');
-                tabak = $(this).attr('data-name');
-              });
-         
-            total =  +chashaPrice + +colbPrice + +tabacPrice ;
-             if(isNaN(total) ) total = 0;
-
-            $(".total_price_sum, .total_price_sum-phone").text('Сумма заказа ' + total + " " + "UAH");
-             $(".form-text-sum").text( tabak + ' ' + kolbsName + ' и с'+ ' '+ chashaName + ' чашей.');
-             $(".form-price").text( 'Cумма заказа ' + total + ' ' + 'UAH' );
-       };
-//clik po inx kalianov
-
-      $('.indx-0').click(function (){
-        if( $('.number-shisha').hasClass('hidden')){
-          $('.number-shisha').removeClass('hidden').fadeIn(400).css('display','block');
-        }
-
-        else if( $('.number-shisha').css('display','block')){
-          $('.number-shisha').fadeOut(500).addClass('hidden');
-        }
-        
-      });
-
-      $('.indx-1').click(function (){
-        $('.chosen-indx').text('1').removeClass('indx-2').removeClass('indx-3').removeClass('indx-1').addClass('indx-1');
-        $('.number-shisha').removeClass("hidden").fadeIn(500);
-        $('.third-shahta, .chasha-3, .kolb-3, .second-shahta, .chasha-2, .kolb-2').addClass('hidden');
-        $('.first-shahta, .chasha-1, .kolb-1').fadeIn(200);
-        $('.first-shahta').css('margin-left', '0px');
-        $('.number-shisha').fadeOut(500).addClass('hidden');
-      });
-
-      $('.indx-2').click(function (){
-        $('.chosen-indx').text('2').removeClass('indx-1').removeClass('indx-3').addClass('indx-2');
-        $('.number-shisha').removeClass("hidden").fadeIn(500);
-        $('.second-shahta, .chasha-2, .kolb-2').removeClass('hidden').fadeIn(200);
-        $('.third-shahta').addClass('hidden');
-        $('.first-shahta').css({'margin-left': '-100px'});
-        $('.second-shahta').css({'margin-left': '90px'});
-        $('.number-shisha').fadeOut(500).addClass('hidden');
-      })
-      $('.indx-3').click(function (){
-        $('.chosen-indx').text('3').removeClass('indx-1').removeClass('indx-2').addClass('indx-3');
-        $('.number-shisha').removeClass("hidden").fadeIn(500);
-        $('.third-shahta, .chasha-3, .kolb-3, .second-shahta').removeClass('hidden').fadeIn(200);
-        $('.second-shahta').css('margin-left', '-15px');
-        $('.third-shahta').css('margin-left','-10px');
-        $('.first-shahta').css('margin-left', '-120px');
-        $('.number-shisha').fadeOut(500).addClass('hidden');
-      })
-
-//click po strelkam na kaliane
-      $('.arrow-right-shisha').click(function(e){
-        console.log('right');
-        e.preventDefault();
-        if($('.chosen-indx').hasClass('indxfirst') || $('.chosen-indx').hasClass('indx-1')){
-             $('.third-shahta, .chasha-3, .kolb-3').fadeOut(300).addClass('hidden'); 
-             $('.chosen-indx').text('2').removeClass('indx-1').removeClass('indxfirst').removeClass('indx-3').addClass('indx-2');  
-             $('.second-shahta, .chasha-2, .kolb-2, .first-shahta, .chasha-1, .kolb-1').removeClass('hidden').fadeIn(300);
-             $('.first-shahta').css({'margin-left': '-120px'});
-             $('.second-shahta').css({'margin-left': '90px'});
-              
-        }
-        else if($('.chosen-indx').hasClass('indx-2')){
-          $('.chosen-indx').text('3').removeClass('indx-2').removeClass('indx-1').addClass('indx-3').removeClass('indxfirst');
-          $('.third-shahta, .chasha-3, .kolb-3, .second-shahta, .chasha-2, .kolb-2, .first-shahta, .chasha-1, .kolb-1').removeClass('hidden').fadeIn(300);
-          $('.second-shahta').css('margin-left', '-15px');
-          $('.third-shahta').css('margin-left','-10px');
-          $('.first-shahta').css('margin-left', '-120px');
-        }
-        else if($('.chosen-indx').hasClass('indx-3')){
-          $('.chosen-indx').text('1').removeClass('indx-2').removeClass('indx-3').addClass('indx-1').addClass('indxfirst');
-          $('.third-shahta, .chasha-3, .kolb-3, .second-shahta, .chasha-2, .kolb-2').fadeOut(00).addClass('hidden');
-          $('.first-shahta, .chasha-1, .kolb-1').removeClass('hidden').fadeIn(200);
-          $('.first-shahta').css('margin-left', '0px');
-          
-        }});
-
-          $('.arrow-left-shisha').click(function(e){
-            console.log('left');
-            e.preventDefault();
-            if($('.chosen-indx').hasClass('indxfirst') || $('.chosen-indx').hasClass('indx-1')){
-              $('.chosen-indx').text('3').removeClass('indx-2').removeClass('indx-1').removeClass('indxfirst').addClass('indx-3');
-              $('.third-shahta, .chasha-3, .kolb-3, .second-shahta, .chasha-2, .kolb-2, .first-shahta, .chasha-1, .kolb-1').removeClass('hidden').fadeIn(300);
-              $('.second-shahta').css('margin-left', '-15px');
-              $('.third-shahta').css('margin-left','-10px');
-              $('.first-shahta').css('margin-left', '-120px');
-              }
-            else if($('.chosen-indx').hasClass('indx-3')){  
-              $('.third-shahta, .chasha-3, .kolb-3').fadeOut(300).addClass('hidden');  
-              $('.second-shahta').css({'margin-left': '90px'});
-              $('.chosen-indx').text('2').removeClass('indx-3').removeClass('indx-1').removeClass('indxfirst').addClass('indx-2');
-              $('.first-shahta, .chasha-1, .kolb-1, .second-shahta, .chasha-2, .kolb-2,').removeClass('hidden').fadeIn(300);
-              $('.first-shahta').css('margin-left', '-100px');
-         }
-         else if($('.chosen-indx').hasClass('indx-2')){
-           $('.chosen-indx').text('1').removeClass('indx-2').removeClass('indx-3').removeClass('indxfirst').addClass('indx-1');
-           $('.third-shahta, .chasha-3, .kolb-3, .second-shahta, .chasha-2, .kolb-2').fadeOut(300).addClass('hidden');
-           $('.first-shahta, .chasha-1, .kolb-1').removeClass('hidden').fadeIn(300);
-           $('.first-shahta').css('margin-left', '0px');
-           $('.chosen-indx').addClass('indxfirst');
-         }
-          });
-      
-//phone
-
-$('#rc-phone-icon').click(function(){
-  if($(this).hasClass('fa-times')){
-   $(this).removeClass('fa-times');
-   $(this).addClass('fa-phone');
-   $('#rc-phone-form').animate({width:'50px'});
-   setTimeout(function(){$('#rc-phone-form').addClass('closed');}, 600);
-  } 
-  });
- $('#rc-phone-form').click(function(){
-   if($(this).hasClass('closed')){
-     $('#rc-phone-icon').removeClass('fa-phone');
-     $('#rc-phone-icon').addClass('fa-times');
-     $('#rc-phone-form').animate({width:'605%'}).removeClass('closed');
-     setTimeout(function(){$('#rc-phone-form').addClass('opened');}, 600);
-   }
- });
-//
-//myOrderForm
-
-$('.order-table').click(function(){
-  
-  $('.table-order').css('display', "flex");
-});
-
-$('.css-radio-2').on('click', function () {
-  $('.css-radio-2').parent().fadeIn(150);
-  $('.css-radio-2').parent().removeClass('option-radio2-active');
-  $(this).parent().addClass('option-radio2-active');
- });
-
-$('.back-btn').click(function(){
-  
-  $('.table-order').css('display', "none");
-  
-});
-
-
-$('.for-adress').on('click',function(){
-  $('.adress').css('display', " table");
- });
- $('.for-place').on('click',function(){
-  $('.adress').css('display', "none");
- });
-
- $('.go-btn').on('click',function(){
-      
-      $('.succes-order').css('display', "block");
-      $('.myform').css('display', "none");
-      $('.myform-2').css('display', "none");
-    
-    })
-  
-     $('.order-close-btn').click(function(e){
-         
-        $('.succes-order').css('display', "none");
-        $('.myform, .myform-2').css('display', "none");
-        $('#fullpage').css('display', "table");
-        $('body').css({'background': 'none','font-family': 'Roboto'});
-        location.reload();
-
-        });
-
-// анимаци в области видимости
-var windowHeight = $(window).height();
-var windowWidth = $(window).width();
-
-	$(document).on('scroll', function() {
-		$('.about-plus, .bgicon, .icon-text, .logo-img ').each(function() {
-			var self = $(this),
-			height = self.offset().top + self.height();
-			if ($(document).scrollTop() + windowHeight >= height -300 && windowWidth > 768 ){
-         self.addClass('bounceInLeft'); 
-        };
-
-      if($(document).scrollTop() + windowHeight >= height -500 &&  windowWidth <768){
-        self.addClass('bounceInLeft'); 
-        $('.about-img').each(function() {
-          $(this).addClass('bounceInLeft');
-      })}
-      
-});
-      $('.map').each(function() {
-        var self = $(this),
-        height = self.offset().top + self.height();
-        if ($(document).scrollTop() + windowHeight >= height -300 && windowWidth > 768){
-          self.addClass('wow zoomInLeft'); 
-       }});
-
-      $('.gallery-wrapper').each(function() {
-        var self = $(this),
-        height = self.offset().top + self.height();
-        if ($(document).scrollTop() + windowHeight >= height-20  && windowWidth > 768 ){
-          $('.gallery-wrapper').css('display', 'flex');
-          $('.gallery-item').addClass('wow zoomInLeft').css('opacity', '1');
-          
-          }
-
-         if ($(document).scrollTop() + windowHeight >= height - 500 && windowWidth < 768 ){
-          $('.gallery-wrapper').css({'opacity': '1', 'display':'flex'});
-          $('.gallery-item').addClass('wow zoomInLeft').css('opacity', '1');
-         }
-          });
-});
-
-$(".toggle-icon").on('click',function() {
-  $('section').each(function (){
-  if($('section').hasClass('hidden')){
-    $('section').removeClass('hidden');
-    $('.logo-main').removeClass('hidden');
-  } else $('section').addClass('hidden');;
-  });
-
- 
-  if( $('.menu-header-phone').hasClass('hidden')){
-    $('.menu-header-phone').removeClass('hidden'); 
-    $('#nav-container').toggleClass("pushed");
-  $('.logo-main').addClass('hidden');
-  } else {
-    $('.menu-header-phone').addClass('hidden');
-    $('.logo-main').removeClass('hidden');
-    $('#nav-container').toggleClass("pushed");
-  }
-});
-
-
-
-
+  console.log(1);
