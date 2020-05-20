@@ -8,10 +8,27 @@ $( window ).on('load', changeVersion);
     $('#loader').fadeOut('slow' );
   });
 
+ 
   function changeVersion(){ 
    
     let phoneWidth = 1000;
     if( $(window).width() > phoneWidth){
+
+      jQuery(function($){
+         $('.main-nav-links, .main-nav-bar').on('click.smoothscroll', function( e ){
+        var hash= this.hash,
+         _hash  = hash.replace(/#/,''), theHref = $(this).attr('href').replace(/#.*/, '');
+        if( theHref && location.href.replace(/#.*/,'') != theHref ) return;
+        var $target = _hash === '' ? $('body') : $( hash + ', a[name="'+ _hash +'"]').first();
+        if( ! $target.length ) return;
+        e.preventDefault();
+        $('html, body').stop().animate({ scrollTop: $target.offset().top -5}, 900, 'swing', function(){
+        window.location.hash = hash -5;
+        
+            });
+          });
+        });
+
       $(".form-time").focus( function() {
         if($(this).attr({type: 'text'})){
           $(this).attr({type: 'datetime-local'});
@@ -191,6 +208,11 @@ $( window ).on('load', changeVersion);
 
     } 
     if($(window).width() <= phoneWidth){
+      $(".form-time").click( function() {
+        if($(this).attr({type: 'text'})){
+          $(this).attr({type: 'datetime-local'});
+        } 
+      });
 
       $('.slider').slick({
         slidesToShow: 1,
@@ -202,23 +224,25 @@ $( window ).on('load', changeVersion);
         prevArrow:'<a href="" class="icon arrow-left-slider"> <i class="fas fa-arrow-circle-left "></i> </a>',
         nextArrow: '<a href="" class="icon arrow-right-slider"><i class="fas fa-arrow-circle-right "></i> </a> '
       });
-    
-    $('.main-nav-links').on('click', function( e ){ 
-      e.preventDefault();
-          if( $('section').hasClass('hidden')){ 
+
+     jQuery(function($){
+           $('.main-nav-links').on('click.smoothscroll', function(e){
             $('section').removeClass('hidden');
-             $('#nav-container').removeClass("pushed");
-            $('.menu-header-phone ').addClass('hidden');  
-            $('.logo-img').removeClass("hidden");
-            var t = 1000;
-            var d = $(this).attr('data-href') ? $(this).attr('data-href') : $(this).attr('href'); 
-            $('html,body').stop().animate({ scrollTop: $(d).offset().top }, t);
-             
-        } else {
-          $('section').addClass('hidden'); 
-            $('.menu-header-phone ').removeClass('hidden'); 
-            $('#nav-container').addClass("pushed");
-        }});
+            $('#nav-container').removeClass("pushed");
+           $('.menu-header-phone ').addClass('hidden');  
+           $('.logo-img').removeClass("hidden");
+            var hash= this.hash,
+            _hash  = hash.replace(/#/,''), theHref = $(this).attr('href').replace(/#.*/, '');
+           if( theHref && location.href.replace(/#.*/,'') != theHref ) return;
+           var $target = _hash === '' ? $('body') : $( hash + ', a[name="'+ _hash +'"]').first();
+           if( ! $target.length ) return;
+           e.preventDefault();
+           $('html, body').stop().animate({ scrollTop: $target.offset().top -30}, 900, 'swing', function(){
+           window.location.hash = hash;
+               });
+          
+         
+        })});
     
       $('.menu-phone').slick({
         dots:true,
@@ -254,7 +278,7 @@ $( window ).on('load', changeVersion);
         });
     
       $('.back-shahta-btn').on('click', function (e) {
-        var url = "http://127.0.0.1:5503/index.html#shisha-page";
+        var url = "http://127.0.0.1:5503/index.html#shisha";
         
         e.preventDefault();
         if($('#main-shahta-phone').hasClass('hidden')){
@@ -273,12 +297,12 @@ $( window ).on('load', changeVersion);
           $('.myform-2').css('display', "flex").removeClass('hidden');
         });
     
-        $('.back-btn-shisha').click(function(){
-          var url = "http://127.0.0.1:5503/index.html#5thPage";
+        $('.back-btn-shisha').click(function(e){
+         e.preventDefault();
+         var url = "http://127.0.0.1:5503/index.html#shisha";
           $('section').removeClass('hidden');
-          
           $('.myform-2').addClass('hidden');
-            $(location).attr('href',url);
+          $(location).attr('href',url);
         });
       }
   };
@@ -506,10 +530,9 @@ $('.css-radio-2').on('click', function () {
  });
 
 $('.back-btn').click(function(){
-  $('#fullpage').css('display', "table");
-  $('body').css({'background': 'none','font-family': "'Roboto',sans-serif"});
+  
   $('.table-order').css('display', "none");
-  location.reload();
+  
 });
 
 
@@ -525,6 +548,7 @@ $('.for-adress').on('click',function(){
       $('.succes-order').css('display', "block");
       $('.myform').css('display', "none");
       $('.myform-2').css('display', "none");
+    
     })
   
      $('.order-close-btn').click(function(e){
