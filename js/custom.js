@@ -623,4 +623,5 @@ $(".toggle-icon").on('click',function() {
       }
   };//finish changeVersion//
 
-  console.log(1);
+  console.log('1'); 
+  
