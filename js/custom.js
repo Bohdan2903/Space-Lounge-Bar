@@ -1,203 +1,189 @@
+hookahs = {
+  bowls: {
+      1: 0, //
+      2: 75, // orange
+      3: 165 // pineapple
+  },
+  colbs: {
+      1: 0, // water
+      2: 20, // milk
+      3: 40, // alcohol
+  },
+  tobaccos: {
+      1: 185, // lite
+      2: 235, // medium
+      3: 255, // strong
+  },
 
+  stage: {
+      1: {"bowl": 1, "colb": 1, "tobacco": 1},
+      2: {"bowl": 1, "colb": 1, "tobacco": 1},
+      3: {"bowl": 1, "colb": 1, "tobacco": 1},
+  },
+  hookahsOnStage: 1,
+  hookahSelected: 1,
 
-$( window ).on('load', changeVersion);
-  $( window ).on('resize', changeVersion);
-  $(window).on('load', function () {
-    $('#fullpage').сss('display', 'none');
-    $('#preloader').fadeOut('slow');
-    $('#loader').fadeOut('slow' );
-  });
+  orderAmount: 0, // cost of an order
 
- 
+  setParam: function(param, value) {
+      this.stage[this.hookahSelected][param] = value;
+  },
 
-jQuery(function($){
-  
-  $('.main-nav-links, .main-nav-bar').on('click.smoothscroll', function( e ){
-  var hash= this.hash,
-   _hash  = hash.replace(/#/,''), theHref = $(this).attr('href').replace(/#.*/, '');
-  if( theHref && location.href.replace(/#.*/,'') != theHref ) return;
-  var $target = _hash === '' ? $('body') : $( hash + ', a[name="'+ _hash +'"]').first();
-  if( ! $target.length ) return;
-  e.preventDefault();
-  $('html, body').stop().animate({ scrollTop: $target.offset().top -5}, 900, 'swing', function(){
-  window.location.hash = hash -5;
-  
+  calculate: function () {
+      let cost = 0;
+      for (let i = 1; i <= this.hookahsOnStage; i++) {
+          let hookah = this.stage[i];
+          cost += this.bowls[hookah.bowl];
+          cost += this.colbs[hookah.colb];
+          cost += this.tobaccos[hookah.tobacco];
+      }
+      this.orderAmount = cost;
+  },
+
+  render: function () {
+      // load proper values to params - for current hookah
+      ["bowl", "colb", "tobacco"].forEach(param => {
+          document.querySelectorAll(`.form-input [data-id="select-${param}"]`).value = this.stage[this.hookahSelected][param];
       });
-    });
-  });
-
-
-$(document).ready(function(){
- changeVersion();
-  
-  $('#preloader').fadeOut();
-  $('#loader').fadeOut();
-  $('#fullpage').сss('display', 'table');
-
-  });
-    //calculator
-
-    $('.kolbs-img').click(function(e){
-      e.preventDefault();
-    });
-    
-      $('.calc-img').click(function(e){
-        e.preventDefault();
-      });
-    
-      $('.calc-kolbs, .colbs').on('change', function (e) {
-        e.preventDefault();
-        $('.colbs').fadeIn(250);
-        $('.colbs-text').removeClass("border-colbs-header");
-        $(this).fadeOut(450, summ).parent().find(".colbs-text").addClass("border-colbs-header");
-        $('.new-kolba').removeClass().addClass('new-kolba').hide().addClass($(this).attr('data-image')).fadeIn(600);
-      });
-  
-      $('.calc-img-chasha').on('change', function (e) {
-        e.preventDefault();
-        $('.calc-img-chasha').fadeIn(250);
-        $('.colbs-header').removeClass("border-chasha-header");
-        $(this).fadeOut(450, summ).parent().find(".colbs-header").addClass("border-chasha-header");
-        $('.new-chasha').removeClass().addClass('new-chasha').hide().addClass($(this).attr('data-image')).fadeIn(600);
-      });
-  
-      $('.css-radio').on('click', function () {
-        $('.css-radio').parent().fadeIn(150);
-        $('.css-radio').parent().removeClass('option-radio-active');
-        $(this).parent().addClass('option-radio-active');
-       
-      });
-
-    let colbPrice = 0;
-    let total=0;
-    let chashaPrice = 0;
-    let tabacPrice = 0;
-        let chashaName;
-        let kolbsName;
-        let tabak;
-
-      $('.form-input').on('change',function () {
-            summ();
-      });
-
-      function summ() {
-        $('.calc-img-chasha').on('click',function() {
-            chashaPrice = +$(this).attr('data-price');
-               chashaName = $(this).attr('data-name');
-                 
-          });
-
-          $('.calc-kolbs').on('click',function() {
-               colbPrice = +$(this).attr('data-price');
-               kolbsName = $(this).attr('data-name');
-           });
-           
-            $('.calc-handler').on('click',function() {
-                tabacPrice = +$(this).attr('data-price');
-                tabak = $(this).attr('data-name');
-              });
-         
-            total =  +chashaPrice + +colbPrice + +tabacPrice ;
-             if(isNaN(total) ) total = 0;
-
-            $(".total_price_sum, .total_price_sum-phone").text('Сумма заказа ' + total + " " + "UAH");
-             $(".form-text-sum").text( tabak + ' ' + kolbsName + ' и с'+ ' '+ chashaName + ' чашей.');
-             $(".form-price").text( 'Cумма заказа ' + total + ' ' + 'UAH' );
-       };
-//clik po inx kalianov
-
-      $('.indx-0').click(function (){
-        if( $('.number-shisha').hasClass('hidden')){
-          $('.number-shisha').removeClass('hidden').fadeIn(400).css('display','block');
-        }
-
-        else if( $('.number-shisha').css('display','block')){
-          $('.number-shisha').fadeOut(500).addClass('hidden');
-        }
-        
-      });
-
-      $('.indx-1').click(function (){
-        $('.chosen-indx').text('1').removeClass('indx-2').removeClass('indx-3').removeClass('indx-1').addClass('indx-1');
-        $('.number-shisha').removeClass("hidden").fadeIn(500);
-        $('.third-shahta, .chasha-3, .kolb-3, .second-shahta, .chasha-2, .kolb-2').addClass('hidden');
-        $('.first-shahta, .chasha-1, .kolb-1').fadeIn(200);
-        $('.first-shahta').css('margin-left', '0px');
-        $('.number-shisha').fadeOut(500).addClass('hidden');
-      });
-
-      $('.indx-2').click(function (){
-        $('.chosen-indx').text('2').removeClass('indx-1').removeClass('indx-3').addClass('indx-2');
-        $('.number-shisha').removeClass("hidden").fadeIn(500);
-        $('.second-shahta, .chasha-2, .kolb-2').removeClass('hidden').fadeIn(200);
-        $('.third-shahta').addClass('hidden');
-        $('.first-shahta').css({'margin-left': '-100px'});
-        $('.second-shahta').css({'margin-left': '90px'});
-        $('.number-shisha').fadeOut(500).addClass('hidden');
-      })
-      $('.indx-3').click(function (){
-        $('.chosen-indx').text('3').removeClass('indx-1').removeClass('indx-2').addClass('indx-3');
-        $('.number-shisha').removeClass("hidden").fadeIn(500);
-        $('.third-shahta, .chasha-3, .kolb-3, .second-shahta').removeClass('hidden').fadeIn(200);
-        $('.second-shahta').css('margin-left', '-15px');
-        $('.third-shahta').css('margin-left','-10px');
-        $('.first-shahta').css('margin-left', '-120px');
-        $('.number-shisha').fadeOut(500).addClass('hidden');
-      })
-
-//click po strelkam na kaliane
-      $('.arrow-right-shisha').click(function(e){
-        console.log('right');
-        e.preventDefault();
-        if($('.chosen-indx').hasClass('indxfirst') || $('.chosen-indx').hasClass('indx-1')){
-             $('.third-shahta, .chasha-3, .kolb-3').fadeOut(300).addClass('hidden'); 
-             $('.chosen-indx').text('2').removeClass('indx-1').removeClass('indxfirst').removeClass('indx-3').addClass('indx-2');  
-             $('.second-shahta, .chasha-2, .kolb-2, .first-shahta, .chasha-1, .kolb-1').removeClass('hidden').fadeIn(300);
-             $('.first-shahta').css({'margin-left': '-120px'});
-             $('.second-shahta').css({'margin-left': '90px'});
-              
-        }
-        else if($('.chosen-indx').hasClass('indx-2')){
-          $('.chosen-indx').text('3').removeClass('indx-2').removeClass('indx-1').addClass('indx-3').removeClass('indxfirst');
-          $('.third-shahta, .chasha-3, .kolb-3, .second-shahta, .chasha-2, .kolb-2, .first-shahta, .chasha-1, .kolb-1').removeClass('hidden').fadeIn(300);
-          $('.second-shahta').css('margin-left', '-15px');
-          $('.third-shahta').css('margin-left','-10px');
-          $('.first-shahta').css('margin-left', '-120px');
-        }
-        else if($('.chosen-indx').hasClass('indx-3')){
-          $('.chosen-indx').text('1').removeClass('indx-2').removeClass('indx-3').addClass('indx-1').addClass('indxfirst');
-          $('.third-shahta, .chasha-3, .kolb-3, .second-shahta, .chasha-2, .kolb-2').fadeOut(00).addClass('hidden');
-          $('.first-shahta, .chasha-1, .kolb-1').removeClass('hidden').fadeIn(200);
-          $('.first-shahta').css('margin-left', '0px');
-          
-        }});
-
-          $('.arrow-left-shisha').click(function(e){
-            console.log('left');
-            e.preventDefault();
-            if($('.chosen-indx').hasClass('indxfirst') || $('.chosen-indx').hasClass('indx-1')){
-              $('.chosen-indx').text('3').removeClass('indx-2').removeClass('indx-1').removeClass('indxfirst').addClass('indx-3');
-              $('.third-shahta, .chasha-3, .kolb-3, .second-shahta, .chasha-2, .kolb-2, .first-shahta, .chasha-1, .kolb-1').removeClass('hidden').fadeIn(300);
-              $('.second-shahta').css('margin-left', '-15px');
-              $('.third-shahta').css('margin-left','-10px');
-              $('.first-shahta').css('margin-left', '-120px');
-              }
-            else if($('.chosen-indx').hasClass('indx-3')){  
-              $('.third-shahta, .chasha-3, .kolb-3').fadeOut(300).addClass('hidden');  
-              $('.second-shahta').css({'margin-left': '90px'});
-              $('.chosen-indx').text('2').removeClass('indx-3').removeClass('indx-1').removeClass('indxfirst').addClass('indx-2');
-              $('.first-shahta, .chasha-1, .kolb-1, .second-shahta, .chasha-2, .kolb-2,').removeClass('hidden').fadeIn(300);
-              $('.first-shahta').css('margin-left', '-100px');
-         }
-         else if($('.chosen-indx').hasClass('indx-2')){
-           $('.chosen-indx').text('1').removeClass('indx-2').removeClass('indx-3').removeClass('indxfirst').addClass('indx-1');
-           $('.third-shahta, .chasha-3, .kolb-3, .second-shahta, .chasha-2, .kolb-2').fadeOut(300).addClass('hidden');
-           $('.first-shahta, .chasha-1, .kolb-1').removeClass('hidden').fadeIn(300);
-           $('.first-shahta').css('margin-left', '0px');
-           $('.chosen-indx').addClass('indxfirst');
-         }
-          });
       
+      // display ONLY required number of hookahs
+      document.querySelectorAll(".hookah").forEach(hookah => {
+          hookah.classList.toggle("hidden", +hookah.getAttribute("data-id") > this.hookahsOnStage);
+      })
+
+      // mark active hookah + apply the matched color to params block
+      // remove "active" class from all hookahs
+      document.querySelectorAll(".hookah").forEach(e => {
+          e.classList.remove("active");
+      });
+      // add "active" class to current hookah
+      document.querySelector(`.hookah[data-id="${this.hookahSelected}"]`).classList.add("active");
+      // class for params block
+      const params = document.querySelector(".params");
+      for (let i = 1; i <= 3; i++) {
+          params.classList.remove("hookah-color" + i);
+      }
+      params.classList.add("hookah-color" + this.hookahSelected);
+
+      // applying bowls / colbs to hookahs on stage
+      for (hookah in this.stage) {
+          //
+          let div; 
+          div = document.querySelector(`.hookah[data-id="${hookah}"] > .bowl`);
+          for (let i = 1; i <=3; i++) {
+              div.classList.toggle("bowl" + i, this.stage[hookah].bowl === i);
+          }
+          div = document.querySelector(`.hookah[data-id="${hookah}"] > .tobacco`);
+          for (let i = 1; i <=3; i++) {
+              div.classList.toggle("tobacco" + i, this.stage[hookah].tobacco === i);
+          }
+          div = document.querySelector(`.hookah[data-id="${hookah}"] > .colb`);
+          for (let i = 1; i <=3; i++) {
+              div.classList.toggle("colb" + i, this.stage[hookah].colb === i);
+          }
+      }
+
+      // calculate and display the cost
+      this.calculate();
+      document.querySelector(".total_price_sum").textContent = `Сумма заказа ${this.orderAmount + ' ' + 'UAH'}`;
+  }
+  
+};
+
+let selectActiveItem = e => {
+  let current;
+  if (e.target.classList.contains("hookah")) {
+      current = e.target;
+  } else {
+      current = e.target.parentNode;
+  }
+
+  hookahs.hookahSelected = +current.getAttribute("data-id");
+  hookahs.render();
+}
+
+const handleSelectChange = function() {
+  const param = this.getAttribute("data-type").replace("select-", "");
+  const value= this.value;
+  // console.log(value);
+  hookahs.setParam(param, +value);
+  hookahs.render();
+}
+// const getBowlName = function() {
+//     document.querySelectorAll('.calc-img-chasha').forEach(element => {
+//       element.addEventListener("click", function(){
+//         const text = this.getAttribute('data-name');
+//         document.querySelector(".form-text-sum-1").textContent = `Кальян  ${text} + ' ' + 'UAH'}`;
+//         console.log(bowlText);
+//         hookahs.render();
+//       });
+//   });
+// }
+      
+// onload function
+document.addEventListener("DOMContentLoaded", () => { 
+
+  document.querySelectorAll(".hookah, .hookah > *").forEach(element => {
+      element.addEventListener("click", selectActiveItem);
+  });
+
+  document.querySelectorAll(".calc-handler").forEach(element => {
+    element.addEventListener("click", handleSelectChange);
+  });
+
+  document.querySelectorAll(".calc-img-chasha").forEach(element => {
+    element.addEventListener("click", handleSelectChange);
+  });
+
+  document.querySelectorAll(".calc-kolbs").forEach(element => {
+      element.addEventListener("click", handleSelectChange);
+  });
+
+
+  document.querySelectorAll(".index-shisha").forEach(element => {
+    element.addEventListener("click", function(){
+     $(".index-shisha").toggleClass('hidden');
+       this.classList.remove('hidden');
+      // console.log(this);
+      const num = this.getAttribute('value');
+      hookahs.hookahsOnStage = num;
+      hookahs.hookahSelected = (hookahs.hookahSelected > num) ? 1 : hookahs.hookahSelected;
+      hookahs.render();
+    });
+  });
+
+  hookahs.render();
+});
+
+ //calculator
+  
+
+  $(window).on('load', function () {
+    $('#preloader').css("display", "none");
+    $('#loader').css("display", "none");
+    changeVersion();
+    });
+  
+  $(window).resize(changeVersion());
+  
+
+    jQuery(function($){
+  
+      $('.main-nav-links, .main-nav-bar').on('click.smoothscroll', function( e ){
+      var hash= this.hash,
+       _hash  = hash.replace(/#/,''), theHref = $(this).attr('href').replace(/#.*/, '');
+      if( theHref && location.href.replace(/#.*/,'') != theHref ) return;
+      var $target = _hash === '' ? $('body') : $( hash + ', a[name="'+ _hash +'"]').first();
+      if( ! $target.length ) return;
+      e.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $target.offset().top - 30}, 900, 'swing', function(){
+      window.location.hash = hash - 30;
+      
+          });
+        });
+      });
+    
+   
 //phone
 
 $('#rc-phone-icon').click(function(){
@@ -220,7 +206,6 @@ $('#rc-phone-icon').click(function(){
 //myOrderForm
 
 $('.order-table').click(function(){
-  
   $('.table-order').css('display', "flex");
 });
 
@@ -231,9 +216,7 @@ $('.css-radio-2').on('click', function () {
  });
 
 $('.back-btn').click(function(){
-  
   $('.table-order').css('display', "none");
-  
 });
 
 
@@ -249,32 +232,32 @@ $('.for-adress').on('click',function(){
       $('.succes-order').css('display', "block");
       $('.myform').css('display', "none");
       $('.myform-2').css('display', "none");
-    
-    })
+    });
   
-     $('.order-close-btn').click(function(e){
-         
-        $('.succes-order').css('display', "none");
-        $('.myform, .myform-2').css('display', "none");
-        $('#fullpage').css('display', "table");
-        $('body').css({'background': 'none','font-family': 'Roboto'});
-        location.reload();
-
-        });
+  $('.order-close-btn').click(function(e){
+      $('.succes-order').css('display', "none");
+      $('.myform, .myform-2').css('display', "none");
+      $('#fullpage').css('display', "table");
+      if( $('#fullpage').hasClass('hidden')){
+        $('#fullpage').removeClass('hidden');
+        var url = "http://127.0.0.1:5503/index.html#5thPage";
+        $(location).attr('href',url);
+      }
+      $('body').css({'background': 'none','font-family': 'Roboto'});
+    });
 
 // анимаци в области видимости
 var windowHeight = $(window).height();
 var windowWidth = $(window).width();
-
 	$(document).on('scroll', function() {
-		$('.about-plus, .bgicon, .icon-text, .logo-img ').each(function() {
+		$('.about-plus, .bgicon, .icon-text, .logo-img, .map ').each(function() {
 			var self = $(this),
 			height = self.offset().top + self.height();
-			if ($(document).scrollTop() + windowHeight >= height -300 && windowWidth > 768 ){
+			if ($(document).scrollTop() + windowHeight >= height -100 && windowWidth > 768){
          self.addClass('bounceInLeft'); 
         };
 
-      if($(document).scrollTop() + windowHeight >= height -500 &&  windowWidth <768){
+      if($(document).scrollTop() + windowHeight >= height -400 &&  windowWidth <768){
         self.addClass('bounceInLeft'); 
         $('.about-img').each(function() {
           $(this).addClass('bounceInLeft');
@@ -374,8 +357,8 @@ $(".toggle-icon").on('click',function() {
       });
       
       //canvas
-       var canvasWidth = 1500;
-       var canvasHeight = 1;
+      var canvasWidth = 1500;
+      var canvasHeight = 1;
       var pCount = 0;
       var pCollection = new Array();
       var puffs = 1;
@@ -594,14 +577,11 @@ $(".toggle-icon").on('click',function() {
         });
     
       $('.back-shahta-btn').on('click', function (e) {
-        var url = "http://127.0.0.1:5503/index.html#shisha";
-        
+        var url = "http://127.0.0.1:5503/index.html#5thPage";
         e.preventDefault();
         if($('#main-shahta-phone').hasClass('hidden')){
-    
           $('section, #header-mob').removeClass('hidden');
-          
-        } else {
+          } else {
           $('#main-shahta-phone').addClass('hidden');
           $('section, #header-mob').removeClass('hidden');
           $(location).attr('href',url);
@@ -615,9 +595,10 @@ $(".toggle-icon").on('click',function() {
     
         $('.back-btn-shisha').click(function(e){
          e.preventDefault();
-         var url = "http://127.0.0.1:5503/index.html#shisha";
+         var url = "http://127.0.0.1:5503/index.html#5thPage";
           $('section').removeClass('hidden');
           $('.myform-2').addClass('hidden');
+          $('.myform-2').css('display', "none").addClass('hidden');
           $(location).attr('href',url);
         });
       }

@@ -17,6 +17,7 @@
   <!-- прелоадер -->
   <div id="preloader">
     <div id="loader"></div>
+    <div class="preloader-text">Страница загружается.<br> Пожалуйста, ожидайте!</div>
   </div>
     
 <form class="myform-2 shisha-order-button fadeInDown" action="" enctype="text/plain">
@@ -25,7 +26,9 @@
   <div class="text-in-order">
     <div class="form-left-text">
        <div class="form-price-header"> Ваш заказ:  </div>
-       <div class="form-text-sum"></div>
+       <div class="form-text-sum-1">1)</div>
+       <div class="form-text-sum-2">2)</div>
+       <div class="form-text-sum-3">3)</div>
         <div class="form-price"></div>
     </div>
    
@@ -39,7 +42,7 @@
             </div>
         </div>
          <div class="row">
-         <input type="tel" name="phone" class="form-phone" placeholder="Номер телефона" id="form-phone" required minlength="6" maxlength='12'>
+         <input type="tel" name="phone" class="form-phone" placeholder="Номер телефона"  required minlength="6" maxlength='12'>
          </div>
         <div class="row">
          <input type="text" name="time" class="form-time" placeholder="Укажите время">
@@ -107,28 +110,31 @@
     <header id="header-mob"> 
       <img src="./img/logo.png" class="logo-img logo-main " alt=''>
       <nav class="menu-header-phone hidden">
-          <ul class="main-nav-bar-text">
-            <a href="#main" class="main-nav-links"> <img src="./img/logo.png" class="logo-img hamburger" alt=''></a></li>
+          <div class="main-nav-bar-text">
+            <ul class="main-nav-bar-text">
+            <li><a href="#main" class="main-nav-links"> <img src="./img/logo.png" class="logo-img hamburger" alt=''></a></li>
             <li><a href="#about" class="main-nav-links">О НАС</a></li>
             <li><a href="#menu" class="main-nav-links">МЕНЮ</a></li>
             <li><a href="#discount" class="main-nav-links">АКЦИИ</a></li>
             <li><a href="#shisha" class="main-nav-links">КАЛЬЯН</a></li>
             <li><a href="#contact" class="main-nav-links">КОНТАКТЫ</a></li> 
+            </ul>
+            
             <ul class="main-nav-bar-icon-phone">
             <li class ="header_icon">
-                  <a class="icon " href="mailto:bogdanprodan20@gmail.com" target="_blank">
+                  <a class="icon " href="https://uk-ua.facebook.com/" target="blank">
                     <img src="./img/Facebook.png"  alt="Facebook" /> </a>
             </li>
               <li class="header_icon" >
-                  <a class="icon  " href="" target="_blank">
+                  <a class="icon  " href="" target="blank">
                     <img src="./img/YouTube.png" alt="YouTube"  /></a>
               </li>
                 <li class="header_icon">
-                  <a class="icon " href="https://www.instagram.com/bogdan_prodan/" target="_blank">
+                  <a class="icon " href="https://www.instagram.com/bogdan_prodan/" target="blank">
                     <img src="./img/INSTA.png" alt="instagram" /></a>
                 </li>
             </ul>
-          </ul>
+          </div>
          
           </nav>
       
@@ -166,40 +172,39 @@
               <div class="area">
                 <div class="row">
                  <div class="col2">
-                  <input type="text" name="firstname" class="form-name" id="fistname" placeholder="Имя" required minlength="3" maxlength='20'>
+                  <input type="text" name="firstname" class="form-name"  placeholder="Имя" required minlength="3" maxlength='20'>
                 
                 </div>
                 <div class="col2">
-                  <input type="text" name="lastname" id="lastname" placeholder="Фамилия" maxlength='20'>
+                  <input type="text" name="lastname"  placeholder="Фамилия" maxlength='20'>
                   
                 </div>
                 </div>
               <div class="row">
                 <input type="tel" name="phone" class="form-phone" placeholder="Номер телефона" id="form-phone" required minlength="6" maxlength='12'>
-                
               </div>
               <div class="row">
                 <input type="text" name="time" class="form-time" placeholder="Укажите время">
               </div>
               <div class="row-button">
               <input type="submit" value="Заказать" class="btn go-btn">
-              <input type="button" value="Вернутся" class="btn back-btn" href="#main-page" />
+              <input type="button" value="Вернуться" class="btn back-btn">
               </div>
             </div>
           </form>
           <div class="right-article">
                  <ul class="main-nav-bar-icon">
                   <li class ="header_icon">
-                        <a class="icon " href="mailto:bogdanprodan20@gmail.com">
-                          <img src='./img/Facebook.png' /> </a>
+                        <a class="icon " href="https://uk-ua.facebook.com/" target="blank">
+                          <img src='./img/Facebook.png' alt="header-icon"/> </a>
                   </li>
                     <li class="header_icon" >
-                        <a class="icon  " href="">
-                          <img src='./img/INSTA.png' /> </a>
+                        <a class="icon"  href="https://www.instagram.com/bogdan_prodan/" target="blank">
+                          <img src='./img/INSTA.png' alt="header-icon" /> </a>
                     </li>
                       <li class="header_icon">
-                        <a class="icon " href="https://www.instagram.com/bogdan_prodan/">
-                          <img src='./img/YouTube.png' /> </a>
+                        <a class="icon " href="https://www.instagram.com/bogdan_prodan/" target="blank">
+                          <img src='./img/YouTube.png' alt="header-icon" /> </a>
                       </li>
                   </ul>
         </div>
@@ -208,7 +213,7 @@
 </div>
 
 <div class="section" id="section1">
-  <section class="about"> <a name="about"></a> 
+  <section class="about-page"> <a name="about"></a> 
       <div id="about-us">
           <span class="about-main-text"> О Нас </span>
                 <span class="about-text-1 "> Мы  &nbsp; -<span class="purple-text"> &nbsp; Space Hoohak Lounge  </span> &nbsp; работаем в этой свере уже 3 года.</span>
@@ -232,22 +237,23 @@
 <div class="section" id="section2"> 
   <section class="menu-page "><a name="menu"></a>
     <div class="menu-text">Меню </div>
-
       <div class="menu">
-        <div> <img src="./img/menu-1.png" class="menu-1"/></div>
-        <div><img src="./img/menu-2.png" class="menu-2"/></div>
-        <div><img src="./img/menu-3.png" class="menu-3"/></div>
+        <div> <img src="./img/menu-1.png"  alt='menu-img' class="menu-1"/></div>
+        <div><img src="./img/menu-2.png" alt='menu-img' class="menu-2"/></div>
+        <div><img src="./img/menu-3.png"  alt='menu-img' class="menu-3"/></div>
       </div>
   
       <div class="menu-phone">
-        <div> <img src="./img/menu-1.1-phone.png" class="menu-phone-img"/></div>
-        <div> <img src="./img/menu-1.2-phone.png" class="menu-phone-img"/></div>
-        <div> <img src="./img/menu-1.3-phone.png" class="menu-phone-img"/></div>
-        <div> <img src="./img/menu-2.1-phone.png" class="menu-phone-img"/></div>
-        <div> <img src="./img/menu-2.2-phone.png" class="menu-phone-img"/></div>
-        <div> <img src="./img/menu-3.1-phone.png" class="menu-phone-img"/></div>
-        <div> <img src="./img/menu-3.2-phone.png" class="menu-phone-img"/></div>
-        <div> <img src="./img/menu-3.3-phone.png" class="menu-phone-img"/></div>
+        <div> <img src="./img/menu-1.1-phone.png" alt='menu-img' class="menu-phone-img"/></div>
+        <div> <img src="./img/menu-1.2-phone.png" alt='menu-img' class="menu-phone-img"/></div>
+        <div> <img src="./img/menu-1.3-phone.png" alt='menu-img' class="menu-phone-img"/></div>
+        <div> <img src="./img/menu-2.1-phone.png" alt='menu-img' class="menu-phone-img"/></div>
+        <div> <img src="./img/menu-2.1-phone.png" alt='menu-img' class="menu-phone-img"/></div>
+        <div> <img src="./img/menu-2.1-phone.png" alt='menu-img' class="menu-phone-img"/></div>
+        <div> <img src="./img/menu-2.2-phone.png" alt='menu-img' class="menu-phone-img"/></div>
+        <div> <img src="./img/menu-3.1-phone.png" alt='menu-img' class="menu-phone-img"/></div>
+        <div> <img src="./img/menu-3.2-phone.png" alt='menu-img' class="menu-phone-img"/></div>
+        <div> <img src="./img/menu-3.3-phone.png" alt='menu-img' class="menu-phone-img"/></div>
       </div>
   </section>
 </div>
@@ -264,19 +270,18 @@
           </div>
           <span class="discount-text2">Почуствуй Атмосферу </span>
           <div class="gallery-wrapper " >
-            
-               <div class="gallery-item  " data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; ">
+             <div class="gallery-item  " data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; ">
                   <img class="img-responsive" src="./img/galery_1.jpg" alt="Кальянная">
              </div>
-                 <div class="gallery-item  " data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; ">
+              <div class="gallery-item  " data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; ">
                 <img class="img-responsive" src="./img/galery_2.jpg" alt="Кальянная">
-                </div>
-                  <div class="gallery-item  " data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s;">
+              </div>
+                <div class="gallery-item  " data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s;">
                    <img class="img-responsive" src="./img/galery_3.jpg" alt="Кальянная">
-                  </div>
+                </div>
                   <div class="gallery-item  " data-wow-delay="1s" style="visibility: visible; animation-delay: 1s; ">
                       <img class="img-responsive" src="./img/galery_4.jpg" alt="Кальянная ">
-                     </div>
+                  </div>
                   <div class="gallery-item  " data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; ">
                        <img class="img-responsive" src="./img/galery_5.jpg" alt="Кальянная ">
                   </div>
@@ -289,88 +294,84 @@
                   <div class="gallery-item  " data-wow-delay="0.8s" style="visibility: visible; animation-delay: 1.3s; ">
                     <img class="img-responsive" src="./img/galery_8.jpg" alt="Кальянная">
                  </div>
-              </div>
           </div>
-      </section>
+      </div>
+    </section>
 </div>
-
 <div class="section" id="section4">
-<section class="shishaPage"><a name="shisha"></a>
-    <div class='canvas'>
-      <canvas class="myCanvas"></canvas>
-    </div>
-            <div id="first-fieldset">
-                <div class="form-text"> Соберите Свой Кальян </div>
-              <div class="form-text-2">Крепость табака </span></div>
-            <div class="label-form">   
-              <div class="form-second-question">Выберите чашу <span class="chosen-сolba">  </span></div>
-              <div class="form-third-question">Количество кальянов
-                <span class="shisha-index">
-                  <span class='index-shisha chosen-indx indx-0 indxfirst'>1</span>
-                   </span>
-                  <span class='number-shisha'>
-                  <span class="index-shisha indx-1">1</span>
-                  <span class="index-shisha indx-2">2</span>
-                  <span class="index-shisha indx-3">3</span>
-                  </span>
-              </div>
-             
-             <ul class="radio-group-2">
-               <li>
-                  <input id="choice-a" type="radio" name="g" class="css-radio calc-img-chasha form-input choice-a" data-image="glina" data-price="0" data-name='классической'>
-                  <label for="choice-a option" class="choice-a">
-                   <span><span></span></span>
-                      </label>
-               </li>
-               <li>
-                  <input id="choice-b" type="radio" name="g" class="css-radio calc-img-chasha  form-input choice-b"  data-image="orange" data-price="75" data-name='апельсиновой'>
-                     <label for="choice-b option"  class="choice-b">
-                       <span><span></span></span>
-                    </label>
-               </li>
-               <li>
-                   <input id="choice-c" type="radio" name="g" class="css-radio calc-img-chasha  form-input choice-c" data-image="pineapple" data-price="165" data-name='ананасовой'>
-                   <label for="choice-c option" class="choice-c">
-                    <span><span></span></span>
-                    </label>
-               </li>
-           </ul>
-            <div class="chasha-block">
-                <div class="checkbox-label base_value">
-                  <div class="calc-img-chasha glina form-input"  data-price="0" data-image="glina" data-name=' классической'></div>
-                </div>
-                <div class="checkbox-label base_value">
-                    <div class="calc-img-chasha orange form-input"   data-price="75" data-image="orange" data-name=' апельсиновой'> </div>
-                </div>
-                <div class="checkbox-label base_value">
-                   <div class="calc-img-chasha pineapple form-input" data-price="165" data-image="pineapple" data-name=' ананасовой'> </div>
+  <section class="shishaPage"><a name="shisha"></a>
+      <div class='canvas'>
+        <canvas class="myCanvas"></canvas>
+      </div>
+       <div class="form-text"> Соберите Свой Кальян </div> 
+           <div id="first-fieldset">
+           <span class="form-second-question">Выберите чашу</span>
+            <div class="form-text-2">Крепость табака </div>
+            <div class="number">
+              <span>Количество:</span>
+              <div class='number-shisha'>
+                  <span class="index-shisha indx-1" value="1">1</span> 
+                  <span class="index-shisha indx-2" value="2">2</span>
+                  <span class="index-shisha indx-3" value="3">3</span>
                </div>
-            </div>
-           </div>
-
-     <div class="label-form"> 
-               <div class="form-second-question q-3">Что будет в колбе?</div>
-               <ul class="radio-group-3">
+            </div> 
+              <div class="label-form">  
+                <ul class="radio-group-2">
                  <li>
-                         <input id="water" type="radio" name="calc-kolbs"  class="css-radio calc-kolbs form-input choice-a"  data-image="colbWater" data-price="0" data-name='на воде'>
-                         <label for="water" class="choice-a">
-                             <span><span></span></span>
+                    <input id="choice-a" type="radio" name="calc-bowl" value="1" class="css-radio calc-img-chasha form-input choice-a" data-type='select-bowl' data-image="glina" data-price="0" data-name='классической'>
+                    <label for="choice-a option" class="choice-a">
+                     <span><span></span></span>
                         </label>
                  </li>
                  <li>
-                         <input id="milk" type="radio" name="calc-kolbs" class="css-radio calc-kolbs form-input choice-b" data-image="colbMilk"  data-price="20" data-name='на молоке'>
+                    <input id="choice-b" type="radio" name="calc-bowl" value="2" class="css-radio calc-img-chasha form-input choice-b" data-type='select-bowl' data-image="orange" data-price="75" data-name='апельсиновой'>
+                       <label for="choice-b option"  class="choice-b">
+                         <span><span></span></span>
+                      </label>
+                 </li>
+                 <li>
+                     <input id="choice-c" type="radio" name="calc-bowl" value="3" class="css-radio calc-img-chasha form-input choice-c" data-type='select-bowl' data-image="pineapple" data-price="165" data-name='ананасовой'>
+                     <label for="choice-c option" class="choice-c">
+                      <span><span></span></span>
+                      </label>
+                 </li>
+             </ul>
+              <div class="chasha-block">
+                  <div class="checkbox-label base_value">
+                    <div class="calc-img-chasha glina form-input"  data-price="0" data-image="glina" data-name=' классической'></div>
+                  </div>
+                  <div class="checkbox-label base_value">
+                      <div class="calc-img-chasha orange form-input"   data-price="75" data-image="orange" data-name=' апельсиновой'> </div>
+                  </div>
+                  <div class="checkbox-label base_value">
+                     <div class="calc-img-chasha pineapple form-input"   data-price="165" data-image="pineapple" data-name=' ананасовой'> </div>
+                 </div>
+              </div>
+             </div>
+
+              <div class="label-form"> 
+                <span class="form-second-question q-3">Что будет в колбе?</span>
+                  <ul class="radio-group-3">
+                     <li>
+                         <input id="water" type="radio" name="calc-kolbs"  value="1"  class="css-radio calc-kolbs form-input choice-a" data-type='select-colb' data-image="colbWater" data-price="0" data-name='на воде'>
+                         <label for="water" class="choice-a">
+                             <span><span></span></span>
+                        </label>
+                     </li>
+                      <li>
+                         <input id="milk" type="radio" name="calc-kolbs" value="2"  class="css-radio calc-kolbs form-input choice-b" data-type='select-colb' data-image="colbMilk"  data-price="20" data-name='на молоке'>
                          <label for="milk"  class="choice-b">
                            <span><span></span></span>
                          </label>
-                 </li>
-                 <li >
-                         <input id="alco" type="radio" name="calc-kolbs" class="css-radio calc-kolbs form-input choice-c"  data-image="colbAlk" data-price="40" data-name='на алкоголе'>
+                      </li>
+                      <li>
+                         <input id="alco" type="radio" name="calc-kolbs"  value="3 " class="css-radio calc-kolbs form-input choice-c" data-type='select-colb' data-image="colbAlk" data-price="40" data-name='на алкоголе'>
                          <label for="alco" class="choice-c">
                           <span><span></span></span>
                          </label>
-                 </li>
-             </ul>
-             <div class=" block-colbs">
+                      </li>
+                  </ul>
+             <div class="block-colbs">
                <div class="checkbox-label base_value">
                      <div class="colbs-header"><span class="colbs-text ct1">Вода</span></div>
                      <div class="colbWater calc-kolbs colbs form-input " data-price="0" data-image="colbWater" data-name='на воде'></div>
@@ -389,21 +390,21 @@
                 <div id="tabac">
                   <ul class="radio-group">
                     <li>
-                      <input id="easy" type="radio" name="weight"  class="css-radio calc-handler form-input choice-a" data-price="185" data-name="Легкий кальян">
+                      <input id="easy" type="radio" name="weight" value="1" class="css-radio calc-handler form-input choice-a" data-type="select-tobacco" data-price="185" data-name="Легкий кальян">
                       <label for="easy" class="choice-a">
                           <span><span></span></span>
                           <p>Легкий</p>
                       </label>
                     </li>
                     <li>
-                      <input id="medium" type="radio" name="weight" class="css-radio calc-handler form-input choice-b" data-price="235" data-name="Средний кальян ">
+                      <input id="medium" type="radio" name="weight" value="2" class="css-radio calc-handler form-input choice-b" data-type="select-tobacco" data-price="235" data-name="Средний кальян ">
                       <label for="medium"  class="choice-b">
                           <span><span></span></span>
                           <p>Средний</p>
                       </label>
                     </li>
                     <li >
-                      <input id="hard" type="radio" name="weight" class="css-radio calc-handler form-input choice-c" data-price="255" data-name="Тяжелый кальян">
+                      <input id="hard" type="radio" name="weight" value="3" class="css-radio calc-handler form-input choice-c" data-type="select-tobacco" data-price="255" data-name="Тяжелый кальян">
                       <label for="hard" class="choice-c">
                       <span><span></span></span>
                       <p>Тяжелый</p>
@@ -412,8 +413,8 @@
                 </ul>
                   <div class="tabac-wrap" >
                       <div class="calc-img sherbetti"> </div>
-                      <div  class="calc-img fumari"></div> 
-                      </div>
+                      <div class="calc-img fumari"></div> 
+                  </div>
                  
                   <div class="tabac-wrap" >
                      <div class="calc-img cult"></div>
@@ -430,12 +431,31 @@
                      <div class="total_price_sum"> Сумма заказа 0 UAH</div>
               </div>
 
+              <div class="params hookah-color1"> 
+                <div class="stage">
+                  <div class="hookah hookah-color1 active" data-id="1">
+                    <div class="bowl"></div>
+                    <div class="tobacco"></div>
+                    <div class="colb"></div>
+                  </div>
+                   <div class="hookah hookah-color2" data-id="2">
+                    <div class="bowl"></div>
+                    <div class="tobacco"></div>
+                    <div class="colb"></div>
+                  </div>
+                  <div class="hookah hookah-color3" data-id="3">
+                    <div class="bowl"></div>
+                    <div class="tobacco"></div>
+                    <div class="colb"></div>
+                  </div>
+                </div>
+              </div>
                 <!-- phone-slider-tabac -->
                 <div class="tabac-block-phone">
                     <div class="tabac-wrap-phone" >
                       <span class="tabac-wrap-img">
-                        <img src="./img/sherbetti.png" class="calc-img sherbetti"/> 
-                         <img src="./img/fumari.png" class="calc-img fumari"/>
+                        <img src="./img/sherbetti.png" alt="tabac-img" class="calc-img sherbetti"/> 
+                         <img src="./img/fumari.png" alt="tabac-img" class="calc-img fumari"/>
                          <input id="easy" type="radio" name="weight"  class="css-radio calc-handler form-input choice-a" data-price="185" data-name="Легкий кальян">
                          <label for="easy" class="choice-a">
                              <span><span></span></span>
@@ -444,8 +464,8 @@
                       </span>
                       
                        <span class="tabac-wrap-img">
-                          <img src="./img/cult.png" class="calc-img cult"/>
-                          <img src="./img/dailyhookah.png" class="calc-img dailyhookah"/>
+                          <img src="./img/cult.png" alt="tabac-img" class="calc-img cult"/>
+                          <img src="./img/dailyhookah.png" alt="tabac-img" class="calc-img dailyhookah"/>
                           <input id="medium" type="radio" name="weight" class="css-radio calc-handler form-input choice-b" data-price="235" data-name="Средний кальян ">
                             <label for="medium"  class="choice-b">
                                 <span><span></span></span>
@@ -453,17 +473,16 @@
                            </label>
                        </span>
 
-                     <span class="tabac-wrap-img">
-                          <img src="./img/tangiers.png" class="calc-img tangiers"/>
-                          <img src="./img/darkside.png" class="calc-img darkside"/>
+                        <span class="tabac-wrap-img">
+                          <img src="./img/tangiers.png" alt="tabac-img" class="calc-img tangiers"/>
+                          <img src="./img/darkside.png" alt="tabac-img" class="calc-img darkside"/>
                             <input id="hard" type="radio" name="weight" class="css-radio calc-handler form-input choice-c" data-price="255" data-name="Тяжелый кальян">
                               <label for="hard" class="choice-c">
                                  <span><span></span></span>
                                   <p class="hard-tabac-text">Тяжелый</p>
                               </label>
-                     </span>
-                      
-                     </div>
+                        </span>
+                    </div>
                 </div>
 
                 <!-- chasha-phone -->
@@ -493,7 +512,7 @@
                         <div class="colbs-header"><span class="colbs-text ct3">Алкоголь</span></div>
                         <div class="colbAlk colbs calc-kolbs form-input" data-price="40" data-image="colbAlk"  data-name='на алкоголе'></div>
                     </div>
-                </div>
+              </div>
                 <div class="check-order">
                   <span class="check-order-text"> Посмотреть заказ</span>
                 </div>
@@ -501,29 +520,8 @@
                 <div class="total_price-phone">
                   <a href='#order-shisha' class='shisha-order order-button'><span>Заказать</span></a>   
                   <div class="total_price_sum-phone"> Сумма заказа 0 UAH</div>
-              </div>
-           
-
-                <div id="main-shahta">
-                   <div id="shahta-items">
-                       <div class='new-chasha'></div>
-                            <img src="./img/sahta.jpg" id="shahta-img" alt='' class="first-shahta">
-                        <div class="new-kolba"></div>
-
-                        <div class='new-chasha chasha-2'></div>
-                            <img src="./img/sahta.jpg" id="shahta-img" alt='' class="second-shahta hidden">
-                        <div class="new-kolba kolb-2"></div>
-
-                        <div class='new-chasha chasha-3'></div>
-                              <img src="./img/sahta.jpg" id="shahta-img" alt='' class="third-shahta hidden">
-                        <div class="new-kolba kolb-3"></div>
-                   </div>
-                  <div class="ellips"> </div>
-
-                  <a href="" class="icon arrow-left-shisha"><i class="fas fa-arrow-circle-left "></i> </a>
-                  <a href="" class="icon arrow-right-shisha"><i class="fas fa-arrow-circle-right "></i> </a>
-             </div>
-         </div>
+               </div>
+            </div>
     </section>         
 </div>
 
@@ -670,13 +668,13 @@
                 </div>
                 <div class="contact-info"> <a name='#contact-page'></a>
                               <div class ='contact-info-text'>Контакты</div>
-                             <div class="bgicon ">
-                                <a > <img src="./img/time.png" alt="time" class="icon1 clock-icon"> </a>
-                                <a href="tel:+380660580166"  class="icon1">
-                                 <a><i class="fa fa-phone icon1" aria-hidden="true"></i></a> 
-                                 <a href="spacehookahlounge@gmail.com"  target="_blank" class="icon1"><i class="fa fa-envelope icon1" aria-hidden="true"></i></a>
+                                <div class="bgicon ">
+                                  <a > <img src="./img/time.png" alt="time" class="icon1 clock-icon"> </a>
+                                  <a href="tel:+380660580166"  class="icon1"></a>
+                                  <a><i class="fa fa-phone icon1" aria-hidden="true"></i></a> 
+                                  
                                   <a><i class="fa fa-map-marker icon1" aria-hidden="true"></i></a> 
-                             </div>
+                                 </div>
                     
                           <div class="icon-text ">
                              <div class="border-fot-textshort">ВС - ЧТ : 15:00-02:00 <br> ПТ - СБ : 14:00-03:00 
@@ -684,50 +682,32 @@
                             <div class="tel-text-footer border-fot-textshort"><a href="tel:+380660580166">+380(66)058-01-66</a>
                               <br> 
                               <a href="tel:+380660580166">+380(66)058-01-66</a></div>
-                            <span class='border-fot-textlong' >  <a href="mailto:spacehookahlounge@gmail.com" target="_blank">spacehookahlounge@gmail.com </a></span>
                             <span class='border-fot-text'><a href='https://2gis.ua/dnepropetrovsk/firm/14777965558930367' target="blank">Нижнеднепровская 	&mdash; 17</a></span>
                           </div> 
                           
                             <div class="map"><div class="map-marker"> <div class="mapframe">
                               <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d84584.65535773613!2d35.00836405810549!3d48.508879418281595!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d958c91fa3ff3b%3A0x8e5048ae7dd11059!2z0JrQsNGA0LDQstCw0L0!5e0!3m2!1sru!2sua!4v1581938568811!5m2!1sru!2sua" width='100%' height='100%' frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                             </div> </div></div>
-                        </div>  
-             </div>
-             
+               </div>  
+           </div>
         </div>
     </section>
   </div>
-</div>     
+</div>  
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="./js/custom.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/c3b8959d8b.js"></script>
 <script type="text/javascript" src="./js/fullpage.js"></script>
 <script type="text/javascript" src="./js/slick-min.js"></script>
+<script src="./js/custom.js"></script>
 <script type="text/javascript">
-$('#fullpage').fullpage({
-       anchors: ['1stPage', '2ndPage', '3rdPage', '4thpage', '5thPage', '6thPage'],
-       lazyLoad: true,
-      scrollBar:true,
-      responsiveWidth: 1000
+    $('#fullpage').fullpage({
+        anchors: ['1stPage', '2ndPage', '3rdPage', '4thpage', '5thPage', '6thPage'],
+        lazyLoad: true,
+        scrollBar:true,
+        responsiveWidth: 1000
       });
- $(window).resize( function() {
-    if($(window).width() < 1000){
-        $('#fullpage').fullpage({
-        anchors: false,
-        lazyLoad: false,
-        scrollBar:false,
-        
-      });
-      }
-  });
 
- 
-    
-     
-</script>
-
-    
 </script>
 </body>
 </html> 
