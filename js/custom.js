@@ -14,6 +14,21 @@ hookahs = {
       2: 235, // medium
       3: 255, // strong
   },
+  colbs_title: {
+    1: "воде", 
+    2: "молоке", 
+    3: "алкоголе"
+  },
+  bowls_title: {
+    1: "классической",
+    2: "апельсиновой", 
+    3: "ананасовой"
+  },
+  tobaccos_title: {
+    1: "Лёгкий", 
+    2: "Средний", 
+    3: "Тяжелый"
+  },
 
   stage: {
       1: {"bowl": 1, "colb": 1, "tobacco": 1},
@@ -42,10 +57,40 @@ hookahs = {
 
   render: function () {
       // load proper values to params - for current hookah
-      ["bowl", "colb", "tobacco"].forEach(param => {
-          document.querySelectorAll(`.form-input [data-id="select-${param}"]`).value = this.stage[this.hookahSelected][param];
+
+      document.querySelectorAll("input[name=calc-bowl]").forEach(input => {
+        if (input.value == this.stage[this.hookahSelected].bowl) {
+            input.checked = true;
+        }
       });
+      document.querySelectorAll("input[name=calc-kolbs]").forEach(input => {
+        if (input.value == this.stage[this.hookahSelected].colb) {
+            input.checked = true;
+        }
+      });
+      document.querySelectorAll("input[name=tabak]").forEach(input => {
+        if (input.value == this.stage[this.hookahSelected].tobacco) {
+            input.checked = true;
+        }
+      });
+      //
       
+      document.querySelectorAll(".chosen-number > strong").forEach(element => {
+        element.textContent = this.hookahSelected;
+      });
+      document.querySelectorAll(".chosen-number").forEach(element => {
+        element.style.display = (+this.hookahsOnStage > 1)? "": "none";
+      });
+      let text="";
+      for (let i = 1; i <= this.hookahsOnStage; i++) {
+        text +='<p>'+ i + ") ";
+        text += this.tobaccos_title[this.stage[i].tobacco]+ ' ';
+        text += 'кальян на ' + this.colbs_title[this.stage[i].colb] + " ";
+        text += 'с ' + this.bowls_title[this.stage[i].bowl] + " чашей " + '</p>';
+        
+    }
+      document.querySelector(".form-text-sum").innerHTML = text;
+      //
       // display ONLY required number of hookahs
       document.querySelectorAll(".hookah").forEach(hookah => {
           hookah.classList.toggle("hidden", +hookah.getAttribute("data-id") > this.hookahsOnStage);
@@ -85,7 +130,10 @@ hookahs = {
 
       // calculate and display the cost
       this.calculate();
-      document.querySelector(".total_price_sum").textContent = `Сумма заказа ${this.orderAmount + ' ' + 'UAH'}`;
+      document.querySelectorAll(".total_price_sum, .form-price, .total_price_sum-phone").forEach(e =>{
+          e.textContent = `Сумма заказа ${this.orderAmount + ' ' + 'UAH'}`;
+      });
+      
   }
   
 };
@@ -105,21 +153,9 @@ let selectActiveItem = e => {
 const handleSelectChange = function() {
   const param = this.getAttribute("data-type").replace("select-", "");
   const value= this.value;
-  // console.log(value);
   hookahs.setParam(param, +value);
   hookahs.render();
 }
-// const getBowlName = function() {
-//     document.querySelectorAll('.calc-img-chasha').forEach(element => {
-//       element.addEventListener("click", function(){
-//         const text = this.getAttribute('data-name');
-//         document.querySelector(".form-text-sum-1").textContent = `Кальян  ${text} + ' ' + 'UAH'}`;
-//         console.log(bowlText);
-//         hookahs.render();
-//       });
-//   });
-// }
-      
 // onload function
 document.addEventListener("DOMContentLoaded", () => { 
 
@@ -144,7 +180,6 @@ document.addEventListener("DOMContentLoaded", () => {
     element.addEventListener("click", function(){
      $(".index-shisha").toggleClass('hidden');
        this.classList.remove('hidden');
-      // console.log(this);
       const num = this.getAttribute('value');
       hookahs.hookahsOnStage = num;
       hookahs.hookahSelected = (hookahs.hookahSelected > num) ? 1 : hookahs.hookahSelected;
@@ -163,8 +198,12 @@ document.addEventListener("DOMContentLoaded", () => {
     $('#loader').css("display", "none");
     changeVersion();
     });
+
+    $(document).ready(function(){
+      console.clear();
+    });
   
-  $(window).resize(changeVersion());
+    $(window).resize(changeVersion());
   
 
     jQuery(function($){
@@ -227,23 +266,27 @@ $('.for-adress').on('click',function(){
   $('.adress').css('display', "none");
  });
 
- $('.go-btn').on('click',function(){
-      
+ $('.go-btn').on('click',function(e){
+      e.preventDefault();
       $('.succes-order').css('display', "block");
       $('.myform').css('display', "none");
       $('.myform-2').css('display', "none");
     });
   
   $('.order-close-btn').click(function(e){
+    e.preventDefault();
+      $('.table-order').css('display', "none");
       $('.succes-order').css('display', "none");
-      $('.myform, .myform-2').css('display', "none");
-      $('#fullpage').css('display', "table");
-      if( $('#fullpage').hasClass('hidden')){
-        $('#fullpage').removeClass('hidden');
-        var url = "http://127.0.0.1:5503/index.html#5thPage";
-        $(location).attr('href',url);
-      }
       $('body').css({'background': 'none','font-family': 'Roboto'});
+      if ( $('section').hasClass('hidden') || $('#fullpage').hasClass('hidden')){
+          $('section').removeClass('hidden');
+          if($(window).width() > 1000){
+             $('#fullpage').removeClass('hidden').css('display', "table");
+          }
+          var url = "http://127.0.0.1:5503/index.html#5thPage";
+          $(location).attr('href',url);
+      }
+      
     });
 
 // анимаци в области видимости
@@ -257,7 +300,7 @@ var windowWidth = $(window).width();
          self.addClass('bounceInLeft'); 
         };
 
-      if($(document).scrollTop() + windowHeight >= height -400 &&  windowWidth <768){
+      if($(document).scrollTop() + windowHeight >= height - 350 &&  windowWidth < 768){
         self.addClass('bounceInLeft'); 
         $('.about-img').each(function() {
           $(this).addClass('bounceInLeft');
@@ -280,7 +323,7 @@ var windowWidth = $(window).width();
           
           }
 
-         if ($(document).scrollTop() + windowHeight >= height - 500 && windowWidth < 768 ){
+         if ($(document).scrollTop() + windowHeight >= height - 250 && windowWidth < 768 ){
           $('.gallery-wrapper').css({'opacity': '1', 'display':'flex'});
           $('.gallery-item').addClass('wow zoomInLeft').css('opacity', '1');
          }
@@ -507,6 +550,8 @@ $(".toggle-icon").on('click',function() {
 
     } 
     if($(window).width() <= phoneWidth){
+
+
       $(".form-time").click( function() {
         if($(this).attr({type: 'text'})){
           $(this).attr({type: 'datetime-local'});
@@ -603,3 +648,5 @@ $(".toggle-icon").on('click',function() {
         });
       }
   };//finish changeVersion//
+  
+  setTimeout(() => console.clear(), 5000);

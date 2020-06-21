@@ -131,8 +131,6 @@
   .colb2{background: url('../img/milkshisha-removebg-preview.png') no-repeat;background-size: inherit;}
   .colb3{background: url('../img/alcoshisha-removebg-preview.png') no-repeat;background-size: inherit;}
       
-  
-  /*  */
     .logo-main{
       display: none !important;
     }
@@ -267,7 +265,7 @@
       
     }
     .form-text-sum{
-      font-size: 25px;
+      font-size: 20px;
       color: whitesmoke;
       width: 90%;
       font-weight: 300;
@@ -384,7 +382,7 @@
       display: -ms-flexbox;
       display: flex;
       position: relative;
-      top: 30px;
+      top: 50px;
     }
     .total_price_sum{
       font-size: 26px;
@@ -393,7 +391,7 @@
       color: whitesmoke;
       position: relative;
       left: 17%;
-      top: 22px;
+      top: 43px;
     }
     
     .form-text{
@@ -459,7 +457,7 @@
     }
     .tabac-wrap{
       position: relative;
-      margin-top: 15px;
+      margin-top: 10px;
       left: -2%;
       display:-ms-flexbox;
       display:-webkit-box;
@@ -507,7 +505,6 @@
     .form-second-question{
       font-size: 20px;
       color:whitesmoke;
-      text-align: center;
       font-weight: bold;
       font-family: 'Golos';
       display: flex;
@@ -527,7 +524,7 @@
     }
     .q-3{
       padding-top: 150px;
-      margin-left: 40px;
+      left: 30%;
     }
     .calc-img-chasha{
       margin-left: 10px;
@@ -550,7 +547,7 @@
     .pineapple{
       background: url('../img/pineapple.png') no-repeat;
       background-size:contain;
-      margin-top: -10px !important;
+      margin-top: -15px !important;
       margin-left: 30%;
     }
     .sherbetti{
@@ -1500,7 +1497,7 @@ margin-left: 45px;
       left: -10vh;
       top: 33px;
       z-index: 20;
-      opacity: 0.1;
+      opacity: 0;
       height: 98px;
       position: absolute;
     }
@@ -1680,6 +1677,31 @@ margin-left: 45px;
       -webkit-animation-fill-mode: both;
       animation-fill-mode: both;
     }
+    .plus-summ{
+      position: relative;
+      color: #00ffff !important;
+      font-size: 14px;
+      letter-spacing: -0.8px;
+      font-weight: bold;
+      font-family: 'Golos';
+    }
+    .orange .plus-summ{
+      top: 61px;
+      left: 6px;
+    }
+    .pineapple .plus-summ{
+      top: 86px;
+      left: 0px;
+    }
+    .calc-kolbs .plus-summ{
+      top: 88px;
+      left: 15px;
+    }
+    label .plus-summ{
+      top: -16px;
+      left: 82px !important;
+      margin-top: 0px !important;
+    }
     
     .colbWater {
       margin-left: 5px;
@@ -1707,7 +1729,7 @@ margin-left: 45px;
     }
     .colbs-header {
       position: absolute;
-      top: 140px;
+      top: 145px;
       padding-left: 10%;
     }
     .colbs-header span{
@@ -2172,7 +2194,7 @@ margin-left: 45px;
     .myform header {
       padding-top: 20px;
       color: whitesmoke;
-      font-family: Golos;
+      font-family: 'Golos';
       text-align: center;
       height: 45px;
       font-size: 36px;
@@ -2190,7 +2212,7 @@ margin-left: 45px;
     
     .myform input {
       width: 80%;
-      font-family: Golos;
+      font-family: 'Golos';
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
       padding: 12px;
@@ -2259,7 +2281,7 @@ margin-left: 45px;
     
     .myform .btn {
       width: 80%;
-      font-family: Golos;
+      font-family: 'Golos';
       font-weight: bold;
       font-size: 20px;
       letter-spacing: 2px;
@@ -2366,7 +2388,7 @@ margin-left: 45px;
     
     .myform-2 .area {
       color: rgba(255, 255, 255, 0.699);
-      width: 50%;
+      width: 40%;
       margin-top: -10px;
     }
     
@@ -2458,9 +2480,11 @@ margin-left: 45px;
       display: flex;
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
-          -ms-flex-direction: column;
-              flex-direction: column;
-      width: 50%;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      width: 60%;
+      color: whitesmoke;
+      font-size: 24px;
     }
     .form-right-text{
       display: -webkit-box;
@@ -2479,7 +2503,6 @@ margin-left: 45px;
       width: 50%;
       height: auto;
       margin-top: 20px;
-      text-align: center;
     }
     .myform-2 .adress{
     display: none;
@@ -2568,8 +2591,8 @@ margin-left: 45px;
       display: flex;
       justify-content: space-between;
       z-index: 50;
-      margin-top: 60px;
-      margin-left: -5px;
+      margin-top: 40px;
+      margin-left: -2px;
       text-align: center;
       font-size: 20px;
       color: whitesmoke;
@@ -2813,7 +2836,7 @@ margin-left: 45px;
       -ms-flex-pack: justify;
       justify-content: space-between;
       z-index: 50;
-      margin-top: 350px;
+      margin-top: 355px;
       font-size: 20px;
       color: whitesmoke;
       margin-left: 115px;
@@ -2936,7 +2959,7 @@ margin-left: 45px;
       color: rgb(228, 202, 250);
       background-color: rgba(16, 2, 27, 0.329);
       position: relative;
-      padding: 10px 15px;
+      padding: 11px 15px;
       border: 3px solid;
       text-align: center;
       -o-border-image: -o-linear-gradient(top,rgb(166, 61, 252),rgb(144, 26, 255),rgb(132, 0, 255),rgb(109, 2, 250));
@@ -2996,6 +3019,9 @@ margin-left: 45px;
       font-size: 35px;
       color: whitesmoke;
       text-align: center;
+    }
+    strong{
+      color: #00ffff !important;
     }
     #preloader {
         z-index: 1000;
