@@ -296,7 +296,7 @@ var windowWidth = $(window).width();
 		$('.about-plus, .bgicon, .icon-text, .logo-img, .map ').each(function() {
 			var self = $(this),
 			height = self.offset().top + self.height();
-			if ($(document).scrollTop() + windowHeight >= height -100 && windowWidth > 768){
+			if ($(document).scrollTop() + windowHeight >= height -350 && windowWidth > 768){
          self.addClass('bounceInLeft'); 
         };
 
@@ -310,7 +310,7 @@ var windowWidth = $(window).width();
       $('.map').each(function() {
         var self = $(this),
         height = self.offset().top + self.height();
-        if ($(document).scrollTop() + windowHeight >= height -300 && windowWidth > 768){
+        if ($(document).scrollTop() + windowHeight >= height -350 && windowWidth > 768){
           self.addClass('wow zoomInLeft'); 
        }});
 
