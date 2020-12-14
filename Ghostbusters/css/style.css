@@ -1,0 +1,232 @@
+
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #363636;
+}
+.logo{
+    width: 68px;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 104px;
+    padding-left: 34px;
+    border-bottom: 1px solid #D4D4D4;
+}
+.search-input{
+    background-image: url('../img/search-icon.svg');
+    background-repeat: no-repeat;
+    background-position: center left;
+    padding-left: 38px;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-style: 18px;
+    color: #A5A5A5;
+    line-height: 21px;
+    margin-left: 34px;
+    margin-right: auto;
+}
+.line{
+    height: 100%;
+    width: 1px;
+    background:#D4D4D4;
+    margin-left: 34px;
+}
+.navigation-link{
+    text-decoration: none;
+    margin-right: 18px;
+    font-size: 18px;
+    line-height: 21px;
+    color: #363636;
+}
+.sign-up{
+    color: #5671F6;
+    font-size: 18px;
+    background-color:#ffffff;
+    border: none;
+    padding: 0px 34px;
+    border-left: 1px solid #D4D4D4;
+}
+.login{
+    color: #ffffff;
+    font-size: 18px;
+    border: none;
+    background-color:#5671F6;
+    padding: 0px 50px;
+}
+.button-group{
+    height: 100%;
+}
+.button{
+    height: 100%;
+    cursor: pointer;
+}
+.navigation{
+    margin-right: 34px;
+    margin-left: auto;
+}
+.container{
+    max-width: 1130px;
+    margin: auto;
+}
+.film{
+    padding: 80px 0 80px 0;
+    border-bottom: 1px solid #D4D4D4;
+}
+.film-wrapper{
+    display: flex;
+}
+.poster{
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    width: 358px;
+}
+.trailer-button{
+    background: #ffffff;
+    border: 1px solid #D4D4D4;
+    border-radius: 0px 0px 5px 5px;
+    padding: 25px 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+}
+.film-trailer{
+    display: flex;
+    flex-direction: column;
+    margin-right: 60px;
+}
+.trailer-button-icon{
+    margin-right: 14px;
+}
+.film-title{
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 42px;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+.film-subtitle{
+    font-size: 18px;
+    display:block;
+    line-height: 21px;
+    color: #A5A5A5;
+    margin-bottom: 32PX;
+}
+.film-description{
+    max-width: 514px;
+    font-size: 14px;
+    line-height: 150%;
+    color: #000000;
+    margin-bottom: 50PX;
+}
+.about-film{
+    display: flex;
+    margin-bottom: 50px;
+}
+.about-text{
+    display: block;
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 16px;
+}
+.about-text-bold{
+    display: inline-block;
+    width: 100px;
+    vertical-align: top;
+    font-weight: bold;
+}
+.left-side{
+    margin-right: 40px;
+}
+.rating{
+    display: flex;
+    align-items: center;
+}
+.film-rating-counter{
+    padding: 34px 25px;
+    color: #5671F6;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 33px;
+    border: 1px solid #5671F6;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    margin-right: 28px;
+}
+.rating-title{
+   font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    color: #363636; 
+    margin:0px 0px 12px 0px;
+}
+.rating-text{
+    display: block;
+    margin-bottom: 7px;
+    font-size: 16px;
+    line-height: 19px;
+    color: #363636;
+}
+.rating-text-bold{font-weight: bold;}
+.cast{
+    padding: 70px 0 100px 0;
+}
+.tabs{
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+}
+.section-title{
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    color: #A5A5A5;
+    margin-right: 30px;
+}
+.section-title.active{
+    color: #363636;
+    font-weight: 900;
+}
+.name{
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    color: #5671F6;
+    margin: 0px 0px 6px 0px;
+}
+.en-name{
+    font-weight: normal;
+    color: #A5A5A5;
+}
+.card-image{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.card{
+    display: flex;
+    align-items: center;
+    flex-basis: 25%;
+    margin-bottom: 35px;
+}
+.tabs-content{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
