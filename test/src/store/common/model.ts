@@ -1,0 +1,1 @@
+export enum ActionType { GET_EMPLOYERS = 'GET_EMPLOYERS', SET_EMPLOYERS = 'SET_EMPLOYERS' }
